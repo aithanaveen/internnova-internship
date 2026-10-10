@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--
+  Week 1 Assignment: HTML Fundamentals
+  Task 5: Semantic HTML (10 Marks)
+  Author: Aitha Naveen
+  Description: Demonstrating standard Semantic HTML5 tags: <header>, <nav>,
+               <main>, <section>, <article>, <aside>, <figure>, <figcaption>, and <footer>.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task 5: Exploring Semantic HTML5 tags and their significance for web accessibility and search engine optimization.">
+    <meta name="author" content="Aitha Naveen">
+    <title>Task 5: Semantic HTML | HTML Fundamentals</title>
+</head>
+<body>
+
+    <!-- Semantic Tag: <header> for the entire document -->
+    <header>
+        <h1>Web Tech Gazette: The Semantic Web Edition</h1>
+        <p><em>An educational journal exploring meaningful, accessible, and structured web development.</em></p>
+
+        <!-- Semantic Tag: <nav> for site-wide navigation links -->
+        <nav aria-label="Main Navigation">
+            <p>
+                <strong>Assignment Navigation:</strong>
+                <a href="index.html">Home Dashboard</a> |
+                <a href="task1_structure.html">Task 1: Structure</a> |
+                <a href="task2_text_formatting.html">Task 2: Text Elements</a> |
+                <a href="task3_multimedia_tables.html">Task 3: Media &amp; Tables</a> |
+                <a href="task4_student_form.html">Task 4: Forms</a> |
+                <strong>Task 5: Semantic HTML</strong> |
+                <a href="task6_mini_project.html">Task 6: Mini Project</a> |
+                <a href="task7_reflection.html">Task 7: Reflection</a>
+            </p>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Semantic Tag: <main> defines the dominant content of the <body> -->
+    <main>
+
+        <!-- Semantic Tag: <section> 1 - Introduction to Semantic HTML -->
+        <section>
+            <h2>1. What is Semantic HTML?</h2>
+            <p>
+                Semantic HTML introduces meaning to webpage markup rather than merely dictating presentation.
+                A semantic element clearly describes its meaning to both the browser and the developer.
+                For instance, <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> convey their purpose immediately, unlike generic <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> containers.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Semantic Tag: <section> 2 - Comparison Table -->
+        <section>
+            <h2>2. Non-Semantic vs. Semantic Elements</h2>
+            <p>Prior to HTML5, developers relied on generic division elements with class names. HTML5 replaced them with standardized semantic elements:</p>
+
+            <table border="1" cellpadding="8" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Old Non-Semantic Pattern</th>
+                        <th>Modern HTML5 Semantic Element</th>
+                        <th>Semantic Purpose &amp; Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;div id="header"&gt;</code></td>
+                        <td><code>&lt;header&gt;</code></td>
+                        <td>Represents introductory content or a set of navigational aids.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div class="nav"&gt;</code></td>
+                        <td><code>&lt;nav&gt;</code></td>
+                        <td>Designates a section containing major navigation links.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div id="main-content"&gt;</code></td>
+                        <td><code>&lt;main&gt;</code></td>
+                        <td>Contains central topic content unique to the document.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div class="section"&gt;</code></td>
+                        <td><code>&lt;section&gt;</code></td>
+                        <td>Represents a standalone generic section with thematic grouping.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div class="post"&gt;</code></td>
+                        <td><code>&lt;article&gt;</code></td>
+                        <td>Specifies independent, self-contained, syndicateable content.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div id="sidebar"&gt;</code></td>
+                        <td><code>&lt;aside&gt;</code></td>
+                        <td>Defines content indirectly related to surrounding content.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;div id="footer"&gt;</code></td>
+                        <td><code>&lt;footer&gt;</code></td>
+                        <td>Represents a footer containing metadata, author, and copyright.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Semantic Tag: <section> 3 - Independent Articles -->
+        <section>
+            <h2>3. Featured Technical Articles</h2>
+
+            <!-- Article 1 -->
+            <article>
+                <header>
+                    <h3>Article 1: Enhancing Accessibility with Semantic Landmarks</h3>
+                    <p>
+                        Published by <author>Aitha Naveen</author> on
+                        <time datetime="2026-10-10">October 10, 2026</time> | Category: <em>Web Accessibility (a11y)</em>
+                    </p>
+                </header>
+
+                <p>
+                    Screen readers and assistive technologies rely heavily on semantic tags to generate an outline of the webpage.
+                    When a visually impaired user accesses a page built with landmarks like <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;article&gt;</code>,
+                    their software can jump directly to key landmarks without having to read through hundreds of unrelated links or decorative divisions.
+                </p>
+
+                <figure>
+                    <img src="images/web_development.svg" alt="Diagram showing clear landmark structure of a modern web application" width="400" height="230">
+                    <figcaption><strong>Figure 3.1:</strong> Landmark hierarchy assisting screen readers and search crawlers.</figcaption>
+                </figure>
+
+                <p>
+                    Furthermore, semantic tags automatically implement WAI-ARIA landmark roles without requiring manual <code>role="banner"</code> or <code>role="navigation"</code> annotations.
+                </p>
+
+                <footer>
+                    <p><small>Tags: Accessibility, Screen Readers, Standards | 3 min read</small></p>
+                </footer>
+            </article>
+
+            <br>
+            <hr>
+
+            <!-- Article 2 -->
+            <article>
+                <header>
+                    <h3>Article 2: How Semantic Markup Boosts Search Engine Optimization (SEO)</h3>
+                    <p>
+                        Published by <author>Aitha Naveen</author> on
+                        <time datetime="2026-10-10">October 10, 2026</time> | Category: <em>Search Engine Optimization</em>
+                    </p>
+                </header>
+
+                <p>
+                    Search engine web crawlers (such as Googlebot and Bingbot) parse the structural hierarchy of HTML to determine relevance.
+                    Content wrapped within <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> elements signals to algorithms what the core subject matter is.
+                    In contrast, content inside <code>&lt;aside&gt;</code> or <code>&lt;footer&gt;</code> is properly identified as secondary.
+                </p>
+                <p>
+                    Clean, semantic code provides clear machine-readable context, helping search engines generate rich snippets and accurate site previews in search results.
+                </p>
+
+                <footer>
+                    <p><small>Tags: SEO, Googlebot, Web Standards | 4 min read</small></p>
+                </footer>
+            </article>
+
+        </section>
+
+        <hr>
+
+        <!-- Semantic Tag: <aside> for sidebar / auxiliary information -->
+        <aside>
+            <h3>Related Resources &amp; Quick Facts (&lt;aside&gt;)</h3>
+            <ul>
+                <li><strong>W3C Recommendation:</strong> Always use one single <code>&lt;main&gt;</code> tag per HTML document.</li>
+                <li><strong>Heading Rule:</strong> Ensure every <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> contains its own heading level (h2-h6).</li>
+                <li><strong>Validation:</strong> Validate markup using the <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Nu HTML Checker</a>.</li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <hr>
+
+    <!-- Semantic Tag: <footer> for document-level author, copyright and contact -->
+    <footer>
+        <address>
+            Written by <strong>Aitha Naveen</strong><br>
+            Email: <a href="mailto:aitha.naveen@example.com">aitha.naveen@example.com</a><br>
+            Hyderabad, Telangana, India
+        </address>
+        <p>&copy; 2026 Aitha Naveen | Week 1 Assignment: HTML Fundamentals | Internnova Internship</p>
+        <p>
+            <a href="task4_student_form.html">&larr; Previous Task: HTML Forms</a> |
+            <a href="task6_mini_project.html">Next Task: Mini HTML Project &rarr;</a>
+        </p>
+    </footer>
+
+</body>
+</html>

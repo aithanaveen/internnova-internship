@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="600" height="350">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="code" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" rx="12" fill="url(#bg)"/>
+  <!-- Monitor frame -->
+  <rect x="50" y="40" width="500" height="230" rx="8" fill="url(#screen)" stroke="#475569" stroke-width="2"/>
+  <rect x="70" y="60" width="460" height="190" rx="4" fill="#0f172a"/>
+  <!-- Window buttons -->
+  <circle cx="85" cy="75" r="5" fill="#ef4444"/>
+  <circle cx="100" cy="75" r="5" fill="#f59e0b"/>
+  <circle cx="115" cy="75" r="5" fill="#10b981"/>
+  <!-- Code lines -->
+  <rect x="90" y="100" width="120" height="8" rx="4" fill="#f43f5e"/>
+  <rect x="90" y="120" width="220" height="8" rx="4" fill="#38bdf8"/>
+  <rect x="110" y="140" width="180" height="8" rx="4" fill="#a855f7"/>
+  <rect x="110" y="160" width="260" height="8" rx="4" fill="#10b981"/>
+  <rect x="90" y="180" width="140" height="8" rx="4" fill="#fbbf24"/>
+  <rect x="90" y="200" width="90" height="8" rx="4" fill="#f43f5e"/>
+  <!-- Monitor stand -->
+  <rect x="270" y="270" width="60" height="30" fill="#475569"/>
+  <rect x="220" y="300" width="160" height="12" rx="4" fill="#64748b"/>
+  <!-- Text -->
+  <text x="300" y="335" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">HTML5 Web Fundamentals</text>
+</svg>

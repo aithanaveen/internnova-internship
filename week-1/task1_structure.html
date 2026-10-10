@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+  Week 1 Assignment: HTML Fundamentals
+  Task 1: HTML Document Structure (15 Marks)
+  Author: Aitha Naveen
+  Description: Demonstrating the standard HTML5 document skeleton including DOCTYPE,
+               html, head, body, title, meta charset, and meta viewport tags.
+-->
+<html lang="en">
+<head>
+    <!-- Character encoding declaration for UTF-8 character support -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport configuration to ensure proper scaling on all devices and screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Document metadata -->
+    <meta name="description" content="Task 1: HTML Document Structure demonstrating HTML5 fundamentals, doctype declaration, head and body tags.">
+    <meta name="author" content="Aitha Naveen">
+
+    <!-- Webpage title displayed in the browser tab -->
+    <title>Task 1: HTML Document Structure | HTML Fundamentals</title>
+</head>
+<body>
+
+    <!-- Main Navigation Bar linking across assignment tasks -->
+    <nav>
+        <p>
+            <strong>Assignment Navigation:</strong>
+            <a href="index.html">Home Dashboard</a> |
+            <strong>Task 1: Structure</strong> |
+            <a href="task2_text_formatting.html">Task 2: Text Elements</a> |
+            <a href="task3_multimedia_tables.html">Task 3: Media &amp; Tables</a> |
+            <a href="task4_student_form.html">Task 4: Forms</a> |
+            <a href="task5_semantic_html.html">Task 5: Semantic HTML</a> |
+            <a href="task6_mini_project.html">Task 6: Mini Project</a> |
+            <a href="task7_reflection.html">Task 7: Reflection</a>
+        </p>
+    </nav>
+
+    <hr>
+
+    <!-- Page Header -->
+    <header>
+        <h1>Task 1: HTML5 Document Structure</h1>
+        <p><em>Module: Web Development Internship - Week 1: HTML Fundamentals</em></p>
+    </header>
+
+    <hr>
+
+    <!-- Section 1: Introduction to HTML5 Structure -->
+    <section>
+        <h2>1. Overview of HTML Document Structure</h2>
+        <p>
+            Every modern webpage begins with an established HTML5 foundation. The structure dictates how browsers parse, render, and interpret the hierarchy of elements on the page.
+        </p>
+    </section>
+
+    <!-- Section 2: Core Components Breakdown -->
+    <section>
+        <h2>2. Essential Building Blocks Explained</h2>
+
+        <dl>
+            <dt><strong>&lt;!DOCTYPE html&gt;</strong></dt>
+            <dd>
+                The document type declaration tells web browsers that the document is written in HTML5. It must always be the very first line of an HTML document, appearing before the opening &lt;html&gt; tag. It prevents browsers from switching into "quirks mode".
+            </dd>
+
+            <br>
+
+            <dt><strong>&lt;html lang="en"&gt;</strong></dt>
+            <dd>
+                The root element of an HTML document. All other elements are nested inside this tag. The <code>lang="en"</code> attribute defines the primary language of the page (English), aiding search engines and assistive technologies like screen readers.
+            </dd>
+
+            <br>
+
+            <dt><strong>&lt;head&gt;</strong></dt>
+            <dd>
+                The container for document metadata (information about the document). Contents within &lt;head&gt; are not directly rendered as visual content on the page, but provide critical instructions to the browser, search engines, and external tools.
+            </dd>
+
+            <br>
+
+            <dt><strong>&lt;meta charset="UTF-8"&gt;</strong></dt>
+            <dd>
+                Specifies character encoding for the document. UTF-8 supports almost all written human languages, special characters, and emojis, ensuring content displays without garbled text.
+            </dd>
+
+            <br>
+
+            <dt><strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</strong></dt>
+            <dd>
+                Controls how the viewport is rendered on different screen sizes. <code>width=device-width</code> sets the page width to follow screen width, while <code>initial-scale=1.0</code> sets the initial zoom level, which is fundamental for responsive design.
+            </dd>
+
+            <br>
+
+            <dt><strong>&lt;title&gt;</strong></dt>
+            <dd>
+                Defines the title of the document. This text appears in the browser tab, bookmarks bar, and search engine results pages (SERP).
+            </dd>
+
+            <br>
+
+            <dt><strong>&lt;body&gt;</strong></dt>
+            <dd>
+                Contains all visible content of the webpage, including text, images, tables, links, forms, audio, and video that visitors interact with.
+            </dd>
+        </dl>
+    </section>
+
+    <!-- Section 3: Standard Boilerplate Code Demonstration -->
+    <section>
+        <h2>3. Standard HTML5 Boilerplate Code</h2>
+        <p>Below is the complete, standard HTML5 boilerplate represented verbatim:</p>
+
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First HTML Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Web Development&lt;/h1&gt;
+    &lt;p&gt;This is a properly structured HTML5 webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+
+    <!-- Section 4: Structural Hierarchy Table -->
+    <section>
+        <h2>4. Component Summary &amp; Verification</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Tag / Element</th>
+                    <th>Location</th>
+                    <th>Mandatory in HTML5?</th>
+                    <th>Primary Function</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                    <td>Line 1 (Top)</td>
+                    <td>Yes</td>
+                    <td>Informs browser to use HTML5 standards mode</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;html&gt;</code></td>
+                    <td>Wraps whole page</td>
+                    <td>Yes</td>
+                    <td>Root element enclosing head and body</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;head&gt;</code></td>
+                    <td>Inside &lt;html&gt;</td>
+                    <td>Yes</td>
+                    <td>Contains metadata, titles, and configs</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+                    <td>Inside &lt;head&gt;</td>
+                    <td>Yes (Recommended)</td>
+                    <td>Defines character encoding</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta name="viewport"&gt;</code></td>
+                    <td>Inside &lt;head&gt;</td>
+                    <td>Yes (Responsive)</td>
+                    <td>Controls mobile viewport and scaling</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;title&gt;</code></td>
+                    <td>Inside &lt;head&gt;</td>
+                    <td>Yes</td>
+                    <td>Sets the webpage title on browser tabs</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;body&gt;</code></td>
+                    <td>Inside &lt;html&gt;</td>
+                    <td>Yes</td>
+                    <td>Holds all visible UI content</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aitha Naveen | Week 1 Assignment: HTML Fundamentals | Internnova Internship</p>
+        <p><a href="#top">Back to Top &uarr;</a> | <a href="task2_text_formatting.html">Next Task: Text Formatting &amp; Elements &rarr;</a></p>
+    </footer>
+
+</body>
+</html>

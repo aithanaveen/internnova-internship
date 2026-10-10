@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+  Week 1 Assignment: HTML Fundamentals
+  Task 3: Links, Images, Lists & Tables (20 Marks)
+  Author: Aitha Naveen
+  Description: Demonstrating internal & external links, image elements with alt attributes,
+               ordered lists, unordered lists, nested lists, and structured HTML tables.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task 3: Demonstrating HTML hyperlinks, images, ordered/unordered/nested lists, and data tables.">
+    <meta name="author" content="Aitha Naveen">
+    <title>Task 3: Links, Images, Lists &amp; Tables | HTML Fundamentals</title>
+</head>
+<body id="top">
+
+    <!-- Main Navigation Bar -->
+    <nav>
+        <p>
+            <strong>Assignment Navigation:</strong>
+            <a href="index.html">Home Dashboard</a> |
+            <a href="task1_structure.html">Task 1: Structure</a> |
+            <a href="task2_text_formatting.html">Task 2: Text Elements</a> |
+            <strong>Task 3: Media &amp; Tables</strong> |
+            <a href="task4_student_form.html">Task 4: Forms</a> |
+            <a href="task5_semantic_html.html">Task 5: Semantic HTML</a> |
+            <a href="task6_mini_project.html">Task 6: Mini Project</a> |
+            <a href="task7_reflection.html">Task 7: Reflection</a>
+        </p>
+    </nav>
+
+    <hr>
+
+    <!-- Page Header -->
+    <header>
+        <h1>Task 3: Links, Images, Lists &amp; Tables</h1>
+        <p><em>Demonstrating hyperlinks, local images with alternate text, structured lists, and data tables.</em></p>
+    </header>
+
+    <!-- In-Page Jump Links (Internal Navigation) -->
+    <section>
+        <h3>Quick In-Page Table of Contents:</h3>
+        <ul>
+            <li><a href="#hyperlinks-section">1. Hyperlinks (Internal &amp; External)</a></li>
+            <li><a href="#images-section">2. Images with Alternate Text</a></li>
+            <li><a href="#lists-section">3. Ordered, Unordered &amp; Nested Lists</a></li>
+            <li><a href="#tables-section">4. Tables with Rows, Columns &amp; Headings</a></li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- Section 1: Hyperlinks -->
+    <section id="hyperlinks-section">
+        <h2>1. Hyperlinks (Internal &amp; External)</h2>
+        <p>Hyperlinks are created with the <code>&lt;a&gt;</code> (anchor) tag using the <code>href</code> attribute.</p>
+
+        <h3>A. Internal Hyperlinks:</h3>
+        <p>Internal links navigate to sections within the current document or to other files within the same website:</p>
+        <ul>
+            <li>Jump to <a href="#tables-section">Section 4 (Data Tables) on this page</a></li>
+            <li>Navigate to <a href="task1_structure.html">Task 1: HTML Document Structure (Local File)</a></li>
+            <li>Navigate to <a href="task4_student_form.html">Task 4: Student Registration Form (Local File)</a></li>
+            <li>Return to <a href="#top">Top of this page</a></li>
+        </ul>
+
+        <h3>B. External Hyperlinks:</h3>
+        <p>External links point to resources on different domains. They include <code>target="_blank"</code> to open in a new tab and <code>rel="noopener noreferrer"</code> for security:</p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+                    MDN Web Docs - HTML Reference
+                </a> (Opens in new tab)
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">
+                    W3Schools - HTML5 Tutorial
+                </a> (Opens in new tab)
+            </li>
+            <li>
+                <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">
+                    WHATWG HTML Living Standard Specification
+                </a> (Opens in new tab)
+            </li>
+        </ul>
+
+        <h3>C. Email and Phone Protocol Links:</h3>
+        <ul>
+            <li>Email Support Link: <a href="mailto:support@internnova.com">Send Email to support@internnova.com</a></li>
+            <li>Telephone Link: <a href="tel:+919876543210">Call +91 98765 43210</a></li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- Section 2: Images with Alternate Text -->
+    <section id="images-section">
+        <h2>2. Images with Alternate Text (&lt;img&gt;)</h2>
+        <p>
+            The <code>&lt;img&gt;</code> element embeds an image. The <code>alt</code> attribute is essential for accessibility (screen readers) and displays alternative text if the image fails to load.
+        </p>
+
+        <!-- Image 1: HTML5 Badge with Figure & Figcaption -->
+        <figure>
+            <img src="images/html5_badge.svg" alt="Official W3C HTML5 Shield Logo representing the standard web markup language" width="150" height="150">
+            <figcaption><strong>Figure 1:</strong> The official HTML5 Technology Logo.</figcaption>
+        </figure>
+
+        <br>
+
+        <!-- Image 2: Web Development Vector Illustration -->
+        <figure>
+            <img src="images/web_development.svg" alt="Digital illustration of a computer workstation displaying colored lines of HTML code on a screen" width="500" height="290">
+            <figcaption><strong>Figure 2:</strong> Modern Web Development Workstation &amp; Code Editor Interface.</figcaption>
+        </figure>
+    </section>
+
+    <hr>
+
+    <!-- Section 3: Lists -->
+    <section id="lists-section">
+        <h2>3. Lists: Ordered, Unordered &amp; Nested</h2>
+
+        <!-- Unordered List -->
+        <h3>A. Unordered List (&lt;ul&gt; - Bulleted)</h3>
+        <p>Used when the order of items does not inherently matter:</p>
+        <ul>
+            <li>HyperText Markup Language (HTML5)</li>
+            <li>Cascading Style Sheets (CSS3)</li>
+            <li>JavaScript (ES6+)</li>
+            <li>Responsive Web Design Principles</li>
+            <li>Web Accessibility (ARIA &amp; Semantic Tags)</li>
+        </ul>
+
+        <!-- Ordered List -->
+        <h3>B. Ordered List (&lt;ol&gt; - Numbered)</h3>
+        <p>Used when sequential order or procedure is important:</p>
+        <ol>
+            <li>Define document structure with &lt;!DOCTYPE html&gt;</li>
+            <li>Add metadata and title in the &lt;head&gt; tag</li>
+            <li>Structure layout using semantic tags like &lt;header&gt;, &lt;main&gt;, &lt;footer&gt;</li>
+            <li>Format text content with appropriate headings and paragraphs</li>
+            <li>Embed multimedia assets (images, audio, video) with descriptive alt text</li>
+            <li>Validate markup against W3C standards before publishing</li>
+        </ol>
+
+        <!-- Ordered List with Roman Numerals -->
+        <h4>Ordered List using Roman Numerals (type="I"):</h4>
+        <ol type="I">
+            <li>Planning &amp; Wireframing</li>
+            <li>Content Architecture</li>
+            <li>HTML5 Markup Implementation</li>
+            <li>Cross-Browser Testing</li>
+        </ol>
+
+        <!-- Nested List -->
+        <h3>C. Multi-Level Nested List</h3>
+        <p>Demonstrating lists nested inside other list items to build hierarchical structures:</p>
+        <ul>
+            <li>
+                <strong>Frontend Development</strong>
+                <ol>
+                    <li>HTML5 (Structure)
+                        <ul>
+                            <li>Text Formatting</li>
+                            <li>Forms &amp; Inputs</li>
+                            <li>Semantic Tags</li>
+                        </ul>
+                    </li>
+                    <li>CSS3 (Styling)
+                        <ul>
+                            <li>Flexbox Layout</li>
+                            <li>CSS Grid</li>
+                        </ul>
+                    </li>
+                    <li>JavaScript (Interactivity)</li>
+                </ol>
+            </li>
+            <li>
+                <strong>Backend Development</strong>
+                <ol>
+                    <li>Python (FastAPI / Django)</li>
+                    <li>Node.js (Express Framework)</li>
+                </ol>
+            </li>
+            <li>
+                <strong>Database Management</strong>
+                <ul>
+                    <li>Relational Databases (PostgreSQL, MySQL)</li>
+                    <li>NoSQL Databases (MongoDB)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- Section 4: Tables with Rows, Columns & Headings -->
+    <section id="tables-section">
+        <h2>4. Tables with Rows, Columns &amp; Headings</h2>
+        <p>
+            Tables organize two-dimensional data using rows (<code>&lt;tr&gt;</code>), header cells (<code>&lt;th&gt;</code>), and data cells (<code>&lt;td&gt;</code>).
+            The table below demonstrates <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, along with <code>colspan</code> and <code>rowspan</code>.
+        </p>
+
+        <table border="1" cellpadding="10" cellspacing="0" width="100%">
+            <caption><strong>Table 1: Internnova Internship - Course Curriculum &amp; Grading Matrix</strong></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Week</th>
+                    <th scope="col">Module Topic</th>
+                    <th scope="col">Key Deliverables</th>
+                    <th scope="col">Practical Exercises</th>
+                    <th scope="col">Max Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" align="center"><strong>Week 1</strong></td>
+                    <td rowspan="2">HTML5 Fundamentals</td>
+                    <td>Document Structure, Text Elements</td>
+                    <td>Tasks 1 &amp; 2</td>
+                    <td align="center">35</td>
+                </tr>
+                <tr>
+                    <td>Media, Tables, Forms, Semantic HTML</td>
+                    <td>Tasks 3, 4, 5, 6 &amp; 7</td>
+                    <td align="center">65</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" align="center"><strong>Week 2</strong></td>
+                    <td rowspan="2">CSS3 Styling &amp; Layouts</td>
+                    <td>Selectors, Box Model, Typography</td>
+                    <td>Responsive Landing Page</td>
+                    <td align="center">50</td>
+                </tr>
+                <tr>
+                    <td>Flexbox &amp; CSS Grid Mastery</td>
+                    <td>Dashboard Layout</td>
+                    <td align="center">50</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" align="center"><strong>Week 3</strong></td>
+                    <td rowspan="2">JavaScript Basics</td>
+                    <td>Variables, Functions, Loops</td>
+                    <td>Algorithm Practice</td>
+                    <td align="center">50</td>
+                </tr>
+                <tr>
+                    <td>DOM Manipulation &amp; Events</td>
+                    <td>Interactive Calculator</td>
+                    <td align="center">50</td>
+                </tr>
+                <tr>
+                    <td align="center"><strong>Week 4</strong></td>
+                    <td>Capstone Project</td>
+                    <td>Full Responsive Web Application</td>
+                    <td>Final Evaluation &amp; Viva</td>
+                    <td align="center">100</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4" align="right">Total Internship Course Marks:</th>
+                    <th align="center">400 Marks</th>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aitha Naveen | Week 1 Assignment: HTML Fundamentals | Internnova Internship</p>
+        <p>
+            <a href="task2_text_formatting.html">&larr; Previous Task: Text Elements</a> |
+            <a href="#top">Back to Top &uarr;</a> |
+            <a href="task4_student_form.html">Next Task: HTML Forms &rarr;</a>
+        </p>
+    </footer>
+
+</body>
+</html>

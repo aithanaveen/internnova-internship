@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="800" height="250">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="250" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="700" cy="60" r="35" fill="#fde047"/>
+  <!-- Ground -->
+  <rect y="200" width="800" height="50" fill="#22c55e"/>
+  <!-- Main College Building -->
+  <rect x="250" y="70" width="300" height="130" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <!-- Roof / Pediment -->
+  <polygon points="230,70 400,20 570,70" fill="#0f172a"/>
+  <!-- Pillars -->
+  <rect x="290" y="80" width="20" height="120" fill="#e2e8f0"/>
+  <rect x="350" y="80" width="20" height="120" fill="#e2e8f0"/>
+  <rect x="430" y="80" width="20" height="120" fill="#e2e8f0"/>
+  <rect x="490" y="80" width="20" height="120" fill="#e2e8f0"/>
+  <!-- Entrance door -->
+  <rect x="375" y="140" width="50" height="60" rx="25" fill="#1e293b"/>
+  <!-- Clock / Emblem in pediment -->
+  <circle cx="400" cy="50" r="14" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <!-- Trees -->
+  <circle cx="150" cy="160" r="40" fill="#16a34a"/>
+  <rect x="142" y="170" width="16" height="35" fill="#78350f"/>
+  <circle cx="650" cy="160" r="40" fill="#16a34a"/>
+  <rect x="642" y="170" width="16" height="35" fill="#78350f"/>
+  <!-- Title banner text -->
+  <text x="400" y="235" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#ffffff" text-anchor="middle">TECHNOVA INSTITUTE OF TECHNOLOGY &amp; WEB SCIENCES</text>
+</svg>
