@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>InternNova - Premium Virtual Internships & Learning Tracks | Official Redesign</title>
+  <meta name="title" content="InternNova - Premium Virtual Internships & Learning Tracks | Official Redesign">
+  <meta name="description" content="Accelerate your tech career with InternNova. Gain real-world project experience, mentorship from industry experts, and verified internship certificates in Web Development, AI/ML, Data Analytics, Cyber Security, and Cloud.">
+  <meta name="keywords" content="InternNova, virtual internships, tech internships, web development, AI, machine learning, data science, cybersecurity, student mentorship, verified certificates, MSME registered">
+  <meta name="author" content="InternNova Redesign Project">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://internnova.co.in/">
+  <meta property="og:title" content="InternNova - Build Real Skills. Land Real Jobs.">
+  <meta property="og:description" content="Virtual internships with industry-grade projects, 1-on-1 mentor code reviews, and verifiable QR-coded credentials.">
+  <meta property="og:image" content="./assets/images/hero_dashboard.jpg">
+
+  <!-- Favicons & Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b5cf6'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Background Orbs -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement" id="topAnnouncement">
+    <div class="container">
+      <div class="announcement-content">
+        <span class="announcement-badge"><i class="fa-solid fa-fire"></i> Cohort Alert</span>
+        <span class="announcement-text">
+          Batch-08 Starting Soon! Applications closing in
+        </span>
+        <span class="countdown-box" id="topCountdown"><i class="fa-regular fa-clock"></i> <span id="countdownTimer">03d : 14h : 22m : 45s</span></span>
+        <span class="announcement-link" id="announcementApplyBtn">Apply Now &rarr;</span>
+      </div>
+      <button class="announcement-close" id="closeAnnouncement" aria-label="Dismiss banner">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="brand-icon-wrapper">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <span>Intern<span class="accent">Nova</span></span>
+        <span class="brand-tag-mini">MSME</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#programs" class="nav-link" id="navProgramsLink">Programs</a></li>
+          <li><a href="#about" class="nav-link" id="navAboutLink">About</a></li>
+          <li><a href="#verify" class="nav-link" id="navVerifyLink">Verify Credential</a></li>
+          <li><a href="#why-choose" class="nav-link" id="navWhyLink">Why InternNova</a></li>
+          <li><a href="#roadmap" class="nav-link" id="navRoadmapLink">Roadmap</a></li>
+          <li><a href="#workshops" class="nav-link" id="navWorkshopsLink">Workshops</a></li>
+          <li><a href="#testimonials" class="nav-link" id="navTestimonialsLink">Wall of Love</a></li>
+          <li><a href="#faq" class="nav-link" id="navFaqLink">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+
+        <!-- Student LMS Login -->
+        <button class="btn btn-secondary btn-sm" id="studentLoginBtn">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Student Login
+        </button>
+
+        <!-- Apply CTA -->
+        <button class="btn btn-primary btn-sm btn-glow" id="headerApplyBtn">
+          Apply Now <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-icon-wrapper" style="width: 36px; height: 36px; font-size: 1rem;">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <span>Intern<span class="accent">Nova</span></span>
+      </a>
+      <button class="announcement-close" id="closeDrawerBtn" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#programs" class="nav-link drawer-item">Internship Programs</a></li>
+      <li><a href="#about" class="nav-link drawer-item">About InternNova</a></li>
+      <li><a href="#verify" class="nav-link drawer-item">Verify Certificate</a></li>
+      <li><a href="#why-choose" class="nav-link drawer-item">Why InternNova</a></li>
+      <li><a href="#roadmap" class="nav-link drawer-item">Learning Roadmap</a></li>
+      <li><a href="#workshops" class="nav-link drawer-item">Live Workshops</a></li>
+      <li><a href="#testimonials" class="nav-link drawer-item">Student Reviews</a></li>
+      <li><a href="#faq" class="nav-link drawer-item">FAQ & Help</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+      <button class="btn btn-secondary" id="drawerLoginBtn" style="width: 100%;">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i> Intern Portal Login
+      </button>
+      <button class="btn btn-primary" id="drawerApplyBtn" style="width: 100%;">
+        Start Application <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ======================================================================
+         Hero Section
+         ====================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Left Column -->
+        <div class="hero-content">
+          <!-- Dynamic Time Badge -->
+          <div class="hero-badge-wrap" id="heroTimeBadgeWrap">
+            <span class="pulse-indicator"></span>
+            <span class="hero-badge-text" id="heroGreetingText">
+              <i class="fa-regular fa-moon"></i> Good Evening • Welcome to InternNova
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Build Real Skills.<br>
+            <span class="gradient-text">Land Real Tech Jobs.</span>
+          </h1>
+
+          <p class="hero-description">
+            Accelerate your engineering journey with industry-grade virtual internships, verified credentials, and 1-on-1 mentorship. No toy tutorials — collaborate on real GitHub repositories, submit production pull requests, and receive recognized credentials.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg btn-glow" id="heroExploreBtn">
+              Explore Programs <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-secondary btn-lg" id="heroVerifyTriggerBtn">
+              <i class="fa-solid fa-shield-halved"></i> Verify Credential
+            </button>
+          </div>
+
+          <!-- Trust & Social Proof Bar -->
+          <div class="hero-trust-bar">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Student alumni">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="Student alumni">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student alumni">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student alumni">
+            </div>
+            <div class="trust-stats">
+              <div class="trust-stats-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.95 / 5</span>
+              </div>
+              <div class="trust-stats-text">
+                Trusted by <strong>10,000+</strong> students across <strong>100+</strong> universities
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Developer Student Dashboard Preview -->
+        <div class="hero-visual">
+          <div class="hero-card-container">
+            <img src="./assets/images/hero_dashboard.jpg" alt="InternNova Developer Workspace and Dashboard" class="hero-image-mockup">
+            
+            <!-- Floating Badge 1 (Top Right) -->
+            <div class="hero-floating-badge badge-top-right">
+              <div class="floating-icon-wrap green">
+                <i class="fa-solid fa-code-pull-request"></i>
+              </div>
+              <div class="floating-badge-content">
+                <h4>PR #145 Merged</h4>
+                <p>Reviewed by Senior Engineer</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 (Bottom Left) -->
+            <div class="hero-floating-badge badge-bottom-left">
+              <div class="floating-icon-wrap purple">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div class="floating-badge-content">
+                <h4>Verified Certificate</h4>
+                <p>MSME & ISO Recognized</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Statistics / Key Metrics Banner
+         ====================================================================== -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <div class="stats-grid" id="statsGrid">
+          <!-- Dynamically populated or rendered -->
+          <div class="stat-item">
+            <div class="stat-number gradient-text">10,000+</div>
+            <div class="stat-label">Students Trained</div>
+            <div class="stat-sublabel">Across 100+ Universities</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">100%</div>
+            <div class="stat-label">Verifiable Certificates</div>
+            <div class="stat-sublabel">With Unique QR & IDs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">4.9 / 5</div>
+            <div class="stat-label">Student Satisfaction</div>
+            <div class="stat-sublabel">From 300+ Verified Reviews</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">95%</div>
+            <div class="stat-label">Completion Rate</div>
+            <div class="stat-sublabel">Weekly Mentor Check-ins</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">6+</div>
+            <div class="stat-label">Tech Domains</div>
+            <div class="stat-sublabel">Full Stack, AI, Cyber, Cloud</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         About InternNova Section
+         ====================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Column Content -->
+          <div class="about-left-info">
+            <div class="section-tag"><i class="fa-solid fa-compass"></i> About InternNova</div>
+            <h2 class="section-title">Bridging the Gap Between <span class="gradient-text">College & Corporate</span></h2>
+            <p class="section-description">
+              InternNova was created to solve one massive problem: traditional university syllabi focus heavily on theory, leaving students unprepared for actual industry development expectations. We provide structured, milestone-driven virtual internships that mirror high-growth software engineering teams.
+            </p>
+
+            <div class="msme-strip">
+              <i class="fa-solid fa-stamp"></i> Registered MSME Organization &bull; UDYAM-BR-24-0054689
+            </div>
+
+            <div class="about-highlights-list">
+              <div class="about-highlight-card">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="highlight-info">
+                  <h3>Production GitHub Workflows</h3>
+                  <p>Fork repos, build feature branches, submit PRs, and resolve merge conflicts just like professional engineering teams.</p>
+                </div>
+              </div>
+
+              <div class="about-highlight-card">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="highlight-info">
+                  <h3>1:1 Senior Mentor Reviews</h3>
+                  <p>Get line-by-line feedback on your code architecture, edge-case handling, and security best practices from working developers.</p>
+                </div>
+              </div>
+
+              <div class="about-highlight-card">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="highlight-info">
+                  <h3>Cryptographically Verified Credentials</h3>
+                  <p>Every graduate receives an official Offer Letter and verifiable Certificate with an unforgeable QR code and credential ID.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column Visual -->
+          <div class="about-right-visual">
+            <div class="about-main-image-wrap">
+              <img src="./assets/images/mentor_lead.jpg" alt="InternNova Mentorship Team" class="about-main-image">
+              <div class="about-experience-card">
+                <div class="about-experience-icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <div class="about-experience-text">
+                  <h4>Industry-Vetted</h4>
+                  <p>Mentors from leading tech firms & high-growth startups</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Internship Programs & Tracks Catalog
+         ====================================================================== -->
+    <section class="programs-section" id="programs">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-layer-group"></i> Curated Learning Tracks</div>
+          <h2 class="section-title">Industry-Grade <span class="gradient-text">Virtual Internships</span></h2>
+          <p class="section-description">
+            Choose your specialized domain. Each track is built with hands-on capstone projects, automated grading milestones, and comprehensive mentorship.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" id="programFilterTabs" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab"><i class="fa-solid fa-border-all"></i> All Programs</button>
+          <button class="filter-btn" data-filter="web" role="tab"><i class="fa-solid fa-code"></i> Web & Mobile</button>
+          <button class="filter-btn" data-filter="ai-data" role="tab"><i class="fa-solid fa-brain"></i> AI & Data Science</button>
+          <button class="filter-btn" data-filter="cyber" role="tab"><i class="fa-solid fa-shield-virus"></i> Cyber Security</button>
+          <button class="filter-btn" data-filter="cloud" role="tab"><i class="fa-solid fa-cloud"></i> Cloud & DevOps</button>
+          <button class="filter-btn" data-filter="pro-track" role="tab"><i class="fa-solid fa-bolt"></i> Pro Masterclasses</button>
+        </div>
+
+        <!-- Programs Grid (Dynamically Rendered from data.js) -->
+        <div class="programs-grid" id="programsGrid">
+          <!-- Dynamic cards injected via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Interactive Certificate Verification Portal
+         ====================================================================== -->
+    <section class="verify-section" id="verify">
+      <div class="container">
+        <div class="verify-box-wrapper">
+          <!-- Verification Form Column -->
+          <div class="verify-form-column">
+            <div class="section-tag"><i class="fa-solid fa-shield-check"></i> Instant Credential Lookup</div>
+            <h3>Verify Student Credentials</h3>
+            <p>
+              InternNova credentials are permanently registered and cryptographically verifiable. Enter any student's unique Certificate ID to inspect issue dates, capstone projects, and validation authenticity.
+            </p>
+
+            <form id="verifyForm">
+              <div class="verify-input-group">
+                <span class="verify-input-icon"><i class="fa-solid fa-barcode"></i></span>
+                <input 
+                  type="text" 
+                  id="certInputId" 
+                  class="verify-input" 
+                  placeholder="e.g. IN-2026-WEB-8842" 
+                  value="IN-2026-WEB-8842" 
+                  required
+                >
+                <button type="submit" class="btn btn-primary" id="verifyBtn">
+                  <i class="fa-solid fa-magnifying-glass"></i> Verify Now
+                </button>
+              </div>
+            </form>
+
+            <div class="sample-ids-hint">
+              <span>Try sample IDs:</span>
+              <span class="sample-chip" data-id="IN-2026-WEB-8842">IN-2026-WEB-8842</span>
+              <span class="sample-chip" data-id="IN-2026-AIML-4419">IN-2026-AIML-4419</span>
+              <span class="sample-chip" data-id="IN-2026-CYBER-9021">IN-2026-CYBER-9021</span>
+            </div>
+          </div>
+
+          <!-- Preview Frame Column -->
+          <div class="verify-preview-column">
+            <div class="certificate-card-frame" id="certPreviewCard">
+              <img src="./assets/images/certificate_sample.jpg" alt="InternNova Official Verified Certificate of Completion" class="certificate-preview-img">
+              <div class="verification-floating-tag">
+                <i class="fa-solid fa-circle-check"></i> MSME Verified
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Why Choose InternNova (Comparison Matrix)
+         ====================================================================== -->
+    <section class="why-section" id="why-choose">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-scale-balanced"></i> Why InternNova Wins</div>
+          <h2 class="section-title">The <span class="gradient-text">InternNova Difference</span></h2>
+          <p class="section-description">
+            See how our practical virtual internship ecosystem compares against passive online video tutorials and conventional textbook curricula.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table" aria-label="InternNova Comparison">
+            <thead>
+              <tr>
+                <th style="width: 40%;">Feature / Capability</th>
+                <th class="highlight-col" style="width: 30%;">
+                  <i class="fa-solid fa-rocket"></i> InternNova Pro
+                </th>
+                <th style="width: 30%;">Traditional College / Solo Tutorials</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="feature-title">
+                    <div class="feature-icon-badge"><i class="fa-solid fa-file-contract"></i></div>
+                    Official Offer Letter on Day 1
+                  </div>
+                </td>
+                <td class="status-positive"><i class="fa-solid fa-circle-check"></i> Guaranteed Official Document</td>
+                <td class="status-negative"><i class="fa-solid fa-circle-xmark"></i> Not Provided</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-title">
+                    <div class="feature-icon-badge"><i class="fa-solid fa-code-commit"></i></div>
+                    Real Production GitHub Pull Requests
+                  </div>
+                </td>
+                <td class="status-positive"><i class="fa-solid fa-circle-check"></i> Standard Industrial Workflow</td>
+                <td class="status-negative"><i class="fa-solid fa-circle-xmark"></i> Zip files or simple clone</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-title">
+                    <div class="feature-icon-badge"><i class="fa-solid fa-comments"></i></div>
+                    1-on-1 Mentor Code Reviews
+                  </div>
+                </td>
+                <td class="status-positive"><i class="fa-solid fa-circle-check"></i> Line-by-line feedback</td>
+                <td class="status-negative"><i class="fa-solid fa-circle-xmark"></i> Automated or absent</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-title">
+                    <div class="feature-icon-badge"><i class="fa-solid fa-qrcode"></i></div>
+                    Online QR Verifiable Certificate
+                  </div>
+                </td>
+                <td class="status-positive"><i class="fa-solid fa-circle-check"></i> Public MSME-recognized registry</td>
+                <td class="status-negative"><i class="fa-solid fa-circle-xmark"></i> Unverifiable PDF template</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-title">
+                    <div class="feature-icon-badge"><i class="fa-solid fa-handshake"></i></div>
+                    Letter of Recommendation (LOR)
+                  </div>
+                </td>
+                <td class="status-positive"><i class="fa-solid fa-circle-check"></i> Awarded for distinction</td>
+                <td class="status-negative"><i class="fa-solid fa-circle-xmark"></i> Rare or nonexistent</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-title">
+                    <div class="feature-icon-badge"><i class="fa-solid fa-diagram-project"></i></div>
+                    Capstone Portfolio Defense
+                  </div>
+                </td>
+                <td class="status-positive"><i class="fa-solid fa-circle-check"></i> Live demo & interview prep</td>
+                <td class="status-negative"><i class="fa-solid fa-circle-xmark"></i> Toy copy-paste demos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Learning & Mentorship Roadmap (4 Steps)
+         ====================================================================== -->
+    <section class="roadmap-section" id="roadmap">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-route"></i> How It Works</div>
+          <h2 class="section-title">Your 4-Step <span class="gradient-text">Path to Career Success</span></h2>
+          <p class="section-description">
+            From initial onboarding to portfolio defense and certificate issuance, our structured milestones ensure you never feel lost.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number-bubble">01</div>
+            <h3>Choose & Apply</h3>
+            <p>Select your specialized tech domain, submit your application, and receive your official InternNova Offer Letter instantly.</p>
+            <span class="step-pill"><i class="fa-regular fa-clock"></i> Day 1</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number-bubble">02</div>
+            <h3>LMS Onboarding</h3>
+            <p>Access your student portal, repository starter codes, milestone roadmap, and private Discord mentor channels.</p>
+            <span class="step-pill"><i class="fa-regular fa-clock"></i> Week 1</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number-bubble">03</div>
+            <h3>Build & Get Reviewed</h3>
+            <p>Develop real-world capstone microservices. Submit Git pull requests and receive actionable line-by-line code reviews.</p>
+            <span class="step-pill"><i class="fa-regular fa-clock"></i> Weeks 2 - 5</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-number-bubble">04</div>
+            <h3>Certified & Placed</h3>
+            <p>Defend your capstone project, receive your QR-verifiable certificate, LOR, and get highlighted to our hiring network.</p>
+            <span class="step-pill"><i class="fa-regular fa-clock"></i> Graduation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Upcoming Live Workshops & Masterclasses
+         ====================================================================== -->
+    <section class="workshops-section" id="workshops">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-video"></i> Live Masterclasses</div>
+          <h2 class="section-title">Upcoming <span class="gradient-text">Interactive Workshops</span></h2>
+          <p class="section-description">
+            Learn directly from senior engineers and engineering managers from top tech companies. Deep dive into system design, GenAI, and cloud architecture.
+          </p>
+        </div>
+
+        <div class="workshops-grid" id="workshopsGrid">
+          <!-- Populated dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Wall of Love & Student Testimonials
+         ====================================================================== -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-heart"></i> Wall of Love</div>
+          <h2 class="section-title">Loved by <span class="gradient-text">10,000+ Interns</span></h2>
+          <p class="section-description">
+            Read unfiltered feedback and reviews from our alumni who completed their virtual internships and transitioned into software engineering roles.
+          </p>
+        </div>
+
+        <div class="testimonials-grid" id="testimonialsGrid">
+          <!-- Populated dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Partners & University Marquee Ticker
+         ====================================================================== -->
+    <section class="marquee-section" aria-label="Partner Universities & Hiring Networks">
+      <div class="container">
+        <h3 class="marquee-heading">Students & Alumni Representing 100+ Leading Universities</h3>
+      </div>
+      <div class="marquee-track">
+        <div class="partner-logo-item"><i class="fa-solid fa-building-columns"></i> SLIIT University</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-graduation-cap"></i> Anna University</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-landmark"></i> Tribhuvan University</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-school"></i> VTU Karnataka</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-globe"></i> UTM Malaysia</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-book-open"></i> Delhi Technological Univ (DTU)</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-university"></i> JNTU Hyderabad</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-microchip"></i> SRM Institute of Tech</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-atom"></i> Vellore Institute of Tech (VIT)</div>
+        <!-- Duplicated for seamless infinite looping -->
+        <div class="partner-logo-item"><i class="fa-solid fa-building-columns"></i> SLIIT University</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-graduation-cap"></i> Anna University</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-landmark"></i> Tribhuvan University</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-school"></i> VTU Karnataka</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-globe"></i> UTM Malaysia</div>
+        <div class="partner-logo-item"><i class="fa-solid fa-book-open"></i> Delhi Technological Univ (DTU)</div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Frequently Asked Questions (FAQ) Section
+         ====================================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-circle-question"></i> Got Questions?</div>
+          <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <p class="section-description">
+            Everything you need to know about InternNova virtual internships, university credits, verified certificates, and mentor support.
+          </p>
+        </div>
+
+        <!-- Live FAQ Search -->
+        <div class="faq-search-wrapper">
+          <i class="fa-solid fa-magnifying-glass faq-search-icon"></i>
+          <input type="text" id="faqSearchInput" class="faq-search-input" placeholder="Search questions (e.g. certificate, stipend, college credits, beginner)...">
+        </div>
+
+        <div class="faq-list" id="faqList">
+          <!-- Populated dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Call To Action (CTA) Banner
+         ====================================================================== -->
+    <section class="cta-section" id="cta">
+      <div class="container">
+        <div class="cta-card">
+          <span class="cta-badge"><i class="fa-solid fa-sparkles"></i> Limited Seats Per Cohort</span>
+          <h2 class="cta-title">Ready to Build <span class="gradient-text">Real-World Experience?</span></h2>
+          <p class="cta-description">
+            Don't let another semester pass with just theoretical knowledge. Join thousands of ambitious students in Batch-08 and graduate with an authentic, verified software engineering portfolio.
+          </p>
+
+          <div class="cta-actions">
+            <button class="btn btn-primary btn-lg btn-glow" id="ctaApplyBtn">
+              Claim Your Internship Spot <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-secondary btn-lg" id="ctaBrochureBtn">
+              <i class="fa-solid fa-download"></i> Download Track Brochure
+            </button>
+          </div>
+
+          <div class="cta-perks">
+            <span><i class="fa-solid fa-check"></i> Instant Offer Letter</span>
+            <span><i class="fa-solid fa-check"></i> Flexible 8-10 hrs/week</span>
+            <span><i class="fa-solid fa-check"></i> 100% Online & Mentored</span>
+            <span><i class="fa-solid fa-check"></i> MSME Registered Credential</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       Comprehensive Footer
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Summary Column -->
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <div class="brand-icon-wrapper">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <span>Intern<span class="accent">Nova</span></span>
+          </a>
+          <p>
+            InternNova is a premier virtual experiential learning platform bridging academia and the technology industry through production-grade internships and verifiable credentials.
+          </p>
+          <div class="msme-legal-box">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Govt. MSME Reg: <strong>UDYAM-BR-24-0054689</strong></span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Internship Tracks</h4>
+          <ul class="footer-links">
+            <li><a href="#programs">Full Stack Web Dev</a></li>
+            <li><a href="#programs">AI & Machine Learning</a></li>
+            <li><a href="#programs">Data Analytics & BI</a></li>
+            <li><a href="#programs">Cyber Security & Hacking</a></li>
+            <li><a href="#programs">Cloud & DevOps (AWS)</a></li>
+            <li><a href="#programs">Java DSA Masterclass</a></li>
+          </ul>
+        </div>
+
+        <!-- Student Resources -->
+        <div class="footer-column">
+          <h4>Student Corner</h4>
+          <ul class="footer-links">
+            <li><a href="#verify" id="footerVerifyLink">Verify Credential</a></li>
+            <li><a href="#studentLogin" id="footerLoginLink">Intern LMS Portal</a></li>
+            <li><a href="#roadmap">Learning Roadmap</a></li>
+            <li><a href="#workshops">Upcoming Workshops</a></li>
+            <li><a href="#faq">Help & FAQ Center</a></li>
+            <li><a href="#" id="ambassadorLink">Campus Ambassador</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Contact -->
+        <div class="footer-column newsletter-box">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to receive cohort notifications, free tech masterclasses, and open-source internship announcements.</p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Your college email..." required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+          <div style="margin-top: 20px; font-size: 0.82rem; color: var(--text-muted);">
+            <i class="fa-regular fa-envelope"></i> support@internnova.co.in
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 InternNova EdTech Pvt. Ltd. All rights reserved. &bull; Designed & Redesigned with Excellence.
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       Floating Action Buttons (Back to Top & Quick Help)
+       ====================================================================== -->
+  <div class="floating-actions">
+    <button class="floating-btn back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <button class="floating-btn" id="quickHelpBtn" aria-label="Student Help Support" title="Help & Inquiries">
+      <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem; color: #25d366;"></i>
+    </button>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ======================================================================
+       MODAL 1: Multi-Step Application Wizard
+       ====================================================================== -->
+  <div class="modal-backdrop" id="applicationModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="closeAppModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Fast-Track Application</div>
+        <h3>Apply for Virtual Internship</h3>
+        <p>Complete this 3-step application to receive your official offer letter.</p>
+      </div>
+
+      <!-- Step Indicator -->
+      <div class="wizard-steps-indicator">
+        <div class="step-indicator-item active" id="wizardInd1">
+          <span class="indicator-circle">1</span>
+          <span>Personal</span>
+        </div>
+        <div class="step-indicator-item" id="wizardInd2">
+          <span class="indicator-circle">2</span>
+          <span>Track Selection</span>
+        </div>
+        <div class="step-indicator-item" id="wizardInd3">
+          <span class="indicator-circle">3</span>
+          <span>Academics & Submit</span>
+        </div>
+      </div>
+
+      <form id="multiStepAppForm">
+        <!-- Step 1 Fields -->
+        <div class="wizard-step-pane" id="wizardPane1">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="appFullName">Full Name *</label>
+              <input type="text" id="appFullName" class="form-input" placeholder="e.g. Naveen Aitha" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="appEmail">Email Address *</label>
+              <input type="email" id="appEmail" class="form-input" placeholder="e.g. name@university.edu" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="appPhone">Phone / WhatsApp *</label>
+              <input type="tel" id="appPhone" class="form-input" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="appLinkedin">LinkedIn Profile / GitHub</label>
+              <input type="url" id="appLinkedin" class="form-input" placeholder="https://linkedin.com/in/username">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; margin-top: 16px;">
+            <button type="button" class="btn btn-primary" id="wizardNextBtn1">
+              Next Step &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 Fields -->
+        <div class="wizard-step-pane" id="wizardPane2" style="display: none;">
+          <div class="form-group">
+            <label class="form-label" for="appTrackSelect">Select Internship Track *</label>
+            <select id="appTrackSelect" class="form-select" required>
+              <option value="Full Stack Web Development">Full Stack Web Development (MERN / Next.js)</option>
+              <option value="Artificial Intelligence & Machine Learning">Artificial Intelligence & Machine Learning</option>
+              <option value="Data Analytics & Business Intelligence">Data Analytics & Business Intelligence (Power BI, SQL)</option>
+              <option value="Cyber Security & Ethical Hacking">Cyber Security & Ethical Hacking</option>
+              <option value="Cloud Computing & DevOps">Cloud Computing & DevOps (AWS / Docker)</option>
+              <option value="Mobile App Development">Mobile App Development (Flutter / React Native)</option>
+              <option value="Java Mastery & DSA">Java Mastery & DSA Masterclass</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="appCohortDate">Preferred Cohort Start *</label>
+              <select id="appCohortDate" class="form-select">
+                <option value="Batch 08 (Nov 01, 2026)">Batch 08 - Immediate (Nov 01, 2026)</option>
+                <option value="Batch 09 (Nov 15, 2026)">Batch 09 - Next Cohort (Nov 15, 2026)</option>
+                <option value="Batch 10 (Dec 01, 2026)">Batch 10 - Winter Cohort (Dec 01, 2026)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="appWeeklyHours">Weekly Available Time *</label>
+              <select id="appWeeklyHours" class="form-select">
+                <option value="8-10 hours / week">8-10 hours / week (Standard)</option>
+                <option value="12-15 hours / week">12-15 hours / week (Accelerated)</option>
+                <option value="Self-paced flexible">Self-paced (Flexible with College)</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 16px;">
+            <button type="button" class="btn btn-secondary" id="wizardPrevBtn2">&larr; Back</button>
+            <button type="button" class="btn btn-primary" id="wizardNextBtn2">Next Step &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 3 Fields -->
+        <div class="wizard-step-pane" id="wizardPane3" style="display: none;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="appCollege">College / University Name *</label>
+              <input type="text" id="appCollege" class="form-input" placeholder="e.g. SLIIT / Anna University" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="appDegree">Degree & Year of Study *</label>
+              <select id="appDegree" class="form-select">
+                <option value="B.Tech / B.E (3rd Year)">B.Tech / B.E (3rd Year)</option>
+                <option value="B.Tech / B.E (4th Year / Final)">B.Tech / B.E (4th Year / Final)</option>
+                <option value="B.Tech / B.E (1st/2nd Year)">B.Tech / B.E (1st / 2nd Year)</option>
+                <option value="BCA / MCA">BCA / MCA</option>
+                <option value="B.Sc / M.Sc Computer Science">B.Sc / M.Sc Computer Science</option>
+                <option value="Recent Graduate / Career Transition">Recent Graduate</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="appMotivation">Why do you want to join this internship?</label>
+            <textarea id="appMotivation" class="form-textarea" rows="3" placeholder="Briefly describe your goals and what you hope to build..."></textarea>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 16px;">
+            <button type="button" class="btn btn-secondary" id="wizardPrevBtn3">&larr; Back</button>
+            <button type="submit" class="btn btn-primary btn-glow" id="wizardSubmitBtn">
+              <i class="fa-solid fa-paper-plane"></i> Submit & Generate Offer Letter
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Confirmation / Offer Letter Generated View -->
+      <div id="applicationSuccessView" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); color: var(--success); font-size: 2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Application Approved!</h3>
+        <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 20px auto;">
+          Congratulations! Your official InternNova Offer Letter has been prepared and sent to your email.
+        </p>
+
+        <!-- Preview Card for Offer Letter -->
+        <div style="background: var(--bg-surface-elevated); border: 1px solid rgba(139, 92, 246, 0.4); border-radius: var(--radius-md); padding: 20px; text-align: left; margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+            <strong style="color: var(--brand-secondary-light);"><i class="fa-solid fa-envelope-open-text"></i> OFFICIAL INTERNSHIP OFFER LETTER</strong>
+            <span style="font-size: 0.75rem; background: var(--success); color: #fff; padding: 2px 8px; border-radius: var(--radius-full); font-weight: 700;">CONFIRMED</span>
+          </div>
+          <p style="font-size: 0.9rem; margin-bottom: 6px;"><strong>Candidate:</strong> <span id="confCandidateName">Naveen Aitha</span></p>
+          <p style="font-size: 0.9rem; margin-bottom: 6px;"><strong>Assigned Track:</strong> <span id="confTrackName">Full Stack Web Development</span></p>
+          <p style="font-size: 0.9rem; margin-bottom: 6px;"><strong>Internship ID:</strong> <span style="font-family: var(--font-mono); color: var(--brand-primary-light);">IN-2026-APPR-9924</span></p>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">Check your inbox for LMS onboarding instructions and Discord invite link.</p>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="closeSuccessBtn" style="margin: 0 auto;">
+          Done & Explore Dashboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 2: Curriculum Breakdown Modal
+       ====================================================================== -->
+  <div class="modal-backdrop" id="curriculumModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 760px;">
+      <button class="modal-close-btn" id="closeCurriculumModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="section-tag" id="currModalBadge">Syllabus Overview</div>
+        <h3 id="currModalTitle">Full Stack Web Development</h3>
+        <p id="currModalSubtitle">6-Week Industry Curriculum & Capstone Roadmap</p>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;" id="currModalTech">
+        <!-- Tech chips dynamically injected -->
+      </div>
+
+      <div id="currWeeksContainer" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+        <!-- Weekly curriculum blocks injected via app.js -->
+      </div>
+
+      <div style="border-top: 1px solid var(--border-color); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <span style="font-size: 0.82rem; color: var(--text-secondary);">Included Credentials:</span>
+          <div style="display: flex; gap: 8px; margin-top: 4px;">
+            <span class="sample-chip"><i class="fa-solid fa-certificate"></i> Verified Certificate</span>
+            <span class="sample-chip"><i class="fa-solid fa-file-contract"></i> Offer Letter</span>
+            <span class="sample-chip"><i class="fa-solid fa-award"></i> LOR</span>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="currApplyNowBtn">Apply for This Track &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 3: Certificate Verification Result Modal
+       ====================================================================== -->
+  <div class="modal-backdrop" id="certResultModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 650px;">
+      <button class="modal-close-btn" id="closeCertResultModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header" style="text-align: center;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: var(--success); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="section-tag" style="margin-bottom: 8px;">Official Verification Record</div>
+        <h3>Certificate Authenticated</h3>
+        <p>This credential was issued by InternNova EdTech Pvt. Ltd. (MSME UDYAM-BR-24-0054689)</p>
+      </div>
+
+      <div style="background: var(--bg-surface-elevated); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Intern Name</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);" id="resStudentName">Naveen Aitha</div>
+          </div>
+          <div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Credential ID</div>
+            <div style="font-family: var(--font-mono); font-size: 1.05rem; color: var(--brand-secondary-light); font-weight: 600;" id="resCertId">IN-2026-WEB-8842</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Domain Completed</div>
+            <div style="font-size: 0.95rem; font-weight: 600;" id="resDomain">Full Stack Web Development</div>
+          </div>
+          <div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Duration & Grade</div>
+            <div style="font-size: 0.95rem; font-weight: 600;" id="resDuration">6 Weeks &bull; Grade A+</div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 14px;">
+          <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Evaluated Capstone Projects</div>
+          <ul id="resProjectsList" style="list-style: none; font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+            <li>&bull; E-Commerce Microservice with Payment Gateway</li>
+            <li>&bull; Real-Time Collaborative Kanban Dashboard</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <button class="btn btn-secondary" id="copyCertLinkBtn">
+          <i class="fa-regular fa-copy"></i> Copy Verification Link
+        </button>
+        <button class="btn btn-primary" id="viewFullCertImgBtn">
+          <i class="fa-solid fa-file-image"></i> View Certificate Graphic
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 4: Student LMS Login Modal
+       ====================================================================== -->
+  <div class="modal-backdrop" id="loginModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 480px;">
+      <button class="modal-close-btn" id="closeLoginModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header" style="text-align: center;">
+        <div class="brand-icon-wrapper" style="margin: 0 auto 16px auto;">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <h3>Intern Portal Login</h3>
+        <p>Access your assignments, task submissions & mentor reviews</p>
+      </div>
+
+      <form id="lmsLoginForm">
+        <div class="form-group">
+          <label class="form-label" for="lmsEmail">Registered Email</label>
+          <input type="email" id="lmsEmail" class="form-input" placeholder="name@college.edu" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="lmsPassword">Password or Access Token</label>
+          <input type="password" id="lmsPassword" class="form-input" placeholder="••••••••••••" required>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 0.85rem;">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" checked> Remember me
+          </label>
+          <a href="#" style="color: var(--brand-secondary-light); text-decoration: none;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Sign In to Portal <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Application Logic & Scripts -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

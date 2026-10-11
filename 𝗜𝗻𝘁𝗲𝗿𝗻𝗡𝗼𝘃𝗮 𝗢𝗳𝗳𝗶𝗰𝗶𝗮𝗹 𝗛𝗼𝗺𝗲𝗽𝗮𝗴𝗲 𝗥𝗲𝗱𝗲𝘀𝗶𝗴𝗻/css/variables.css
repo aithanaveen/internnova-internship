@@ -1,0 +1,107 @@
+/* ==========================================================================
+   InternNova Design System - CSS Variables & Design Tokens
+   Crafted with luxury dark-first aesthetics, electric neon accents, and smooth glassmorphism
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Dark Theme (Default) */
+  --bg-primary: #070913;
+  --bg-secondary: #0d1224;
+  --bg-tertiary: #131b34;
+  --bg-surface: rgba(17, 24, 48, 0.65);
+  --bg-surface-elevated: rgba(24, 34, 66, 0.85);
+  --bg-glass: rgba(13, 18, 36, 0.72);
+  --bg-glass-hover: rgba(26, 37, 72, 0.85);
+
+  /* Primary Brand Gradients */
+  --brand-primary: #8b5cf6;
+  --brand-primary-light: #a78bfa;
+  --brand-secondary: #06b6d4;
+  --brand-secondary-light: #67e8f9;
+  --brand-accent: #ec4899;
+  --brand-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #9f75ff 0%, #60a5fa 50%, #22d3ee 100%);
+  --brand-gradient-subtle: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.12) 100%);
+  --glow-gradient: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, rgba(6, 182, 212, 0.12) 50%, transparent 70%);
+
+  /* Status & Accents */
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.25);
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.25);
+  --info: #3b82f6;
+  --danger: #ef4444;
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #070913;
+
+  /* Borders & Dividers */
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-color-hover: rgba(139, 92, 246, 0.4);
+  --border-glow: rgba(6, 182, 212, 0.5);
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow-purple: 0 0 35px rgba(139, 92, 246, 0.3);
+  --shadow-glow-cyan: 0 0 35px rgba(6, 182, 212, 0.28);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Typography Families */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Transitions & Animation speeds */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout Constants */
+  --header-height: 80px;
+  --topbar-height: 42px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --container-max-width: 1280px;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass-hover: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #f8fafc;
+
+  --border-color: rgba(15, 23, 42, 0.08);
+  --border-color-hover: rgba(99, 102, 241, 0.4);
+  --border-glow: rgba(2, 132, 199, 0.4);
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --shadow-glow-purple: 0 0 30px rgba(99, 102, 241, 0.18);
+  --shadow-glow-cyan: 0 0 30px rgba(2, 132, 199, 0.18);
+  --shadow-glass: 0 8px 30px rgba(15, 23, 42, 0.07);
+
+  --brand-gradient: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #0284c7 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #0369a1 100%);
+  --brand-gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(2, 132, 199, 0.08) 100%);
+  --glow-gradient: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 70%);
+}

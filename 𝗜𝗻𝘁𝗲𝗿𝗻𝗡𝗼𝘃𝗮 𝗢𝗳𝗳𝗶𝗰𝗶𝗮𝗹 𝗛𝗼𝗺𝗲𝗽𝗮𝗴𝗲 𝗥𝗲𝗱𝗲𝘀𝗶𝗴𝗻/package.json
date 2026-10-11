@@ -1,0 +1,20 @@
+{
+  "name": "internnova-homepage-redesign",
+  "version": "2.0.0",
+  "description": "InternNova Official Homepage Redesign - Mandatory Internship Project",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "internnova",
+    "internship",
+    "redesign",
+    "homepage",
+    "web-development"
+  ],
+  "author": "Naveen Aitha",
+  "license": "MIT"
+}
