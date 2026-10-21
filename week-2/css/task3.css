@@ -1,0 +1,285 @@
+/* ==========================================================================
+   TASK 3: FLEXBOX LAYOUT
+   Author: Internnova Internship - Week 2 Assignment
+   Topic: Flex Containers, Flex Direction, Justify Content, Align Items,
+          Gap, Flex Items (grow/shrink/basis/order), Main vs Cross Axis,
+          and Real-World Component Layouts (Navbar, Cards, Statistics).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FLEX DIRECTION DEMONSTRATION (row, row-reverse, column, column-reverse)
+   -------------------------------------------------------------------------- */
+.direction-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.direction-box {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.direction-box-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+/* Flex Container Bases */
+.flex-container-base {
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem;
+  border-radius: 8px;
+  min-height: 120px;
+}
+
+.dir-row { flex-direction: row; }
+.dir-row-reverse { flex-direction: row-reverse; }
+.dir-column { flex-direction: column; min-height: 180px; }
+.dir-column-reverse { flex-direction: column-reverse; min-height: 180px; }
+
+.flex-badge-item {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(139, 92, 246, 0.4));
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   2. JUSTIFY-CONTENT DEMONSTRATIONS (Main Axis Alignment)
+   -------------------------------------------------------------------------- */
+.justify-demo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.justify-row-container {
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  min-height: 54px;
+  align-items: center;
+}
+
+.jc-start { justify-content: flex-start; }
+.jc-center { justify-content: center; }
+.jc-end { justify-content: flex-end; }
+.jc-between { justify-content: space-between; }
+.jc-around { justify-content: space-around; }
+.jc-evenly { justify-content: space-evenly; }
+
+.jc-box-item {
+  background: #6366f1;
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   3. ALIGN-ITEMS DEMONSTRATION (Cross Axis Alignment)
+   -------------------------------------------------------------------------- */
+.align-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.align-container {
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  height: 140px;
+  padding: 0.75rem;
+}
+
+.ai-stretch { align-items: stretch; }
+.ai-start { align-items: flex-start; }
+.ai-center { align-items: center; }
+.ai-end { align-items: flex-end; }
+.ai-baseline { align-items: baseline; }
+
+.ai-item {
+  background: rgba(6, 182, 212, 0.3);
+  border: 1px solid #06b6d4;
+  color: #a5f3fc;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. FLEX ITEMS PROPERTIES (flex-grow, flex-shrink, flex-basis, order)
+   -------------------------------------------------------------------------- */
+.flex-item-props-container {
+  display: flex;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Item 1: fixed basis */
+.item-basis-fixed {
+  flex-basis: 180px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: rgba(236, 72, 153, 0.2);
+  border: 1px solid #ec4899;
+  color: #fbcfe8;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Item 2: flex-grow: 1 */
+.item-grow-1 {
+  flex: 1 1 200px; /* grow: 1, shrink: 1, basis: 200px */
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid #6366f1;
+  color: #c7d2fe;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Item 3: flex-grow: 2 (takes double free space) */
+.item-grow-2 {
+  flex: 2 1 200px; /* grow: 2 */
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #a7f3d0;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Align Self override */
+.item-self-aligned {
+  align-self: flex-end;
+  background: rgba(245, 158, 11, 0.25);
+  border: 1px solid #f59e0b;
+  color: #fde68a;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   5. REAL WORLD FLEXBOX COMPONENT: RESPONSIVE CARDS
+   -------------------------------------------------------------------------- */
+.flex-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.flex-feature-card {
+  flex: 1 1 calc(33.333% - 1.5rem);
+  min-width: 260px;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.flex-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.card-icon-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(6, 182, 212, 0.3));
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-content-wrap {
+  flex-grow: 1;
+}
+
+.card-footer-action {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   6. REAL WORLD FLEXBOX COMPONENT: STATS COUNTER STRIP
+   -------------------------------------------------------------------------- */
+.flex-stats-strip {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(10, 15, 29, 0.9));
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}

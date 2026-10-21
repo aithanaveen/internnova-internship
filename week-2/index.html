@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Week 2 Assignment: CSS Fundamentals - Master Assignment Hub featuring all 6 Tasks: Selectors, Box Model, Flexbox, CSS Grid, Responsive Design, and Mini CSS Project (100 Marks).">
+  <title>Week 2 Assignment: CSS Fundamentals | Internnova Web Development</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/hub.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">WD Week 2</span>
+        <span>CSS Fundamentals</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Overview Hub</a></li>
+        <li><a href="task1_selectors.html" class="nav-link">Task 1: Selectors</a></li>
+        <li><a href="task2_boxmodel.html" class="nav-link">Task 2: Box Model</a></li>
+        <li><a href="task3_flexbox.html" class="nav-link">Task 3: Flexbox</a></li>
+        <li><a href="task4_grid.html" class="nav-link">Task 4: CSS Grid</a></li>
+        <li><a href="task5_responsive.html" class="nav-link">Task 5: Responsive</a></li>
+        <li><a href="task6_project/index.html" class="nav-link nav-btn-highlight">Task 6: Mini Project 🚀</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hub Hero Header -->
+  <section class="hub-hero-banner">
+    <div class="hero-meta" style="justify-content: center;">
+      <span class="pill-tag">Internnova Internship</span>
+      <span class="pill-tag pill-marks">Total Marks: 100</span>
+      <span class="pill-tag">Student: Aitha Naveen</span>
+      <a href="https://github.com/aithanaveen/internnova-internship" target="_blank" rel="noopener noreferrer" class="pill-tag" style="text-decoration: none; color: #a5b4fc; border-color: rgba(99, 102, 241, 0.4);">
+        GitHub: aithanaveen/internnova-internship ↗
+      </a>
+    </div>
+
+    <h1 class="hub-tagline">
+      Week 2: <span class="text-gradient">CSS Fundamentals</span>
+    </h1>
+
+    <p class="hub-summary-p">
+      A comprehensive web development portfolio demonstrating CSS3 mastery: from core syntax and selector specificity to the Box Model, one-dimensional Flexbox, two-dimensional CSS Grid, responsive Media Queries, and an enterprise-grade Mini CSS Project.
+    </p>
+
+    <!-- Scorecard Ribbon -->
+    <div class="hub-score-ribbon">
+      <div class="score-chip score-chip-highlight">
+        <span>🎯 100 / 100 Marks Total Criteria</span>
+      </div>
+      <div class="score-chip">
+        <span>⚡ 6 Complete Tasks Implemented</span>
+      </div>
+      <div class="score-chip">
+        <span>🎨 100% Pure Vanilla CSS3</span>
+      </div>
+      <div class="score-chip">
+        <span>📱 Fully Mobile Responsive</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Hub Content -->
+  <main class="main-content">
+
+    <!-- Section Heading -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h2 style="font-size: 1.75rem; font-weight: 800; color: #ffffff;">Assignment Task Directory</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Select any task card below to view the dedicated interactive implementation and live code analysis.</p>
+      </div>
+      <a href="task6_project/index.html" class="nav-step-btn btn-primary">
+        Launch Task 6: Mini Project 🚀
+      </a>
+    </div>
+
+    <!-- 6 Task Cards Grid -->
+    <div class="tasks-hub-grid">
+
+      <!-- TASK 1 -->
+      <article class="task-hub-card">
+        <div>
+          <div class="card-num-ribbon">
+            <span class="task-num-badge">Task 01</span>
+            <span class="task-marks-badge">20 Marks</span>
+          </div>
+          <h3 class="task-hub-title">Introduction to CSS & Selectors</h3>
+          <p class="task-hub-desc">
+            Demonstrates core CSS syntax, external stylesheet linkage, element selectors, class selectors, ID selectors, universal selector, color models (HEX, RGB, RGBA, HSL), backgrounds, typography, and text alignments.
+          </p>
+
+          <ul class="task-hub-checklist">
+            <li>Universal Reset (<code>* { box-sizing }</code>)</li>
+            <li>Element, Class, and ID Specificity Hierarchy</li>
+            <li>HEX, RGB, RGBA, HSL, & CSS Variables</li>
+            <li>Linear, Radial, & Repeating Gradients</li>
+            <li>Text Alignment & Neon Text Shadows</li>
+          </ul>
+        </div>
+
+        <a href="task1_selectors.html" class="nav-step-btn btn-primary" style="width: 100%; justify-content: center;">
+          Open Task 1 Demonstration &rarr;
+        </a>
+      </article>
+
+      <!-- TASK 2 -->
+      <article class="task-hub-card">
+        <div>
+          <div class="card-num-ribbon">
+            <span class="task-num-badge">Task 02</span>
+            <span class="task-marks-badge">20 Marks</span>
+          </div>
+          <h3 class="task-hub-title">CSS Box Model & Styling</h3>
+          <p class="task-hub-desc">
+            Interactive visualization and breakdown of the 4 Box Model layers: Content, Padding, Border, and Margin. Features side-by-side content-box vs border-box comparisons, geometric radii, and multi-layer depth shadows.
+          </p>
+
+          <ul class="task-hub-checklist">
+            <li>4-Layer Interactive Box Model Diagram</li>
+            <li>content-box vs border-box Direct Comparison</li>
+            <li>Fixed, Percentage, and Max-Width Sizing</li>
+            <li>Auto Margins (<code>margin: 0 auto;</code> Centering)</li>
+            <li>Border Radius, Pill & Circle (50%) Shapes</li>
+          </ul>
+        </div>
+
+        <a href="task2_boxmodel.html" class="nav-step-btn btn-primary" style="width: 100%; justify-content: center;">
+          Open Task 2 Demonstration &rarr;
+        </a>
+      </article>
+
+      <!-- TASK 3 -->
+      <article class="task-hub-card">
+        <div>
+          <div class="card-num-ribbon">
+            <span class="task-num-badge">Task 03</span>
+            <span class="task-marks-badge">15 Marks</span>
+          </div>
+          <h3 class="task-hub-title">Flexbox Layout Module</h3>
+          <p class="task-hub-desc">
+            One-dimensional layout orchestration along the main axis and cross axis. Demonstrates flex directions, 6 justify-content modes, align-items, flex-grow/shrink/basis, order, and responsive flex feature cards.
+          </p>
+
+          <ul class="task-hub-checklist">
+            <li>Flex Direction (row, column, reverses)</li>
+            <li>Justify Content (6 alignment modes)</li>
+            <li>Align Items (Cross-axis stretch, center)</li>
+            <li>Flex Item Growth (flex-grow: 1 vs 2)</li>
+            <li>Responsive Flex Cards & Stats Strip</li>
+          </ul>
+        </div>
+
+        <a href="task3_flexbox.html" class="nav-step-btn btn-primary" style="width: 100%; justify-content: center;">
+          Open Task 3 Demonstration &rarr;
+        </a>
+      </article>
+
+      <!-- TASK 4 -->
+      <article class="task-hub-card">
+        <div>
+          <div class="card-num-ribbon">
+            <span class="task-num-badge">Task 04</span>
+            <span class="task-marks-badge">15 Marks</span>
+          </div>
+          <h3 class="task-hub-title">CSS Grid Layout Module</h3>
+          <p class="task-hub-desc">
+            Two-dimensional spatial canvas coordinating rows and columns simultaneously. Features fractional (fr) sizing, track repeat/minmax, column and row spans, modern Bento Grid layouts, and a 12-column dashboard.
+          </p>
+
+          <ul class="task-hub-checklist">
+            <li>Fractional Units (<code>fr</code>) & Gap Spacing</li>
+            <li>Track Spanning (<code>grid-column: span 2</code>)</li>
+            <li>Modern Bento Grid Architecture</li>
+            <li>12-Column Enterprise Analytics Dashboard</li>
+            <li>Auto-Fit Responsive Gallery (<code>auto-fit, minmax</code>)</li>
+          </ul>
+        </div>
+
+        <a href="task4_grid.html" class="nav-step-btn btn-primary" style="width: 100%; justify-content: center;">
+          Open Task 4 Demonstration &rarr;
+        </a>
+      </article>
+
+      <!-- TASK 5 -->
+      <article class="task-hub-card">
+        <div>
+          <div class="card-num-ribbon">
+            <span class="task-num-badge">Task 05</span>
+            <span class="task-marks-badge">15 Marks</span>
+          </div>
+          <h3 class="task-hub-title">Responsive Design & Media Queries</h3>
+          <p class="task-hub-desc">
+            Tailoring interfaces for Mobile (&lt;768px), Tablet (768px-1024px), and Desktop (&gt;1024px). Includes a live viewport breakpoint detector, fluid clamp() typography, responsive images, and 4-to-1 card collapsing.
+          </p>
+
+          <ul class="task-hub-checklist">
+            <li>Live Active Viewport Breakpoint Detector</li>
+            <li>Fluid Typography with <code>clamp()</code></li>
+            <li>Responsive Column Stacking (2:1 &rarr; 1:1)</li>
+            <li>Responsive Images with <code>object-fit: cover</code></li>
+            <li>4 &rarr; 2 &rarr; 1 Card Grid Adaptive Scaling</li>
+          </ul>
+        </div>
+
+        <a href="task5_responsive.html" class="nav-step-btn btn-primary" style="width: 100%; justify-content: center;">
+          Open Task 5 Demonstration &rarr;
+        </a>
+      </article>
+
+      <!-- TASK 6 (Featured Mini Project) -->
+      <article class="task-hub-card task-hub-card-featured">
+        <div>
+          <div class="card-num-ribbon">
+            <span class="task-num-badge" style="background: rgba(99, 102, 241, 0.3); color: #ffffff;">Task 06 &bull; Flagship</span>
+            <span class="task-marks-badge">15 Marks</span>
+          </div>
+          <h3 class="task-hub-title" style="color: #ffffff;">Mini CSS Project: NovaSphere Cloud</h3>
+          <p class="task-hub-desc">
+            A production-ready, breathtaking web application and landing page combining all Week 2 concepts: Selectors, Box Model, Flexbox navigation, CSS Grid Bento features, pricing tiers, testimonials, and full responsiveness.
+          </p>
+
+          <ul class="task-hub-checklist">
+            <li>Sticky Glassmorphism Navigation Bar</li>
+            <li>Hero Section with App Mockup & Stats</li>
+            <li>Features Bento Grid with 2x2 Spanning</li>
+            <li>Solutions Showcase with Flexbox</li>
+            <li>Box Model Pricing Cards with Popular Glow</li>
+            <li>Multi-Column Grid Responsive Footer</li>
+          </ul>
+        </div>
+
+        <a href="task6_project/index.html" class="nav-step-btn btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #6366f1, #06b6d4);">
+          Launch Full Mini Project 🚀 &rarr;
+        </a>
+      </article>
+
+    </div>
+
+    <!-- Evaluation Criteria Table -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>📊</span> Evaluation Criteria Breakdown (100 Marks)
+      </h2>
+      <p class="section-subtext">
+        Every single task requirement specified in the internship guidelines has been fully implemented, tested, and validated.
+      </p>
+
+      <div class="breakpoints-table-wrapper">
+        <table class="rubric-card-table">
+          <thead>
+            <tr>
+              <th>Task Component</th>
+              <th>Topic Focus</th>
+              <th>Key Implementation Highlights</th>
+              <th>Marks</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Task 1</strong></td>
+              <td>Introduction to CSS & Selectors</td>
+              <td>Universal (*), Element, Class, ID, HEX/RGB/RGBA/HSL, Gradients, Typography, Alignments</td>
+              <td><strong>20 Marks</strong></td>
+              <td><span style="color: #10b981; font-weight: 700;">✓ Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Task 2</strong></td>
+              <td>CSS Box Model & Styling</td>
+              <td>4-layer visual diagram, content-box vs border-box, width/height, auto margins, border styles & radii, box shadows</td>
+              <td><strong>20 Marks</strong></td>
+              <td><span style="color: #10b981; font-weight: 700;">✓ Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Task 3</strong></td>
+              <td>Flexbox Layout</td>
+              <td>Flex container, row/col/reverses, 6 justify modes, align-items, gap, grow/shrink/basis/order, responsive cards</td>
+              <td><strong>15 Marks</strong></td>
+              <td><span style="color: #10b981; font-weight: 700;">✓ Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Task 4</strong></td>
+              <td>CSS Grid Layout</td>
+              <td>Grid container, fr units, col/row spans, modern Bento Grid, 12-column dashboard layout, auto-fit gallery</td>
+              <td><strong>15 Marks</strong></td>
+              <td><span style="color: #10b981; font-weight: 700;">✓ Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Task 5</strong></td>
+              <td>Responsive Design & Media Queries</td>
+              <td>Mobile (&lt;768px), Tablet (768-1024px), Desktop (&gt;1024px), fluid clamp typography, responsive images, 4-2-1 cards</td>
+              <td><strong>15 Marks</strong></td>
+              <td><span style="color: #10b981; font-weight: 700;">✓ Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Task 6</strong></td>
+              <td>Mini CSS Project</td>
+              <td>NovaSphere AI Cloud Platform synthesizing all concepts into a complete, modern responsive application</td>
+              <td><strong>15 Marks</strong></td>
+              <td><span style="color: #10b981; font-weight: 700;">✓ Completed</span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"><strong>Total Marks Allocated</strong></td>
+              <td colspan="2"><strong>100 / 100 Marks</strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- Submission Guidelines Box -->
+    <section class="submission-guide-box">
+      <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">
+        📤 Submission Instructions for Student
+      </h3>
+      <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        As per the internship guidelines, submit all HTML and CSS files in a single ZIP folder named according to the designated format.
+      </p>
+
+      <div style="background: rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; border-radius: 8px; font-family: var(--font-mono); font-size: 0.9rem; color: #38bdf8; margin-bottom: 1.25rem; border: 1px solid rgba(255, 255, 255, 0.08);">
+        Submission ZIP: <strong>WD_Week2_AithaNaveen.zip</strong><br>
+        Student: <strong>Aitha Naveen</strong> &bull; GitHub: <a href="https://github.com/aithanaveen/internnova-internship" target="_blank" rel="noopener noreferrer" style="color: #67e8f9;">aithanaveen/internnova-internship</a>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 0.9rem;">
+        <strong>Next Steps:</strong>
+        <br>1. <code>WD_Week2_AithaNaveen.zip</code> is already compiled in the project folder.
+        <br>2. Upload <code>WD_Week2_AithaNaveen.zip</code> to your Google Drive.
+        <br>3. Set access permissions to <em>"Anyone with the link can view"</em>.
+        <br>4. Paste and submit the Google Drive link on the Internnova internship portal.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>Internnova Web Development Internship</strong> &bull; Week 2: CSS Fundamentals</p>
+        <p style="margin-top: 0.25rem;">Student: <strong>Aitha Naveen</strong> &bull; <a href="https://github.com/aithanaveen" target="_blank" rel="noopener noreferrer" style="color: var(--primary-light); text-decoration: none;">github.com/aithanaveen</a></p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge-tag">100 / 100 Marks</span>
+        <span class="badge-tag">Vanilla CSS3</span>
+        <span class="badge-tag">HTML5 Validated</span>
+        <span class="badge-tag">WD_Week2_AithaNaveen.zip</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

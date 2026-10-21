@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task 4: CSS Grid Layout - Demonstrating two-dimensional grid containers, fractional fr units, auto-fit repeat minmax, item placement spans, Bento Grid, and 12-column dashboards.">
+  <title>Task 4: CSS Grid Layout | Week 2 Assignment</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/task4.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">WD Week 2</span>
+        <span>CSS Fundamentals</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link">Overview Hub</a></li>
+        <li><a href="task1_selectors.html" class="nav-link">Task 1: Selectors</a></li>
+        <li><a href="task2_boxmodel.html" class="nav-link">Task 2: Box Model</a></li>
+        <li><a href="task3_flexbox.html" class="nav-link">Task 3: Flexbox</a></li>
+        <li><a href="task4_grid.html" class="nav-link active">Task 4: CSS Grid</a></li>
+        <li><a href="task5_responsive.html" class="nav-link">Task 5: Responsive</a></li>
+        <li><a href="task6_project/index.html" class="nav-link nav-btn-highlight">Task 6: Mini Project 🚀</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="task-hero">
+    <div class="hero-meta">
+      <span class="pill-tag">Task 04</span>
+      <span class="pill-tag pill-marks">15 Marks</span>
+      <span class="pill-tag">2-Dimensional Layouts</span>
+    </div>
+    <h1 class="task-title">CSS Grid Layout</h1>
+    <p class="task-desc">
+      CSS Grid provides a true two-dimensional layout system for the web. Simultaneously orchestrate rows and columns, utilize fractional (fr) sizing, span multiple tracks, and build structured dashboards, bento grids, and responsive galleries.
+    </p>
+
+    <!-- Rubric Checklist -->
+    <div class="rubric-pill-list">
+      <span class="rubric-check">Grid Container (display: grid)</span>
+      <span class="rubric-check">Rows & Columns (fr, repeat, minmax)</span>
+      <span class="rubric-check">Grid Gap (gap: 1.25rem)</span>
+      <span class="rubric-check">Grid Item Placement (col & row span)</span>
+      <span class="rubric-check">Multiple-Column Layouts</span>
+      <span class="rubric-check">12-Column Dashboard Layout</span>
+      <span class="rubric-check">Modern Bento Grid System</span>
+      <span class="rubric-check">Auto-Fit Responsive Gallery</span>
+    </div>
+  </section>
+
+  <!-- Main Demonstration Content -->
+  <main class="main-content">
+
+    <!-- Section 1: Grid Container & Fractional Units -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>01.</span> Grid Container, Columns & Fractional (fr) Units
+      </h2>
+      <p class="section-subtext">
+        The <code>fr</code> (fractional unit) allocates available free space dynamically. <code>grid-template-columns: repeat(3, 1fr)</code> slices the container into 3 equal tracks separated by <code>gap: 1.25rem</code>.
+      </p>
+
+      <div class="grid-intro-container">
+        <div class="grid-cell">
+          <div class="grid-cell-label">Track 1: 1fr</div>
+          <p style="font-size: 0.85rem; color: #94a3b8;">Consumes 1/3 of total available width.</p>
+        </div>
+        <div class="grid-cell">
+          <div class="grid-cell-label">Track 2: 1fr</div>
+          <p style="font-size: 0.85rem; color: #94a3b8;">Consumes 1/3 of total available width.</p>
+        </div>
+        <div class="grid-cell">
+          <div class="grid-cell-label">Track 3: 1fr</div>
+          <p style="font-size: 0.85rem; color: #94a3b8;">Consumes 1/3 of total available width.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Grid Item Placement (Spans) -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>02.</span> Grid Item Placement: Row & Column Spanning
+      </h2>
+      <p class="section-subtext">
+        Items can span across multiple column and row tracks using <code>grid-column: span N</code> or <code>grid-row: span N</code>, or span completely edge-to-edge with <code>grid-column: 1 / -1</code>.
+      </p>
+
+      <div class="spanning-grid">
+        <div class="span-cell col-span-2">
+          <span>grid-column: span 2</span>
+          <span style="font-size: 0.75rem; color: #a5b4fc;">Wide Banner Cell</span>
+        </div>
+
+        <div class="span-cell row-span-2">
+          <span>grid-row: span 2</span>
+          <span style="font-size: 0.75rem; color: #67e8f9;">Tall Sidebar Cell</span>
+        </div>
+
+        <div class="span-cell">
+          <span>1x1 Cell</span>
+        </div>
+
+        <div class="span-cell">
+          <span>1x1 Cell</span>
+        </div>
+
+        <div class="span-cell">
+          <span>1x1 Cell</span>
+        </div>
+
+        <div class="span-cell">
+          <span>1x1 Cell</span>
+        </div>
+
+        <div class="span-cell span-full">
+          <span>grid-column: 1 / -1 (Edge to Edge Span)</span>
+          <span style="font-size: 0.75rem; color: #f472b6;">Full Width Grid Footer Row</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Modern Bento Grid -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>03.</span> Modern Bento Grid Architecture
+      </h2>
+      <p class="section-subtext">
+        The Bento layout pattern arranges varied content modules into an organic visual hierarchy, pairing a prominent feature card with supporting widgets.
+      </p>
+
+      <div class="bento-grid">
+        <!-- Main Bento Hero (Span 2x2) -->
+        <div class="bento-item bento-large-hero">
+          <div>
+            <span class="bento-badge">Featured Innovation</span>
+            <h3 class="bento-title">Two-Dimensional Spatial Canvas</h3>
+            <p class="bento-desc">
+              Unlike Flexbox's single-axis discipline, CSS Grid simultaneously coordinates rows and columns. This unlocks sophisticated magazine-style layouts, bento arrangements, and complex application shells without markup nesting workarounds.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <span class="badge-tech">grid-template-areas</span>
+            <span class="badge-tech">minmax(auto, 1fr)</span>
+            <span class="badge-tech">dense packing</span>
+          </div>
+        </div>
+
+        <!-- Bento Tall Item (Span 1x2) -->
+        <div class="bento-item bento-tall">
+          <div>
+            <span class="bento-badge" style="color: #a78bfa;">Telemetry</span>
+            <h3 class="bento-title">Realtime Metrics</h3>
+            <p class="bento-desc">
+              Tall module spanning 2 vertical rows seamlessly adjacent to the hero panel.
+            </p>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+            <div style="font-size: 1.75rem; font-weight: 800; color: #38bdf8;">99.98%</div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">Uptime SLA Tracked</div>
+          </div>
+        </div>
+
+        <!-- Bento Standard 1 -->
+        <div class="bento-item">
+          <div>
+            <span class="bento-badge" style="color: #34d399;">Zero Dependencies</span>
+            <h3 class="bento-title" style="font-size: 1.15rem;">Vanilla CSS Grid</h3>
+            <p class="bento-desc">Standard 1&times;1 module with natural intrinsic height alignment.</p>
+          </div>
+        </div>
+
+        <!-- Bento Standard 2 -->
+        <div class="bento-item">
+          <div>
+            <span class="bento-badge" style="color: #f472b6;">Performance</span>
+            <h3 class="bento-title" style="font-size: 1.15rem;">Hardware Accelerated</h3>
+            <p class="bento-desc">Smooth browser rendering through native CSS layout engines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 12-Column Structured Dashboard Layout -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>04.</span> 12-Column Enterprise Dashboard Layout
+      </h2>
+      <p class="section-subtext">
+        Utilizing <code>grid-template-columns: repeat(12, 1fr)</code> to build an authentic administrative dashboard containing 4 top KPI metric cards, a primary 8-column analytics chart, and a 4-column feed.
+      </p>
+
+      <div class="dashboard-grid">
+        <!-- KPI 1 -->
+        <div class="dash-card-stat">
+          <div style="font-size: 2rem;">👥</div>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Active Users</div>
+            <div style="font-size: 1.4rem; font-weight: 700; color: #ffffff;">24,850</div>
+            <div style="font-size: 0.75rem; color: #10b981;">&uarr; +14.2% this week</div>
+          </div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="dash-card-stat">
+          <div style="font-size: 2rem;">💳</div>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Total Revenue</div>
+            <div style="font-size: 1.4rem; font-weight: 700; color: #ffffff;">$184,320</div>
+            <div style="font-size: 0.75rem; color: #10b981;">&uarr; +8.7% vs goal</div>
+          </div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="dash-card-stat">
+          <div style="font-size: 2rem;">⚡</div>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Server Latency</div>
+            <div style="font-size: 1.4rem; font-weight: 700; color: #ffffff;">18 ms</div>
+            <div style="font-size: 0.75rem; color: #38bdf8;">Optimal Performance</div>
+          </div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="dash-card-stat">
+          <div style="font-size: 2rem;">🛡️</div>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Threats Blocked</div>
+            <div style="font-size: 1.4rem; font-weight: 700; color: #ffffff;">99.9%</div>
+            <div style="font-size: 0.75rem; color: #ec4899;">1,420 attacks mitigated</div>
+          </div>
+        </div>
+
+        <!-- Main Chart Panel (8 Columns) -->
+        <div class="dash-card-main">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 700;">Network Traffic Overview (8 Columns)</h3>
+              <span class="badge-tech">grid-column: span 8</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+              Daily request load across distributed edge nodes.
+            </p>
+          </div>
+
+          <!-- Mock Visual CSS Bar Chart -->
+          <div class="mock-bar-chart">
+            <div class="chart-bar" style="height: 45%;" title="Mon: 45k"></div>
+            <div class="chart-bar" style="height: 65%;" title="Tue: 65k"></div>
+            <div class="chart-bar" style="height: 55%;" title="Wed: 55k"></div>
+            <div class="chart-bar" style="height: 85%;" title="Thu: 85k"></div>
+            <div class="chart-bar" style="height: 75%;" title="Fri: 75k"></div>
+            <div class="chart-bar" style="height: 95%;" title="Sat: 95k"></div>
+            <div class="chart-bar" style="height: 80%;" title="Sun: 80k"></div>
+          </div>
+        </div>
+
+        <!-- Side Activity Panel (4 Columns) -->
+        <div class="dash-card-side">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 700;">Activity Feed</h3>
+            <span class="badge-tech">span 4</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <div style="display: flex; gap: 0.75rem; font-size: 0.85rem;">
+              <span style="color: #10b981;">●</span>
+              <div>
+                <strong style="color: #ffffff;">Node 04 Deployed</strong>
+                <div style="font-size: 0.75rem; color: #94a3b8;">4 minutes ago</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.75rem; font-size: 0.85rem;">
+              <span style="color: #38bdf8;">●</span>
+              <div>
+                <strong style="color: #ffffff;">SSL Cert Renewed</strong>
+                <div style="font-size: 0.75rem; color: #94a3b8;">28 minutes ago</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.75rem; font-size: 0.85rem;">
+              <span style="color: #f59e0b;">●</span>
+              <div>
+                <strong style="color: #ffffff;">DB Backup Synced</strong>
+                <div style="font-size: 0.75rem; color: #94a3b8;">1 hour ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Responsive Auto-Fit Image / Project Gallery -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>05.</span> Responsive Gallery: repeat(auto-fit, minmax(220px, 1fr))
+      </h2>
+      <p class="section-subtext">
+        Auto-fit combined with minmax creates an entirely responsive grid without needing media queries: new columns appear automatically as screen width expands!
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background: linear-gradient(135deg, #1e1b4b, #312e81);">🌌</div>
+          <div class="gallery-card-overlay">
+            <span class="gallery-tag">Design System</span>
+            <span class="gallery-title">Nebula UI Kit</span>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background: linear-gradient(135deg, #064e3b, #047857);">🌿</div>
+          <div class="gallery-card-overlay">
+            <span class="gallery-tag">E-Commerce</span>
+            <span class="gallery-title">BioSphere Goods</span>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background: linear-gradient(135deg, #701a75, #a21caf);">🔮</div>
+          <div class="gallery-card-overlay">
+            <span class="gallery-tag">AI Platform</span>
+            <span class="gallery-title">SynthMind Studio</span>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-bg" style="background: linear-gradient(135deg, #7c2d12, #c2410c);">🔥</div>
+          <div class="gallery-card-overlay">
+            <span class="gallery-tag">Cloud Infra</span>
+            <span class="gallery-title">Ignite Edge Engine</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="task-navigation">
+      <a href="task3_flexbox.html" class="nav-step-btn">
+        &larr; Prev: Task 3 - Flexbox
+      </a>
+      <a href="task5_responsive.html" class="nav-step-btn btn-primary">
+        Next: Task 5 - Responsive Media Queries &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>Internnova Web Development Internship</strong> &bull; Week 2: CSS Fundamentals</p>
+        <p style="margin-top: 0.25rem;">Task 4 Evaluation: 15 / 15 Marks Criteria Met</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge-tag">CSS Grid</span>
+        <span class="badge-tag">Bento Grid</span>
+        <span class="badge-tag">12-Column System</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

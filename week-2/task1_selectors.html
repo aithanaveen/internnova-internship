@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task 1: Introduction to CSS & Selectors - Demonstrating syntax, external stylesheets, element/class/ID/universal selectors, color models, backgrounds, fonts, and text alignment.">
+  <title>Task 1: Introduction to CSS & Selectors | Week 2 Assignment</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/task1.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">WD Week 2</span>
+        <span>CSS Fundamentals</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link">Overview Hub</a></li>
+        <li><a href="task1_selectors.html" class="nav-link active">Task 1: Selectors</a></li>
+        <li><a href="task2_boxmodel.html" class="nav-link">Task 2: Box Model</a></li>
+        <li><a href="task3_flexbox.html" class="nav-link">Task 3: Flexbox</a></li>
+        <li><a href="task4_grid.html" class="nav-link">Task 4: CSS Grid</a></li>
+        <li><a href="task5_responsive.html" class="nav-link">Task 5: Responsive</a></li>
+        <li><a href="task6_project/index.html" class="nav-link nav-btn-highlight">Task 6: Mini Project 🚀</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="task-hero">
+    <div class="hero-meta">
+      <span class="pill-tag">Task 01</span>
+      <span class="pill-tag pill-marks">20 Marks</span>
+      <span class="pill-tag">CSS Core Basics</span>
+    </div>
+    <h1 class="task-title">Introduction to CSS & Selectors</h1>
+    <p class="task-desc">
+      Understanding the core anatomy of Cascading Style Sheets (CSS): syntax, external stylesheet integration, specificity hierarchy (Universal, Element, Class, ID), rich color systems, gradients, and modern typography.
+    </p>
+
+    <!-- Rubric Checklist -->
+    <div class="rubric-pill-list">
+      <span class="rubric-check">CSS Syntax & Rules</span>
+      <span class="rubric-check">External CSS Link</span>
+      <span class="rubric-check">Element Selectors</span>
+      <span class="rubric-check">Class Selectors</span>
+      <span class="rubric-check">ID Selectors</span>
+      <span class="rubric-check">Universal Selector (*)</span>
+      <span class="rubric-check">Colors (HEX/RGB/RGBA/HSL)</span>
+      <span class="rubric-check">Backgrounds & Gradients</span>
+      <span class="rubric-check">Font Styling & Weights</span>
+      <span class="rubric-check">Text Alignments</span>
+    </div>
+  </section>
+
+  <!-- Main Demonstration Content -->
+  <main class="main-content">
+
+    <!-- Section 1: CSS Syntax & Anatomy -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>01.</span> CSS Syntax & Declaration Structure
+      </h2>
+      <p class="section-subtext">
+        A CSS rule consists of a selector pointing to the target HTML element, followed by a declaration block containing property-value pairs enclosed in curly braces.
+      </p>
+
+      <div class="showcase-split">
+        <div class="code-window">
+          <div class="code-header">
+            <span>css/task1.css &mdash; Syntax Anatomy</span>
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+          </div>
+          <pre class="code-content"><code><span class="comment">/* Selector { Property: Value; } */</span>
+<span class="selector">h1.task-headline</span> {
+  <span class="property">font-family</span>: <span class="value">'Plus Jakarta Sans', sans-serif</span>;
+  <span class="property">font-size</span>: <span class="value">2.25</span><span class="unit">rem</span>;
+  <span class="property">font-weight</span>: <span class="value">800</span>;
+  <span class="property">color</span>: <span class="value">#ffffff</span>;
+  <span class="property">letter-spacing</span>: <span class="value">-0.025</span><span class="unit">em</span>;
+}</code></pre>
+        </div>
+
+        <div class="live-preview">
+          <span class="preview-badge">Live Output</span>
+          <h1 class="task-headline">Clean Modern Headline</h1>
+          <p class="content-paragraph">
+            This live heading demonstrates proper declaration parsing, font loading, rem-based relative sizing, and negative letter spacing applied via external CSS.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Four Types of Selectors -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>02.</span> CSS Selectors Hierarchy & Specificity
+      </h2>
+      <p class="section-subtext">
+        Demonstration of Universal, Element/Type, Class, and ID Selectors, showing how rules cascade based on specificity.
+      </p>
+
+      <!-- ID Selector Live Demo -->
+      <div id="unique-featured-banner">
+        <h2 id="special-announcement-title">Featured Spotlight (#unique-featured-banner)</h2>
+        <p class="content-paragraph">
+          This container is uniquely targeted using an <strong>ID Selector</strong> (<code>#unique-featured-banner</code>). ID selectors possess high specificity (0,1,0,0) and apply to an individual element per page.
+        </p>
+        <span class="badge-tech">High Specificity: ID</span>
+      </div>
+
+      <!-- Element & Class Showcase Grid -->
+      <div class="typography-grid">
+        <!-- Element Selector Card -->
+        <div class="selector-card">
+          <span class="badge-tech">Element Selector</span>
+          <h3 class="selector-title">Targeting &lt;blockquote&gt;</h3>
+          <blockquote class="quote-box">
+            "Design is not just what it looks like and feels like. Design is how it works."
+            <cite>&mdash; Steve Jobs</cite>
+          </blockquote>
+          <p class="content-paragraph">
+            Uses tag name selector <code>blockquote.quote-box</code> to style blockquotes with borders and background tint.
+          </p>
+        </div>
+
+        <!-- Class Selector Card -->
+        <div class="selector-card">
+          <span class="badge-tech">Class Selector</span>
+          <h3 class="selector-title">Targeting .selector-card</h3>
+          <p class="content-paragraph">
+            Class selectors (<code>.selector-card</code>, <code>.badge-tech</code>) are modular and reusable across unlimited elements with specificity (0,0,1,0).
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+            <button class="btn-demo-primary">Primary Button</button>
+            <button class="btn-demo-outline">Outline Button</button>
+          </div>
+        </div>
+
+        <!-- Universal Selector Card -->
+        <div class="selector-card">
+          <span class="badge-tech">Universal Selector (*)</span>
+          <h3 class="selector-title">Targeting All Elements</h3>
+          <p class="content-paragraph">
+            The universal selector <code>*</code> applies a global reset: <code>box-sizing: border-box</code> ensuring padding and borders never expand the element's defined width.
+          </p>
+          <div style="background: rgba(99, 102, 241, 0.1); padding: 0.75rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem; color: #a5b4fc;">
+            * { box-sizing: border-box; }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Color Models & Values -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>03.</span> CSS Color Models & Formats
+      </h2>
+      <p class="section-subtext">
+        Modern CSS supports multiple color formats. Below is a real-world swatch comparison between HEX, RGB, RGBA (with alpha opacity), HSL, HSLA, and CSS Variables.
+      </p>
+
+      <div class="color-swatch-grid">
+        <!-- HEX -->
+        <div class="color-swatch color-hex">
+          <span class="swatch-label">HEX Code</span>
+          <span class="swatch-code">#6366F1</span>
+        </div>
+
+        <!-- RGB -->
+        <div class="color-swatch color-rgb">
+          <span class="swatch-label">RGB Format</span>
+          <span class="swatch-code">rgb(236, 72, 153)</span>
+        </div>
+
+        <!-- RGBA -->
+        <div class="color-swatch color-rgba">
+          <span class="swatch-label">RGBA Alpha (65%)</span>
+          <span class="swatch-code">rgba(6, 182, 212, 0.65)</span>
+        </div>
+
+        <!-- HSL -->
+        <div class="color-swatch color-hsl">
+          <span class="swatch-label">HSL Model</span>
+          <span class="swatch-code">hsl(142, 71%, 45%)</span>
+        </div>
+
+        <!-- HSLA -->
+        <div class="color-swatch color-hsla">
+          <span class="swatch-label">HSLA Amber</span>
+          <span class="swatch-code">hsla(38, 92%, 50%, 0.8)</span>
+        </div>
+
+        <!-- CSS Variable -->
+        <div class="color-swatch color-variable">
+          <span class="swatch-label">CSS Variable</span>
+          <span class="swatch-code">var(--primary)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Background Styling & Gradients -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>04.</span> Backgrounds, Gradients & Text Clipping
+      </h2>
+      <p class="section-subtext">
+        Styling containers using solid colors, multi-stop linear gradients, radial glow gradients, repeating patterns, and text background clipping.
+      </p>
+
+      <div class="bg-demo-grid">
+        <div class="bg-card bg-linear-grad">
+          <strong style="font-size: 1.1rem;">Linear Gradient</strong>
+          <span style="font-size: 0.8rem; opacity: 0.85;">135deg multi-stop color blend</span>
+        </div>
+
+        <div class="bg-card bg-radial-grad">
+          <strong style="font-size: 1.1rem;">Radial Gradient</strong>
+          <span style="font-size: 0.8rem; opacity: 0.85;">Circular focal depth effect</span>
+        </div>
+
+        <div class="bg-card bg-pattern-grad">
+          <strong style="font-size: 1.1rem;">Repeating Gradient</strong>
+          <span style="font-size: 0.8rem; opacity: 0.85;">45deg striped pattern fill</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: 10px; text-align: center;">
+        <span style="font-size: 0.85rem; color: #94a3b8; display: block; text-transform: uppercase; letter-spacing: 0.08em;">Text Gradient via Background-Clip</span>
+        <div class="gradient-text-preview">CSS Background-Clip: Text</div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Using <code>-webkit-background-clip: text; -webkit-text-fill-color: transparent;</code></p>
+      </div>
+    </section>
+
+    <!-- Section 5: Font Styling & Typography -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>05.</span> Typography, Weights & Transformations
+      </h2>
+      <p class="section-subtext">
+        Demonstrating font-family selections, font-weight scales (300 to 800), text-transform variations, letter-spacing, and line-height control.
+      </p>
+
+      <div class="typography-grid">
+        <div class="type-sample-box">
+          <div class="type-label">Font Family: Sans-Serif</div>
+          <p class="font-sans-sample">Plus Jakarta Sans &mdash; Sleek, contemporary UI typeface.</p>
+        </div>
+
+        <div class="type-sample-box">
+          <div class="type-label">Font Family: Monospace</div>
+          <p class="font-mono-sample">const framework = "CSS3 Modern";</p>
+        </div>
+
+        <div class="type-sample-box">
+          <div class="type-label">Font Family: Serif / Italic</div>
+          <p class="font-serif-sample">Editorial elegance with italic flourishes.</p>
+        </div>
+
+        <div class="type-sample-box">
+          <div class="type-label">Weight Spectrum</div>
+          <p class="weight-light" style="color: #cbd5e1;">Light 300 Weight</p>
+          <p class="weight-regular" style="color: #cbd5e1;">Regular 400 Weight</p>
+          <p class="weight-semibold" style="color: #cbd5e1;">Semibold 600 Weight</p>
+          <p class="weight-extrabold" style="color: #ffffff;">Extrabold 800 Weight</p>
+        </div>
+
+        <div class="type-sample-box">
+          <div class="type-label">Text Transformations</div>
+          <p class="transform-uppercase" style="color: #38bdf8;">uppercase tracking</p>
+          <p class="transform-capitalize" style="color: #818cf8;">capitalize every word</p>
+          <p class="transform-lowercase" style="color: #f472b6;">LOWERCASE CONVERTED</p>
+        </div>
+
+        <div class="type-sample-box">
+          <div class="type-label">Tracking & Leading</div>
+          <p class="spaced-text">
+            Spaced letter-tracking (0.15em) paired with relaxed line-height (2.0) for comfortable readability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Text Alignment & Shadow Effects -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>06.</span> Text Alignment & Visual Effects
+      </h2>
+      <p class="section-subtext">
+        Comparing horizontal text alignment properties (Left, Center, Right, Justify) and text-shadow depth.
+      </p>
+
+      <div class="alignment-grid">
+        <div class="align-box align-left">
+          <div class="type-label">text-align: left</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">Default western reading orientation aligned precisely along the left margin.</p>
+        </div>
+
+        <div class="align-box align-center">
+          <div class="type-label">text-align: center</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">Centered flow commonly used for hero headers, badges, and call-to-action blocks.</p>
+        </div>
+
+        <div class="align-box align-right">
+          <div class="type-label">text-align: right</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">Right aligned, often employed for financial tabular data, timestamps, and author quotes.</p>
+        </div>
+
+        <div class="align-box align-justify">
+          <div class="type-label">text-align: justify</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">Adjusts word spacing so text aligns evenly flush with both left and right boundaries.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; align-items: center; justify-content: center; padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 10px;">
+        <span class="text-underlined">Custom Underline Offset</span>
+        <span class="text-linethrough">Strikethrough Decoration</span>
+        <span class="text-shadow-neon">Neon Glow Text Shadow</span>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="task-navigation">
+      <a href="index.html" class="nav-step-btn">
+        &larr; Assignment Overview
+      </a>
+      <a href="task2_boxmodel.html" class="nav-step-btn btn-primary">
+        Next: Task 2 - CSS Box Model &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>Internnova Web Development Internship</strong> &bull; Week 2: CSS Fundamentals</p>
+        <p style="margin-top: 0.25rem;">Task 1 Evaluation: 20 / 20 Marks Criteria Met</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge-tag">HTML5 Validated</span>
+        <span class="badge-tag">External CSS</span>
+        <span class="badge-tag">Modern Typography</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Responsive Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

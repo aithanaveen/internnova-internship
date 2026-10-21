@@ -1,0 +1,260 @@
+/* ==========================================================================
+   TASK 5: RESPONSIVE DESIGN USING MEDIA QUERIES
+   Author: Internnova Internship - Week 2 Assignment
+   Topic: Media Queries, Breakpoints (Mobile, Tablet, Desktop), Fluid Layouts,
+          Responsive Typography, Adaptive Spacing, Responsive Images & Cards.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LIVE BREAKPOINT INDICATOR BADGE
+   Displays current active viewport bracket via media query rules.
+   -------------------------------------------------------------------------- */
+.viewport-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Default: Desktop (> 1024px) */
+.device-indicator::after {
+  content: "🖥️ Desktop Viewport (> 1024px)";
+  color: #38bdf8;
+}
+.viewport-status-badge {
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* Tablet Media Query (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .device-indicator::after {
+    content: "📱 Tablet Viewport (768px - 1024px)";
+    color: #facc15;
+  }
+  .viewport-status-badge {
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.4);
+  }
+}
+
+/* Mobile Media Query (< 768px) */
+@media (max-width: 767px) {
+  .device-indicator::after {
+    content: "📱 Mobile Phone Viewport (< 768px)";
+    color: #f472b6;
+  }
+  .viewport-status-badge {
+    background: rgba(244, 114, 182, 0.15);
+    border: 1px solid rgba(244, 114, 182, 0.4);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. BREAKPOINTS COMPARISON MATRIX
+   -------------------------------------------------------------------------- */
+.breakpoints-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.breakpoints-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.breakpoints-table th {
+  background: #0f1523;
+  padding: 0.85rem 1.25rem;
+  color: #94a3b8;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breakpoints-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+
+.breakpoints-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* --------------------------------------------------------------------------
+   3. RESPONSIVE MULTI-COLUMN TO SINGLE-COLUMN LAYOUT
+   -------------------------------------------------------------------------- */
+.adaptive-columns-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.adaptive-col-main {
+  flex: 2;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.adaptive-col-side {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+/* Tablet: Side column contracts */
+@media (max-width: 1024px) {
+  .adaptive-columns-container {
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile: Column collapse into single vertical stream */
+@media (max-width: 768px) {
+  .adaptive-columns-container {
+    flex-direction: column;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE TYPOGRAPHY (clamp() and Media Queries)
+   -------------------------------------------------------------------------- */
+.fluid-headline {
+  /* Fluid sizing formula: clamp(min, preferred_viewport_percentage, max) */
+  font-size: clamp(1.5rem, 3.5vw + 0.5rem, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.typography-media-demo {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 1rem;
+}
+
+/* Media Query adjusted paragraph */
+.responsive-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  .responsive-paragraph {
+    font-size: 0.95rem; /* Scaled down for mobile screen comfort */
+    line-height: 1.6;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE IMAGES & MEDIA
+   -------------------------------------------------------------------------- */
+.responsive-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .responsive-media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.media-card-box {
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.responsive-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Core Responsive Image Rule */
+.responsive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents image distortion */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.responsive-img:hover {
+  transform: scale(1.05);
+}
+
+.media-caption {
+  padding: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE CARDS (Desktop 4 -> Tablet 2 -> Mobile 1)
+   -------------------------------------------------------------------------- */
+.adaptive-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cols on Desktop */
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .adaptive-cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cols on Tablet */
+  }
+}
+
+@media (max-width: 640px) {
+  .adaptive-cards-grid {
+    grid-template-columns: 1fr; /* 1 col on Mobile */
+  }
+}
+
+.adaptive-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.adaptive-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.card-device-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  padding: 2px 6px;
+  border-radius: 4px;
+}

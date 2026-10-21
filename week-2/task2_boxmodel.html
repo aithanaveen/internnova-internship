@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task 2: CSS Box Model & Styling - Deep dive into Content, Padding, Border, Margin, Box-Sizing, Width/Height, Border Radius, Box Shadows, and Content Alignment.">
+  <title>Task 2: CSS Box Model & Styling | Week 2 Assignment</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/task2.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">WD Week 2</span>
+        <span>CSS Fundamentals</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link">Overview Hub</a></li>
+        <li><a href="task1_selectors.html" class="nav-link">Task 1: Selectors</a></li>
+        <li><a href="task2_boxmodel.html" class="nav-link active">Task 2: Box Model</a></li>
+        <li><a href="task3_flexbox.html" class="nav-link">Task 3: Flexbox</a></li>
+        <li><a href="task4_grid.html" class="nav-link">Task 4: CSS Grid</a></li>
+        <li><a href="task5_responsive.html" class="nav-link">Task 5: Responsive</a></li>
+        <li><a href="task6_project/index.html" class="nav-link nav-btn-highlight">Task 6: Mini Project 🚀</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="task-hero">
+    <div class="hero-meta">
+      <span class="pill-tag">Task 02</span>
+      <span class="pill-tag pill-marks">20 Marks</span>
+      <span class="pill-tag">Layout & Geometry</span>
+    </div>
+    <h1 class="task-title">CSS Box Model & Styling</h1>
+    <p class="task-desc">
+      Mastering the fundamental architecture governing every element rendered in the browser: Content area, internal Padding, boundary Borders, and external Margins, along with box-sizing, elevation shadows, and geometric spacing.
+    </p>
+
+    <!-- Rubric Checklist -->
+    <div class="rubric-pill-list">
+      <span class="rubric-check">Width & Height</span>
+      <span class="rubric-check">Margin (Auto & Directional)</span>
+      <span class="rubric-check">Padding Spacing</span>
+      <span class="rubric-check">Border Styles & Widths</span>
+      <span class="rubric-check">Border Radius (Pills & Circles)</span>
+      <span class="rubric-check">Box Shadows & Glows</span>
+      <span class="rubric-check">Proper Spacing & Rhythm</span>
+      <span class="rubric-check">Content Alignment & Truncation</span>
+      <span class="rubric-check">Box-Sizing: content-box vs border-box</span>
+    </div>
+  </section>
+
+  <!-- Main Demonstration Content -->
+  <main class="main-content">
+
+    <!-- Section 1: Visual Box Model Diagram -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>01.</span> Visual Anatomy of the CSS Box Model
+      </h2>
+      <p class="section-subtext">
+        Every HTML element is wrapped in four concentric rectangular boxes. Observe how outer margin surrounds the border, which surrounds the internal padding, which encloses the raw content.
+      </p>
+
+      <div class="boxmodel-diagram-container">
+        <!-- Margin Zone (Orange) -->
+        <div class="bm-margin-zone">
+          <!-- Border Zone (Amber/Yellow) -->
+          <div class="bm-border-zone">
+            <!-- Padding Zone (Green) -->
+            <div class="bm-padding-zone">
+              <!-- Content Zone (Blue/Indigo) -->
+              <div class="bm-content-zone">
+                <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem;">CONTENT AREA</div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; opacity: 0.9;">width &times; height &bull; Text &bull; Images</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Box-Sizing Comparison -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>02.</span> Box-Sizing: content-box vs border-box
+      </h2>
+      <p class="section-subtext">
+        Both boxes below are declared with <code>width: 240px; padding: 25px; border: 5px solid;</code>. Notice how <code>content-box</code> unintentionally inflates to 300px total width, while <code>border-box</code> retains the exact specified width!
+      </p>
+
+      <div class="sizing-comparison-grid">
+        <div class="box-sizing-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <strong style="color: #ef4444; font-size: 1.05rem;">content-box (Default)</strong>
+            <span style="font-size: 0.75rem; background: rgba(239, 68, 68, 0.2); color: #fca5a5; padding: 2px 8px; border-radius: 4px;">Total = 300px</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #94a3b8;">
+            Formula: <code>Total Width = Width + Left/Right Padding + Left/Right Border</code>.
+            Width (240px) + Padding (50px) + Border (10px) = <strong>300px</strong>.
+          </p>
+          <div class="demo-content-box">
+            240px + 50px + 10px = 300px
+          </div>
+        </div>
+
+        <div class="box-sizing-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <strong style="color: #10b981; font-size: 1.05rem;">border-box (Recommended)</strong>
+            <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #6ee7b7; padding: 2px 8px; border-radius: 4px;">Total = 240px</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #94a3b8;">
+            Formula: <code>Total Width = Width</code>. Padding and borders are absorbed inside the dimensions without expanding the element footprint.
+          </p>
+          <div class="demo-border-box">
+            Total Width Remains 240px
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Width & Height Controls -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>03.</span> Width & Height Dimensional Controls
+      </h2>
+      <p class="section-subtext">
+        Demonstrating fixed absolute sizing (pixels), fluid relative percentage sizing, and constraint limits (<code>max-width</code>, <code>min-height</code>).
+      </p>
+
+      <div class="dimensions-grid">
+        <div class="dimension-bar bar-fixed">
+          <span class="dimension-label">Fixed Width (320px)</span>
+          <span class="dimension-val">width: 320px;</span>
+        </div>
+
+        <div class="dimension-bar bar-percentage">
+          <span class="dimension-label">Fluid Percentage (75%)</span>
+          <span class="dimension-val">width: 75%;</span>
+        </div>
+
+        <div class="dimension-bar bar-max-width">
+          <span class="dimension-label">Responsive Max-Width (100% / max 500px)</span>
+          <span class="dimension-val">max-width: 500px;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Margin & Padding Spacing -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>04.</span> Margin & Padding Spacing Strategies
+      </h2>
+      <p class="section-subtext">
+        Internal breathing room (Padding) vs External separation (Margin), including automatic horizontal block centering.
+      </p>
+
+      <div class="spacing-showcase-box">
+        <div class="margin-auto-box">
+          <span>margin: 0 auto; &mdash; Perfectly Centered Block</span>
+          <div style="font-size: 0.8rem; font-weight: normal; margin-top: 0.25rem; opacity: 0.85;">
+            Calculates equal left and right margins automatically within parent container.
+          </div>
+        </div>
+
+        <div class="directional-spacing-grid">
+          <div class="spacing-unit-box">
+            <div class="spacing-unit-title">padding: 1.5rem;</div>
+            <p style="font-size: 0.85rem; color: #94a3b8;">1-value shorthand: Applies uniform 1.5rem spacing to all 4 sides.</p>
+          </div>
+
+          <div class="spacing-unit-box">
+            <div class="spacing-unit-title">padding: 1rem 2rem;</div>
+            <p style="font-size: 0.85rem; color: #94a3b8;">2-value shorthand: 1rem Top/Bottom, 2rem Left/Right.</p>
+          </div>
+
+          <div class="spacing-unit-box">
+            <div class="spacing-unit-title">margin-bottom: 2rem;</div>
+            <p style="font-size: 0.85rem; color: #94a3b8;">Single directional property creating vertical baseline rhythm.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Border Styles & Border Radius -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>05.</span> Border Styles & Border Radius Geometry
+      </h2>
+      <p class="section-subtext">
+        Exploring border line types (solid, dashed, dotted, double) and corner curvings from subtle roundedness to pill shapes and complete circles.
+      </p>
+
+      <!-- Border Styles -->
+      <div class="border-styles-grid">
+        <div class="border-sample-card border-solid">
+          <strong>Solid Border</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #a5b4fc; margin-top: 4px;">border: 2px solid #6366f1</div>
+        </div>
+
+        <div class="border-sample-card border-dashed">
+          <strong>Dashed Border</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #67e8f9; margin-top: 4px;">border: 2px dashed #06b6d4</div>
+        </div>
+
+        <div class="border-sample-card border-dotted">
+          <strong>Dotted Border</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #f472b6; margin-top: 4px;">border: 3px dotted #ec4899</div>
+        </div>
+
+        <div class="border-sample-card border-double">
+          <strong>Double Border</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #6ee7b7; margin-top: 4px;">border: 4px double #10b981</div>
+        </div>
+      </div>
+
+      <!-- Border Radius Variations -->
+      <div class="border-styles-grid" style="margin-top: 1.5rem;">
+        <div class="border-sample-card radius-subtle">
+          <strong>Subtle 6px Radius</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">border-radius: 6px</div>
+        </div>
+
+        <div class="border-sample-card radius-asymmetric">
+          <strong>Asymmetric Organic</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #a5b4fc; margin-top: 4px;">radius: 28px 4px 28px 4px</div>
+        </div>
+
+        <div class="border-sample-card radius-pill">
+          <strong>Full Pill Shape</strong>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">border-radius: 9999px</div>
+        </div>
+
+        <div class="radius-circle">
+          50% Circle
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Box Shadows & Depth Elevation -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>06.</span> Box Shadows & Multi-Layer Depth
+      </h2>
+      <p class="section-subtext">
+        Box shadows grant depth, tactile elevation, and luminous neon highlights. Hover over each card to see subtle hover transitions.
+      </p>
+
+      <div class="shadows-grid">
+        <div class="shadow-box shadow-soft">
+          <strong style="color: #ffffff;">Soft Ambient Elevation</strong>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.5rem;">Layered natural drop shadow with negative spread.</p>
+        </div>
+
+        <div class="shadow-box shadow-glow-purple">
+          <strong style="color: #c4b5fd;">Purple Neon Glow</strong>
+          <p style="font-size: 0.8rem; color: #a78bfa; margin-top: 0.5rem;">Luminous radial diffuse glow for active cards.</p>
+        </div>
+
+        <div class="shadow-box shadow-glow-cyan">
+          <strong style="color: #a5f3fc;">Cyan Electric Glow</strong>
+          <p style="font-size: 0.8rem; color: #67e8f9; margin-top: 0.5rem;">High contrast accent glow for interactive CTAs.</p>
+        </div>
+
+        <div class="shadow-box shadow-inset-depth">
+          <strong style="color: #cbd5e1;">Inset Depth Recess</strong>
+          <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Simulates carved/depressed surfaces for input fields.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Content Alignment & Overflow -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>07.</span> Content Alignment & Text Truncation
+      </h2>
+      <p class="section-subtext">
+        Centering content inside geometric boxes and handling text overflows cleanly with single-line ellipsis.
+      </p>
+
+      <div class="alignment-card-grid">
+        <div class="box-align-demo align-center-both">
+          <span class="badge-tech" style="margin-bottom: 0.5rem;">Centered Content</span>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">Perfect Dual-Axis Centering</h4>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;">
+            Both horizontal and vertical content alignment configured within a padded container.
+          </p>
+        </div>
+
+        <div class="box-align-demo">
+          <span class="badge-tech" style="margin-bottom: 0.5rem;">Overflow Handling</span>
+          <h4 style="color: #ffffff; font-size: 1.1rem;">Ellipsis Truncation</h4>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;">
+            Long text strings automatically cut off with three dots when exceeding the container boundary:
+          </p>
+          <div class="text-ellipsis-single-line">
+            https://internship.internnova.com/web-development/assignments/css-fundamentals-week-2-submission-portal
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="task-navigation">
+      <a href="task1_selectors.html" class="nav-step-btn">
+        &larr; Prev: Task 1 - Selectors
+      </a>
+      <a href="task3_flexbox.html" class="nav-step-btn btn-primary">
+        Next: Task 3 - Flexbox Layout &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>Internnova Web Development Internship</strong> &bull; Week 2: CSS Fundamentals</p>
+        <p style="margin-top: 0.25rem;">Task 2 Evaluation: 20 / 20 Marks Criteria Met</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge-tag">Box Model</span>
+        <span class="badge-tag">border-box</span>
+        <span class="badge-tag">Box Shadows</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

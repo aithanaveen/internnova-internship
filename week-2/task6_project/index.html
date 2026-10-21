@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaSphere Cloud & AI Platform - A modern, high-performance responsive web application built with pure CSS3: Flexbox, CSS Grid, Box Model, and Media Queries.">
+  <title>NovaSphere &mdash; Next-Gen Cloud & AI Web Platform | Mini CSS Project</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Task 6 Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphism Header (Concept: Flexbox & Sticky Navigation) -->
+  <header class="project-header">
+    <div class="container nav-flex-wrapper">
+      
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="brand-identity">
+        <div class="brand-icon">✦</div>
+        <span>NovaSphere<span style="color: var(--secondary);">.ai</span></span>
+      </a>
+
+      <!-- Navigation Links (Flexbox Row) -->
+      <ul class="nav-links-list" id="projectNavLinks">
+        <li><a href="#features" class="project-nav-link">Features</a></li>
+        <li><a href="#solutions" class="project-nav-link">Solutions</a></li>
+        <li><a href="#pricing" class="project-nav-link">Pricing</a></li>
+        <li><a href="#testimonials" class="project-nav-link">Reviews</a></li>
+      </ul>
+
+      <!-- Action Buttons & Hub Link -->
+      <div class="nav-actions-group">
+        <a href="../index.html" class="hub-back-pill" title="Return to Week 2 Assignment Hub">&larr; Week 2 Hub</a>
+        <a href="#cta" class="btn btn-primary" style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">Get Started</a>
+        <button class="mobile-menu-btn" id="projectMobileBtn" aria-label="Toggle navigation menu">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+
+    <!-- HERO SECTION (Concepts: Typography, Flexbox Buttons, Box Model Preview) -->
+    <section class="hero-section">
+      <div class="container">
+        
+        <a href="#features" class="hero-pill-announcement">
+          <span>✨ <strong>NovaSphere 2.0</strong> is Live</span>
+          <span style="opacity: 0.5;">|</span>
+          <span>Explore Next-Gen Distributed Cloud &rarr;</span>
+        </a>
+
+        <h1 class="hero-headline">
+          Build & Scale Modern <br>
+          <span class="text-gradient">Intelligent Cloud Apps</span>
+        </h1>
+
+        <p class="hero-subheading">
+          The ultimate serverless development platform orchestrating high-concurrency microservices, automated edge deployment, and instant AI inference with zero configuration.
+        </p>
+
+        <!-- CTA Buttons Group (Flexbox) -->
+        <div class="hero-cta-group">
+          <a href="#pricing" class="btn btn-primary">Start Building Free</a>
+          <a href="#features" class="btn btn-secondary">Explore Platform Demo</a>
+        </div>
+
+        <!-- Interactive Browser Mockup (Box Model & Elevation Shadows) -->
+        <div class="hero-glass-preview">
+          <div class="preview-browser-bar">
+            <div style="display: flex; gap: 6px;">
+              <span class="p-dot p-dot-red"></span>
+              <span class="p-dot p-dot-yellow"></span>
+              <span class="p-dot p-dot-green"></span>
+            </div>
+            <div class="preview-address-bar">https://console.novasphere.ai/cluster-alpha/metrics</div>
+          </div>
+
+          <div class="preview-app-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <h3 style="color: #ffffff; font-size: 1.25rem; font-weight: 700;">Global Cluster Telemetry</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Edge Node 01 &bull; Northern Virginia (us-east-1)</p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <span class="section-tag" style="margin-bottom: 0; background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                  ● Cluster Health: 100%
+                </span>
+              </div>
+            </div>
+
+            <!-- Mini App Dashboard Grid (CSS Grid inside Hero Mockup) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: 8px;">
+                <div style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Requests / Sec</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-top: 4px;">42,850</div>
+                <div style="font-size: 0.75rem; color: #10b981; margin-top: 2px;">+18% peak bandwidth</div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: 8px;">
+                <div style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">P99 Latency</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #38bdf8; margin-top: 4px;">6.4 ms</div>
+                <div style="font-size: 0.75rem; color: #38bdf8; margin-top: 2px;">Ultra-fast edge response</div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: 8px;">
+                <div style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Active Containers</div>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #a78bfa; margin-top: 4px;">1,248</div>
+                <div style="font-size: 0.75rem; color: #a78bfa; margin-top: 2px;">Auto-scaled dynamically</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Proof Stats Strip (Flexbox) -->
+        <div class="hero-metrics-bar">
+          <div class="metric-cell">
+            <div class="metric-value">99.99%</div>
+            <div class="metric-caption">Guaranteed SLA Uptime</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-value">50,000+</div>
+            <div class="metric-caption">Engineering Teams</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-value">120+</div>
+            <div class="metric-caption">Global Edge PoPs</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-value">&lt; 10 ms</div>
+            <div class="metric-caption">Global Avg Latency</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: BENTO GRID FEATURES (Concept: CSS Grid 2D Spanning) -->
+    <section class="section-wrapper" id="features">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <span class="section-tag">Core Architecture</span>
+          <h2 class="section-main-heading">
+            Engineered For <span class="text-gradient">Maximum Velocity</span>
+          </h2>
+          <p class="section-lead-copy">
+            A comprehensive suite of cloud primitives engineered to eliminate infrastructure complexity and accelerate production shipments.
+          </p>
+        </div>
+
+        <!-- Bento Grid Implementation -->
+        <div class="bento-features-grid">
+          
+          <!-- Flagship Bento 2x2 Item -->
+          <div class="bento-card bento-col-2-row-2">
+            <div>
+              <div class="bento-icon-tag">⚡</div>
+              <h3 class="bento-card-title">Distributed Edge Runtime Engine</h3>
+              <p class="bento-card-text">
+                Your serverless functions and APIs execute instantly on the physical server nearest your visitor. Built-in global caching and cold-start mitigations deliver sub-10ms performance anywhere on Earth.
+              </p>
+            </div>
+
+            <div class="telemetry-mock-display">
+              <span style="color: #64748b;">// Live routing optimization</span><br>
+              <span style="color: #38bdf8;">const</span> edge = <span style="color: #f472b6;">new</span> EdgeRouter({ region: <span style="color: #34d399;">'global-mesh'</span> });<br>
+              <span style="color: #a78bfa;">await</span> edge.dispatch({ cache: <span style="color: #f59e0b;">'stale-while-revalidate'</span> });<br>
+              <span style="color: #10b981;">✓ Status: Dispatched in 2.1ms across 35 edge nodes</span>
+            </div>
+          </div>
+
+          <!-- Tall Bento Card -->
+          <div class="bento-card bento-tall-card">
+            <div>
+              <div class="bento-icon-tag" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3);">🛡️</div>
+              <h3 class="bento-card-title">Zero-Trust Isolation</h3>
+              <p class="bento-card-text">
+                Hardware-enforced sandboxing guarantees complete workload separation with encrypted VPC peering.
+              </p>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+              <div style="font-size: 0.8rem; color: #67e8f9; font-weight: 700;">SOC2 & ISO 27001</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Automated compliance audits active.</div>
+            </div>
+          </div>
+
+          <!-- Standard Bento Card 1 -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-tag" style="background: rgba(236, 72, 153, 0.15); border-color: rgba(236, 72, 153, 0.3);">🤖</div>
+              <h3 class="bento-card-title">AI Model Gateway</h3>
+              <p class="bento-card-text">
+                One unified API gateway to stream token responses from open-source and proprietary LLMs with automatic fallbacks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Standard Bento Card 2 -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3);">📊</div>
+              <h3 class="bento-card-title">Predictive Auto-Scale</h3>
+              <p class="bento-card-text">
+                Machine learning monitors load curves to pre-warm server instances seconds before sudden traffic surges.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES / SOLUTIONS (Concept: CSS Flexbox Layout) -->
+    <section class="section-wrapper" id="solutions" style="background: rgba(10, 15, 29, 0.4);">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <span class="section-tag">Integrated Ecosystem</span>
+          <h2 class="section-main-heading">
+            Tailored For <span class="text-gradient">Every Modern Stack</span>
+          </h2>
+          <p class="section-lead-copy">
+            Deploy microservices, static web applications, container fleets, or real-time websocket pipelines with identical simplicity.
+          </p>
+        </div>
+
+        <!-- Flexbox Services Row -->
+        <div class="services-flex-row">
+          
+          <div class="service-card">
+            <div>
+              <span class="section-tag" style="color: #818cf8; background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3);">
+                Microservices
+              </span>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-top: 0.75rem;">Serverless Compute</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                Run Node.js, Go, Python, and Rust code without provisioning or managing cloud servers.
+              </p>
+              
+              <ul class="service-feature-list">
+                <li>Automatic horizontal scaling from 0 to 10k</li>
+                <li>Instant git push to live preview deployment</li>
+                <li>Built-in secret key rotation management</li>
+                <li>Direct database pooling integration</li>
+              </ul>
+            </div>
+            <a href="#pricing" class="btn btn-secondary" style="width: 100%;">View Compute Specs</a>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <span class="section-tag" style="color: #67e8f9; background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3);">
+                Storage & Data
+              </span>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-top: 0.75rem;">Global Edge Cache</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                Multi-region key-value storage and object asset distribution with instant invalidation triggers.
+              </p>
+
+              <ul class="service-feature-list">
+                <li>Zero-latency globally replicated reads</li>
+                <li>Automatic WebP & AVIF media compression</li>
+                <li>Configurable TTL & cache-control tags</li>
+                <li>Unlimited asset egress bandwidth</li>
+              </ul>
+            </div>
+            <a href="#pricing" class="btn btn-secondary" style="width: 100%;">Explore Storage</a>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <span class="section-tag" style="color: #f472b6; background: rgba(236, 72, 153, 0.15); border-color: rgba(236, 72, 153, 0.3);">
+                Intelligence
+              </span>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-top: 0.75rem;">AI Inference Hub</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                Low-latency GPU compute nodes ready to host embeddings, vector search, and fine-tuned models.
+              </p>
+
+              <ul class="service-feature-list">
+                <li>Dedicated NVIDIA H100 GPU clusters</li>
+                <li>Streaming token completions natively</li>
+                <li>Vector database hybrid indexing</li>
+                <li>Semantic caching reduces token expense</li>
+              </ul>
+            </div>
+            <a href="#pricing" class="btn btn-secondary" style="width: 100%;">Discover AI Hub</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: PRICING TIERS (Concept: CSS Box Model & Grid) -->
+    <section class="section-wrapper" id="pricing">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <span class="section-tag">Transparent Value</span>
+          <h2 class="section-main-heading">
+            Simple, Predictable <span class="text-gradient">Pricing Tiers</span>
+          </h2>
+          <p class="section-lead-copy">
+            Start for free, scale smoothly as your customer base expands. No surprise egress charges.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <!-- Starter Tier -->
+          <div class="pricing-card">
+            <div>
+              <h3 style="color: #ffffff; font-size: 1.35rem; font-weight: 700;">Developer Starter</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">Ideal for hobby projects & student prototypes.</p>
+
+              <div class="price-figure-wrap">
+                <span class="price-currency">$</span>
+                <span class="price-amount">0</span>
+                <span class="price-frequency">/ month</span>
+              </div>
+
+              <ul class="service-feature-list">
+                <li>100k Monthly API Invocations</li>
+                <li>3 Production Git Environments</li>
+                <li>Community Discord Support</li>
+                <li>Shared Edge Network</li>
+              </ul>
+            </div>
+            <a href="#cta" class="btn btn-secondary" style="width: 100%; margin-top: 2rem;">Get Started Free</a>
+          </div>
+
+          <!-- Featured Tier: Professional -->
+          <div class="pricing-card pricing-card-featured">
+            <span class="popular-badge">★ Most Popular</span>
+            <div>
+              <h3 style="color: #ffffff; font-size: 1.35rem; font-weight: 700;">Professional Cloud</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">For fast-moving startups and SaaS builders.</p>
+
+              <div class="price-figure-wrap">
+                <span class="price-currency">$</span>
+                <span class="price-amount">49</span>
+                <span class="price-frequency">/ month</span>
+              </div>
+
+              <ul class="service-feature-list">
+                <li>5,000,000 Monthly Invocations</li>
+                <li>Unlimited Git Branches & Previews</li>
+                <li>Dedicated Custom Domain SSL</li>
+                <li>99.9% Uptime Guarantee SLA</li>
+                <li>Priority 24/7 Slack & Email Help</li>
+              </ul>
+            </div>
+            <a href="#cta" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Upgrade To Pro</a>
+          </div>
+
+          <!-- Enterprise Tier -->
+          <div class="pricing-card">
+            <div>
+              <h3 style="color: #ffffff; font-size: 1.35rem; font-weight: 700;">Enterprise Cluster</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">For scaled organizations with strict compliance.</p>
+
+              <div class="price-figure-wrap">
+                <span class="price-currency">$</span>
+                <span class="price-amount">199</span>
+                <span class="price-frequency">/ month</span>
+              </div>
+
+              <ul class="service-feature-list">
+                <li>Unlimited Invocations & Bandwidth</li>
+                <li>Dedicated Private VPC Peering</li>
+                <li>Custom HIPAA & SOC2 Agreements</li>
+                <li>99.99% Financial Backed SLA</li>
+                <li>Dedicated Solutions Architect</li>
+              </ul>
+            </div>
+            <a href="#cta" class="btn btn-secondary" style="width: 100%; margin-top: 2rem;">Contact Sales</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: TESTIMONIALS (Concept: CSS Grid & Circular Avatars) -->
+    <section class="section-wrapper" id="testimonials" style="background: rgba(10, 15, 29, 0.4);">
+      <div class="container">
+        
+        <div class="section-header-block">
+          <span class="section-tag">Customer Love</span>
+          <h2 class="section-main-heading">
+            Trusted By <span class="text-gradient">Innovators Worldwide</span>
+          </h2>
+          <p class="section-lead-copy">
+            Discover how leading engineering teams accelerated development with NovaSphere.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          
+          <div class="testimonial-card">
+            <div class="quote-stars">★★★★★</div>
+            <p class="quote-body">
+              "Switching to NovaSphere reduced our API response times by 68%. The serverless developer experience is second to none."
+            </p>
+            <div class="author-flex-row">
+              <div class="author-avatar">SK</div>
+              <div>
+                <div class="author-name">Sarah Jenkins</div>
+                <div class="author-role">VP of Engineering at FinEdge</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-stars">★★★★★</div>
+            <p class="quote-body">
+              "We deployed our entire AI inference pipeline in two days. The automated scaling handles traffic spikes without breaking a sweat."
+            </p>
+            <div class="author-flex-row">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #10b981);">MR</div>
+              <div>
+                <div class="author-name">Marcus Reed</div>
+                <div class="author-role">Founder at SynthLabs</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-stars">★★★★★</div>
+            <p class="quote-body">
+              "The pure CSS layout architecture and documentation of this platform is a masterclass in modern web engineering."
+            </p>
+            <div class="author-flex-row">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">AL</div>
+              <div>
+                <div class="author-name">Elena Rostova</div>
+                <div class="author-role">Lead Architect at CloudSphere</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: CALL TO ACTION (Concept: Box Model Inset Forms) -->
+    <section class="section-wrapper" id="cta">
+      <div class="container">
+        
+        <div class="cta-banner-card">
+          <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.2);">
+            Instant 14-Day Trial
+          </span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #ffffff; margin: 1rem 0 0.75rem;">
+            Ready to Build The Future of Cloud?
+          </h2>
+          <p style="color: var(--text-muted); max-width: 580px; margin: 0 auto; font-size: 1.05rem;">
+            Join over 50,000 engineers deploying faster, safer, and cleaner serverless applications today.
+          </p>
+
+          <form class="cta-form-flex" onsubmit="event.preventDefault(); alert('Thank you! Welcome to NovaSphere Cloud.');">
+            <input type="email" placeholder="Enter your work email address..." class="cta-input-field" required>
+            <button type="submit" class="btn btn-primary">Claim Free Account &rarr;</button>
+          </form>
+          <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 1rem;">
+            No credit card required &bull; 100k free monthly requests &bull; Cancel anytime
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MULTI-COLUMN FOOTER (Concept: CSS Grid Layout) -->
+  <footer class="project-footer">
+    <div class="container">
+      
+      <div class="footer-nav-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand-summary">
+          <div class="brand-identity" style="margin-bottom: 1rem;">
+            <div class="brand-icon">✦</div>
+            <span>NovaSphere<span style="color: var(--secondary);">.ai</span></span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Next-generation distributed cloud computing platform. Synthesizing CSS Selectors, Box Model, Flexbox, and CSS Grid into a cohesive user experience.
+          </p>
+        </div>
+
+        <!-- Col 2: Product -->
+        <div>
+          <div class="footer-column-heading">Platform</div>
+          <ul class="footer-links-vertical">
+            <li><a href="#features">Edge Compute</a></li>
+            <li><a href="#features">Zero-Trust Security</a></li>
+            <li><a href="#solutions">AI Inference Hub</a></li>
+            <li><a href="#features">Global DNS Cache</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Resources -->
+        <div>
+          <div class="footer-column-heading">Assignment</div>
+          <ul class="footer-links-vertical">
+            <li><a href="../task1_selectors.html">Task 1: Selectors</a></li>
+            <li><a href="../task2_boxmodel.html">Task 2: Box Model</a></li>
+            <li><a href="../task3_flexbox.html">Task 3: Flexbox</a></li>
+            <li><a href="../task4_grid.html">Task 4: CSS Grid</a></li>
+            <li><a href="../task5_responsive.html">Task 5: Responsive</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal -->
+        <div>
+          <div class="footer-column-heading">Compliance</div>
+          <ul class="footer-links-vertical">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#security">Security Whitepaper</a></li>
+            <li><a href="#sla">Service SLA</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-flex">
+        <div>
+          &copy; 2026 NovaSphere AI &bull; Created by <a href="https://github.com/aithanaveen" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; font-weight: 700;">Aitha Naveen</a> &bull; <a href="https://github.com/aithanaveen/internnova-internship" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); text-decoration: none;">internnova-internship</a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="../index.html" style="color: var(--primary-light); text-decoration: none; font-weight: 600;">
+            &uarr; Back to Master Assignment Hub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Responsive Mobile Menu Handler
+    const mobileBtn = document.getElementById('projectMobileBtn');
+    const navLinks = document.getElementById('projectNavLinks');
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

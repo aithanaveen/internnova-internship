@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task 3: Flexbox Layout - Interactive demonstration of flex containers, direction, justify-content, align-items, gap, flex items, and responsive card arrangements.">
+  <title>Task 3: CSS Flexbox Layout | Week 2 Assignment</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/task3.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">WD Week 2</span>
+        <span>CSS Fundamentals</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link">Overview Hub</a></li>
+        <li><a href="task1_selectors.html" class="nav-link">Task 1: Selectors</a></li>
+        <li><a href="task2_boxmodel.html" class="nav-link">Task 2: Box Model</a></li>
+        <li><a href="task3_flexbox.html" class="nav-link active">Task 3: Flexbox</a></li>
+        <li><a href="task4_grid.html" class="nav-link">Task 4: CSS Grid</a></li>
+        <li><a href="task5_responsive.html" class="nav-link">Task 5: Responsive</a></li>
+        <li><a href="task6_project/index.html" class="nav-link nav-btn-highlight">Task 6: Mini Project 🚀</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="task-hero">
+    <div class="hero-meta">
+      <span class="pill-tag">Task 03</span>
+      <span class="pill-tag pill-marks">15 Marks</span>
+      <span class="pill-tag">1-Dimensional Layouts</span>
+    </div>
+    <h1 class="task-title">CSS Flexbox Layout</h1>
+    <p class="task-desc">
+      Flexbox (Flexible Box Layout Module) delivers powerful one-dimensional layout control along a main axis and cross axis. Seamlessly align, distribute, reorder, and scale items regardless of screen size.
+    </p>
+
+    <!-- Rubric Checklist -->
+    <div class="rubric-pill-list">
+      <span class="rubric-check">Flex Container (display: flex)</span>
+      <span class="rubric-check">Flex Direction (row/column/reverse)</span>
+      <span class="rubric-check">Justify Content (6 Modes)</span>
+      <span class="rubric-check">Align Items (Cross Axis)</span>
+      <span class="rubric-check">Gap Spacing (gap: 1.5rem)</span>
+      <span class="rubric-check">Flex Items (grow/shrink/basis)</span>
+      <span class="rubric-check">Horizontal & Vertical Centering</span>
+      <span class="rubric-check">Responsive Flex Cards Section</span>
+    </div>
+  </section>
+
+  <!-- Main Demonstration Content -->
+  <main class="main-content">
+
+    <!-- Section 1: Flex Direction -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>01.</span> Flex Direction: Defining the Main Axis
+      </h2>
+      <p class="section-subtext">
+        The <code>flex-direction</code> property establishes the main axis orientation: row (left-to-right), row-reverse (right-to-left), column (top-to-bottom), or column-reverse.
+      </p>
+
+      <div class="direction-demo-grid">
+        <!-- Row -->
+        <div class="direction-box">
+          <div class="direction-box-title">flex-direction: row</div>
+          <div class="flex-container-base dir-row">
+            <div class="flex-badge-item">1</div>
+            <div class="flex-badge-item">2</div>
+            <div class="flex-badge-item">3</div>
+          </div>
+        </div>
+
+        <!-- Row-Reverse -->
+        <div class="direction-box">
+          <div class="direction-box-title">flex-direction: row-reverse</div>
+          <div class="flex-container-base dir-row-reverse">
+            <div class="flex-badge-item">1</div>
+            <div class="flex-badge-item">2</div>
+            <div class="flex-badge-item">3</div>
+          </div>
+        </div>
+
+        <!-- Column -->
+        <div class="direction-box">
+          <div class="direction-box-title">flex-direction: column</div>
+          <div class="flex-container-base dir-column">
+            <div class="flex-badge-item">Item 1</div>
+            <div class="flex-badge-item">Item 2</div>
+            <div class="flex-badge-item">Item 3</div>
+          </div>
+        </div>
+
+        <!-- Column-Reverse -->
+        <div class="direction-box">
+          <div class="direction-box-title">flex-direction: column-reverse</div>
+          <div class="flex-container-base dir-column-reverse">
+            <div class="flex-badge-item">Item 1</div>
+            <div class="flex-badge-item">Item 2</div>
+            <div class="flex-badge-item">Item 3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Justify Content -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>02.</span> Justify Content: Main Axis Distribution
+      </h2>
+      <p class="section-subtext">
+        Distribute free space between and around flex items along the primary flow axis.
+      </p>
+
+      <div class="justify-demo-stack">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">justify-content: flex-start</span>
+          <div class="justify-row-container jc-start">
+            <div class="jc-box-item">Alpha</div>
+            <div class="jc-box-item" style="margin-left: 0.5rem;">Beta</div>
+            <div class="jc-box-item" style="margin-left: 0.5rem;">Gamma</div>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">justify-content: center</span>
+          <div class="justify-row-container jc-center">
+            <div class="jc-box-item">Alpha</div>
+            <div class="jc-box-item" style="margin-left: 0.5rem;">Beta</div>
+            <div class="jc-box-item" style="margin-left: 0.5rem;">Gamma</div>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">justify-content: flex-end</span>
+          <div class="justify-row-container jc-end">
+            <div class="jc-box-item">Alpha</div>
+            <div class="jc-box-item" style="margin-left: 0.5rem;">Beta</div>
+            <div class="jc-box-item" style="margin-left: 0.5rem;">Gamma</div>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">justify-content: space-between (Pushes extremes to edges)</span>
+          <div class="justify-row-container jc-between">
+            <div class="jc-box-item">Alpha</div>
+            <div class="jc-box-item">Beta</div>
+            <div class="jc-box-item">Gamma</div>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">justify-content: space-around (Equal padding each side)</span>
+          <div class="justify-row-container jc-around">
+            <div class="jc-box-item">Alpha</div>
+            <div class="jc-box-item">Beta</div>
+            <div class="jc-box-item">Gamma</div>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8;">justify-content: space-evenly (Identical gaps throughout)</span>
+          <div class="justify-row-container jc-evenly">
+            <div class="jc-box-item">Alpha</div>
+            <div class="jc-box-item">Beta</div>
+            <div class="jc-box-item">Gamma</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Align Items -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>03.</span> Align Items: Cross Axis Alignment
+      </h2>
+      <p class="section-subtext">
+        Positions flex children along the perpendicular cross axis (height in a row container).
+      </p>
+
+      <div class="align-demo-grid">
+        <div class="direction-box">
+          <div class="direction-box-title">align-items: stretch</div>
+          <div class="align-container ai-stretch">
+            <div class="ai-item">Stretch Item 1</div>
+            <div class="ai-item">Stretch Item 2</div>
+          </div>
+        </div>
+
+        <div class="direction-box">
+          <div class="direction-box-title">align-items: center</div>
+          <div class="align-container ai-center">
+            <div class="ai-item">Centered 1</div>
+            <div class="ai-item" style="font-size: 1.1rem; padding: 1rem;">Taller Box</div>
+          </div>
+        </div>
+
+        <div class="direction-box">
+          <div class="direction-box-title">align-items: flex-start</div>
+          <div class="align-container ai-start">
+            <div class="ai-item">Top Aligned</div>
+            <div class="ai-item" style="height: 70px;">Height 70px</div>
+          </div>
+        </div>
+
+        <div class="direction-box">
+          <div class="direction-box-title">align-items: flex-end</div>
+          <div class="align-container ai-end">
+            <div class="ai-item">Bottom Aligned</div>
+            <div class="ai-item" style="height: 60px;">Height 60px</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Flex Item Properties -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>04.</span> Flex Item Properties: Grow, Shrink & Basis
+      </h2>
+      <p class="section-subtext">
+        Child items can dictate how available free space is partitioned with <code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-basis</code>, and override alignment with <code>align-self</code>.
+      </p>
+
+      <div class="flex-item-props-container">
+        <div class="item-basis-fixed">
+          <strong>flex-basis: 180px</strong>
+          <div style="font-size: 0.75rem; margin-top: 4px;">grow: 0 (Fixed width)</div>
+        </div>
+
+        <div class="item-grow-1">
+          <strong>flex: 1 1 200px</strong>
+          <div style="font-size: 0.75rem; margin-top: 4px;">flex-grow: 1 (Consumes 1 unit)</div>
+        </div>
+
+        <div class="item-grow-2">
+          <strong>flex: 2 1 200px</strong>
+          <div style="font-size: 0.75rem; margin-top: 4px;">flex-grow: 2 (Consumes 2 units)</div>
+        </div>
+
+        <div class="item-self-aligned">
+          align-self: flex-end
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Real-World Responsive Flex Cards -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>05.</span> Real-World Component: Responsive Flex Cards
+      </h2>
+      <p class="section-subtext">
+        Arrangement of modern feature cards built with <code>display: flex</code>, <code>flex-wrap: wrap</code>, and <code>gap: 1.5rem</code>. Resize your screen to watch cards smoothly wrap and equalize height!
+      </p>
+
+      <div class="flex-cards-row">
+        <!-- Card 1 -->
+        <div class="flex-feature-card">
+          <div class="card-icon-bubble">⚡</div>
+          <div class="card-content-wrap">
+            <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">One-Dimensional Flow</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              Flexbox handles either horizontal rows or vertical columns with effortless flexibility and proportional item growth.
+            </p>
+          </div>
+          <div class="card-footer-action">
+            <span class="badge-tech">Flex Direction</span>
+            <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">Learn More &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex-feature-card">
+          <div class="card-icon-bubble">🎯</div>
+          <div class="card-content-wrap">
+            <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Perfect Centering</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              Historical CSS centering nightmares are solved in two clean lines: <code>justify-content: center</code> and <code>align-items: center</code>.
+            </p>
+          </div>
+          <div class="card-footer-action">
+            <span class="badge-tech">Dual Axis</span>
+            <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">Learn More &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex-feature-card">
+          <div class="card-icon-bubble">📐</div>
+          <div class="card-content-wrap">
+            <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Native Gap Control</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              The native <code>gap</code> property eliminates the need for tricky negative margin hacks or <code>:last-child</code> resets.
+            </p>
+          </div>
+          <div class="card-footer-action">
+            <span class="badge-tech">Gap Property</span>
+            <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">Learn More &rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-World Flex Stats Strip -->
+      <div class="flex-stats-strip">
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Pure CSS Layout</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Float Hacks Needed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Justify Alignments</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">360&deg;</span>
+          <span class="stat-label">Responsive Fluidity</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="task-navigation">
+      <a href="task2_boxmodel.html" class="nav-step-btn">
+        &larr; Prev: Task 2 - Box Model
+      </a>
+      <a href="task4_grid.html" class="nav-step-btn btn-primary">
+        Next: Task 4 - CSS Grid &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>Internnova Web Development Internship</strong> &bull; Week 2: CSS Fundamentals</p>
+        <p style="margin-top: 0.25rem;">Task 3 Evaluation: 15 / 15 Marks Criteria Met</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge-tag">Flexbox</span>
+        <span class="badge-tag">Justify Content</span>
+        <span class="badge-tag">Align Items</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* ==========================================================================
+   TASK 4: CSS GRID LAYOUT
+   Author: Internnova Internship - Week 2 Assignment
+   Topic: Grid Container, Rows & Columns (fr, repeat, minmax), Grid Gap,
+          Item Placement (grid-column/row span), Bento Grid, and Dashboard Layouts.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GRID FUNDAMENTALS (fr units, repeat, minmax)
+   -------------------------------------------------------------------------- */
+.grid-intro-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .grid-intro-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-cell {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px dashed rgba(99, 102, 241, 0.4);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #c7d2fe;
+}
+
+.grid-cell-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. GRID ITEM PLACEMENT (Spanning Rows & Columns)
+   -------------------------------------------------------------------------- */
+.spanning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .spanning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .spanning-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.span-cell {
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.span-cell:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+/* Spans 2 Columns */
+.col-span-2 {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #e0e7ff;
+}
+
+/* Spans 2 Rows */
+.row-span-2 {
+  grid-row: span 2;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(14, 165, 233, 0.2));
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #e0f2fe;
+}
+
+/* Spans full width (1 / -1) */
+.span-full {
+  grid-column: 1 / -1;
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.35);
+  color: #fbcfe8;
+}
+
+/* --------------------------------------------------------------------------
+   3. MODERN BENTO GRID SHOWCASE
+   -------------------------------------------------------------------------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-item {
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+}
+
+.bento-large-hero {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.25), transparent 70%),
+              rgba(17, 24, 39, 0.9);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+.bento-tall {
+  grid-row: span 2;
+}
+
+.bento-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.bento-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.bento-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   4. STRUCTURED DASHBOARD GRID LAYOUT
+   -------------------------------------------------------------------------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* Metric stat widgets (each 3 columns = 4 cards in 12-col grid) */
+.dash-card-stat {
+  grid-column: span 3;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Large Analytics Chart Panel (8 cols) */
+.dash-card-main {
+  grid-column: span 8;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Side Activity Panel (4 cols) */
+.dash-card-side {
+  grid-column: span 4;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 260px;
+}
+
+@media (max-width: 1024px) {
+  .dash-card-stat { grid-column: span 6; }
+  .dash-card-main { grid-column: span 12; }
+  .dash-card-side { grid-column: span 12; }
+}
+
+@media (max-width: 600px) {
+  .dash-card-stat { grid-column: span 12; }
+}
+
+/* Visual bar chart inside dashboard */
+.mock-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 120px;
+  padding-top: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+}
+
+.chart-bar {
+  flex: 1;
+  background: linear-gradient(to top, #6366f1, #38bdf8);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+  min-height: 20px;
+}
+
+.chart-bar:hover {
+  background: linear-gradient(to top, #4f46e5, #06b6d4);
+  filter: brightness(1.2);
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE CSS GRID GALLERY
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-card-bg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.gallery-card:hover .gallery-card-bg {
+  transform: scale(1.08);
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 15, 29, 0.9) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.gallery-tag {
+  font-size: 0.7rem;
+  color: #38bdf8;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gallery-title {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}

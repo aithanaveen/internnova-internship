@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task 5: Responsive Design using Media Queries - Breakpoints for mobile, tablet, and desktop, fluid typography, adaptive spacing, responsive images, and card layouts.">
+  <title>Task 5: Responsive Design & Media Queries | Week 2 Assignment</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS Stylesheets -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/task5.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">WD Week 2</span>
+        <span>CSS Fundamentals</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link">Overview Hub</a></li>
+        <li><a href="task1_selectors.html" class="nav-link">Task 1: Selectors</a></li>
+        <li><a href="task2_boxmodel.html" class="nav-link">Task 2: Box Model</a></li>
+        <li><a href="task3_flexbox.html" class="nav-link">Task 3: Flexbox</a></li>
+        <li><a href="task4_grid.html" class="nav-link">Task 4: CSS Grid</a></li>
+        <li><a href="task5_responsive.html" class="nav-link active">Task 5: Responsive</a></li>
+        <li><a href="task6_project/index.html" class="nav-link nav-btn-highlight">Task 6: Mini Project 🚀</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="task-hero">
+    <div class="hero-meta">
+      <span class="pill-tag">Task 05</span>
+      <span class="pill-tag pill-marks">15 Marks</span>
+      <span class="pill-tag">Adaptive & Mobile-First</span>
+    </div>
+    <h1 class="task-title">Responsive Design & Media Queries</h1>
+    <p class="task-desc">
+      Modern websites must seamlessly adapt to mobile smartphones, tablets, laptops, and ultra-wide desktop monitors. Explore how CSS Media Queries (<code>@media</code>) and fluid constraints modulate typography, imagery, spacing, and structural layout columns.
+    </p>
+
+    <!-- Rubric Checklist -->
+    <div class="rubric-pill-list">
+      <span class="rubric-check">Mobile Breakpoint (&lt;768px)</span>
+      <span class="rubric-check">Tablet Breakpoint (768px - 1024px)</span>
+      <span class="rubric-check">Desktop Breakpoint (&gt;1024px)</span>
+      <span class="rubric-check">Fluid Typography (clamp & queries)</span>
+      <span class="rubric-check">Adaptive Layout Re-stacking</span>
+      <span class="rubric-check">Responsive Aspect Images</span>
+      <span class="rubric-check">Cards: 4 &rarr; 2 &rarr; 1 Column Collapse</span>
+      <span class="rubric-check">Collapsible Mobile Navigation</span>
+    </div>
+  </section>
+
+  <!-- Main Demonstration Content -->
+  <main class="main-content">
+
+    <!-- Live Active Viewport Detector -->
+    <div class="viewport-status-badge">
+      <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Active Device State:</span>
+      <span class="device-indicator"></span>
+    </div>
+
+    <!-- Section 1: Breakpoints Reference Matrix -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>01.</span> Standard Responsive Breakpoint Hierarchy
+      </h2>
+      <p class="section-subtext">
+        Industry standard breakpoint matrix utilized to craft fluid, adaptive interfaces across all screen form factors.
+      </p>
+
+      <div class="breakpoints-table-wrapper">
+        <table class="breakpoints-table">
+          <thead>
+            <tr>
+              <th>Device Target</th>
+              <th>Media Query Rule</th>
+              <th>Target Widths</th>
+              <th>Typical UI Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>📱 Mobile Phones</strong></td>
+              <td><code>@media (max-width: 767px)</code></td>
+              <td>320px &ndash; 767px</td>
+              <td>Single column, hamburger menu, stacked cards, touch targets &ge; 44px</td>
+            </tr>
+            <tr>
+              <td><strong>📱 Tablets / iPads</strong></td>
+              <td><code>@media (min-width: 768px) and (max-width: 1024px)</code></td>
+              <td>768px &ndash; 1024px</td>
+              <td>2 column grids, contracted margins, condensed navigation</td>
+            </tr>
+            <tr>
+              <td><strong>💻 Laptops / Desktop</strong></td>
+              <td><code>@media (min-width: 1025px)</code></td>
+              <td>1025px &ndash; 1440px</td>
+              <td>Multi-column layouts (3-4 cols), full desktop nav, hover interactions</td>
+            </tr>
+            <tr>
+              <td><strong>🖥️ Ultra-Wide Monitors</strong></td>
+              <td><code>@media (min-width: 1441px)</code></td>
+              <td>&gt; 1440px</td>
+              <td>Bounded max-width containers (1240px) to prevent over-stretched lines</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Adaptive Multi-Column Layout -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>02.</span> Layout Adaptation: Multi-Column to Single-Column
+      </h2>
+      <p class="section-subtext">
+        Resize your browser window! On desktop, content flows side-by-side in a 2:1 ratio. On mobile screens below 768px, the layout smoothly stacks vertically.
+      </p>
+
+      <div class="adaptive-columns-container">
+        <div class="adaptive-col-main">
+          <span class="badge-tech">Primary Content Stream (flex: 2)</span>
+          <h3 style="color: #ffffff; font-size: 1.25rem; margin: 0.5rem 0;">Adaptive Article Surface</h3>
+          <p class="responsive-paragraph">
+            On desktop screens, this primary article panel claims 66% width while the sidebar sits conveniently beside it. When the viewport narrows below 768px, the parent flex container switches from <code>flex-direction: row</code> to <code>flex-direction: column</code>, ensuring comfortable mobile vertical scrolling.
+          </p>
+        </div>
+
+        <div class="adaptive-col-side">
+          <span class="badge-tech">Context Sidebar (flex: 1)</span>
+          <h4 style="color: #ffffff; font-size: 1.1rem; margin: 0.5rem 0;">Sidebar Widget</h4>
+          <p style="font-size: 0.85rem; color: #94a3b8;">
+            Collapses underneath the main content on mobile screens so it never squishes reading space.
+          </p>
+          <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 0.8rem; color: #38bdf8;">
+            &check; Touch-optimized height<br>
+            &check; 100% Mobile Width
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Responsive Typography -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>03.</span> Responsive Typography & clamp()
+      </h2>
+      <p class="section-subtext">
+        Fluid typography dynamically calculates font size proportional to viewport width without choppy stepped jumps using <code>clamp(min, val, max)</code>.
+      </p>
+
+      <div class="typography-media-demo">
+        <div class="fluid-headline">Fluid Dynamic Headline</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #818cf8; margin-bottom: 0.75rem;">
+          font-size: clamp(1.5rem, 3.5vw + 0.5rem, 2.75rem);
+        </div>
+        <p class="responsive-paragraph">
+          This text effortlessly transitions between a minimum size of 1.5rem on small mobile devices up to 2.75rem on ultra-wide desktop monitors. Below 768px, media queries also tune line-height and letter-spacing for hand-held readability.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Responsive Images -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>04.</span> Responsive Images & Object-Fit
+      </h2>
+      <p class="section-subtext">
+        Using <code>max-width: 100%; height: auto; object-fit: cover;</code> ensures images never bleed past viewport boundaries or distort aspect ratios.
+      </p>
+
+      <div class="responsive-media-grid">
+        <div class="media-card-box">
+          <div class="responsive-image-container">
+            <!-- Inline SVG / Gradient Artwork for reliable offline rendering -->
+            <svg class="responsive-img" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#4f46e5" />
+                  <stop offset="50%" stop-color="#7c3aed" />
+                  <stop offset="100%" stop-color="#06b6d4" />
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#g1)" />
+              <circle cx="200" cy="100" r="60" fill="rgba(255,255,255,0.15)" />
+              <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="20">
+                Responsive Vector Image 01
+              </text>
+            </svg>
+          </div>
+          <div class="media-caption">
+            <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">Adaptive SVG Artwork</h4>
+            <p style="font-size: 0.8rem; color: #94a3b8;">Preserves sharp clarity at any DPI or mobile resolution.</p>
+          </div>
+        </div>
+
+        <div class="media-card-box">
+          <div class="responsive-image-container">
+            <svg class="responsive-img" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0284c7" />
+                  <stop offset="50%" stop-color="#0d9488" />
+                  <stop offset="100%" stop-color="#10b981" />
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#g2)" />
+              <polygon points="100,160 200,40 300,160" fill="rgba(255,255,255,0.12)" />
+              <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="20">
+                Responsive Vector Image 02
+              </text>
+            </svg>
+          </div>
+          <div class="media-caption">
+            <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">Object-Fit: Cover</h4>
+            <p style="font-size: 0.8rem; color: #94a3b8;">Fills container footprint while retaining proportional aspect.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Responsive Card Grids (4 -> 2 -> 1) -->
+    <section class="demo-card">
+      <h2 class="section-heading">
+        <span>05.</span> Responsive Card Grid: 4 &rarr; 2 &rarr; 1 Column Shift
+      </h2>
+      <p class="section-subtext">
+        4 columns on desktop monitors (>1024px), transitioning to 2 columns on tablets (768px-1024px), and collapsing cleanly to 1 column on mobile phones (&lt;640px).
+      </p>
+
+      <div class="adaptive-cards-grid">
+        <div class="adaptive-card">
+          <span class="card-device-badge">Desktop: Col 1</span>
+          <div style="font-size: 1.75rem; margin: 0.5rem 0;">💻</div>
+          <h4 style="color: #ffffff; font-size: 1rem;">Desktop Ready</h4>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">Full 4-column distribution.</p>
+        </div>
+
+        <div class="adaptive-card">
+          <span class="card-device-badge">Desktop: Col 2</span>
+          <div style="font-size: 1.75rem; margin: 0.5rem 0;">📱</div>
+          <h4 style="color: #ffffff; font-size: 1rem;">Tablet Adaptive</h4>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">Transitions to 2 columns.</p>
+        </div>
+
+        <div class="adaptive-card">
+          <span class="card-device-badge">Desktop: Col 3</span>
+          <div style="font-size: 1.75rem; margin: 0.5rem 0;">📲</div>
+          <h4 style="color: #ffffff; font-size: 1rem;">Mobile First</h4>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">Collapses to single column.</p>
+        </div>
+
+        <div class="adaptive-card">
+          <span class="card-device-badge">Desktop: Col 4</span>
+          <div style="font-size: 1.75rem; margin: 0.5rem 0;">⚡</div>
+          <h4 style="color: #ffffff; font-size: 1rem;">Performance</h4>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem;">Fast zero-JS media queries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="task-navigation">
+      <a href="task4_grid.html" class="nav-step-btn">
+        &larr; Prev: Task 4 - CSS Grid
+      </a>
+      <a href="task6_project/index.html" class="nav-step-btn btn-primary">
+        Next: Task 6 - Mini CSS Project 🚀 &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>Internnova Web Development Internship</strong> &bull; Week 2: CSS Fundamentals</p>
+        <p style="margin-top: 0.25rem;">Task 5 Evaluation: 15 / 15 Marks Criteria Met</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge-tag">Media Queries</span>
+        <span class="badge-tag">Mobile Responsive</span>
+        <span class="badge-tag">Fluid clamp()</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

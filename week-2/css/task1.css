@@ -1,0 +1,446 @@
+/* ==========================================================================
+   TASK 1: INTRODUCTION TO CSS & SELECTORS
+   Author: Internnova Internship - Week 2 Assignment
+   Topic: CSS Syntax, External CSS, Element/Class/ID/Universal Selectors,
+          Colors (HEX, RGB, RGBA, HSL), Backgrounds, Typography & Alignment.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. UNIVERSAL SELECTOR (*)
+   Matches every single element on the document. Commonly used for CSS resets.
+   -------------------------------------------------------------------------- */
+* {
+  /* Box-sizing ensures padding and border are included in element's total width and height */
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. ELEMENT / TYPE SELECTORS
+   Selects HTML elements directly by tag name.
+   -------------------------------------------------------------------------- */
+/* Element Selector: h1 */
+h1.task-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Element Selector: h2 */
+h2.demo-subheading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid #38bdf8;
+  padding-left: 0.75rem;
+}
+
+/* Element Selector: h3 */
+h3.selector-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+
+/* Element Selector: p (Paragraphs) */
+p.content-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+/* Element Selector: blockquote */
+blockquote.quote-box {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #e0e7ff;
+  border-left: 4px solid #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+blockquote.quote-box cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-top: 0.5rem;
+}
+
+/* Element Selector: strong & em */
+strong.highlight-text {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+em.accent-italic {
+  color: #f472b6;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   3. CLASS SELECTORS (.className)
+   Reusable rules applied to any elements bearing the class attribute.
+   -------------------------------------------------------------------------- */
+/* Class Selector: Primary Card */
+.selector-card {
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.selector-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Class Selector: Badges */
+.badge-tech {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+/* Class Selector: Button Variants */
+.btn-demo-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-demo-primary:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.5);
+}
+
+.btn-demo-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #38bdf8;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-demo-outline:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. ID SELECTORS (#idName)
+   Targets a unique element on the page (highest specificity among standard selectors).
+   -------------------------------------------------------------------------- */
+#unique-featured-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 14px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#unique-featured-banner::after {
+  content: "ID: #unique-featured-banner";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #818cf8;
+  background: rgba(10, 15, 29, 0.8);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+#special-announcement-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. COLOR FORMAT DEMONSTRATIONS (HEX, RGB, RGBA, HSL, HSLA, CSS Variables)
+   -------------------------------------------------------------------------- */
+.color-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.color-swatch {
+  border-radius: 10px;
+  padding: 1.25rem;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 110px;
+}
+
+.color-swatch span.swatch-label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.color-swatch span.swatch-code {
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+/* HEX Color */
+.color-hex {
+  background-color: #6366f1; /* 6-digit Hexadecimal */
+}
+
+/* RGB Color */
+.color-rgb {
+  background-color: rgb(236, 72, 153); /* Red, Green, Blue integers 0-255 */
+}
+
+/* RGBA Color with Opacity */
+.color-rgba {
+  background-color: rgba(6, 182, 212, 0.65); /* With alpha transparency */
+}
+
+/* HSL Color */
+.color-hsl {
+  background-color: hsl(142, 71%, 45%); /* Hue: 142deg, Saturation: 71%, Lightness: 45% */
+}
+
+/* HSLA Color */
+.color-hsla {
+  background-color: hsla(38, 92%, 50%, 0.8); /* With alpha transparency */
+}
+
+/* CSS Custom Property Variable Color */
+.color-variable {
+  background-color: var(--primary, #6366f1);
+}
+
+/* --------------------------------------------------------------------------
+   6. BACKGROUND STYLING (Solid, Gradients, Attachment, Clip)
+   -------------------------------------------------------------------------- */
+.bg-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.bg-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Linear Gradient Background (Angled) */
+.bg-linear-grad {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+}
+
+/* Radial Gradient Background */
+.bg-radial-grad {
+  background: radial-gradient(circle at center, #06b6d4 0%, #0e7490 70%, #082f49 100%);
+}
+
+/* Repeating Pattern Gradient */
+.bg-pattern-grad {
+  background: repeating-linear-gradient(
+    45deg,
+    #1e293b,
+    #1e293b 10px,
+    #0f172a 10px,
+    #0f172a 20px
+  );
+}
+
+/* Gradient Text Effect via background-clip: text */
+.gradient-text-preview {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. FONT STYLING & TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.typography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.type-sample-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.type-label {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Font Family variations */
+.font-sans-sample {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.font-mono-sample {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: #38bdf8;
+}
+
+.font-serif-sample {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #fbcfe8;
+}
+
+/* Font Weights */
+.weight-light { font-weight: 300; }
+.weight-regular { font-weight: 400; }
+.weight-semibold { font-weight: 600; }
+.weight-extrabold { font-weight: 800; }
+
+/* Text Transformations */
+.transform-uppercase { text-transform: uppercase; letter-spacing: 0.12em; }
+.transform-capitalize { text-transform: capitalize; }
+.transform-lowercase { text-transform: lowercase; }
+
+/* Line Height and Letter Spacing */
+.spaced-text {
+  letter-spacing: 0.15em;
+  line-height: 2;
+  color: #cbd5e1;
+}
+
+/* --------------------------------------------------------------------------
+   8. TEXT ALIGNMENT & DECORATION
+   -------------------------------------------------------------------------- */
+.alignment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.align-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/* Text Decorations & Text Shadows */
+.text-underlined {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #6366f1;
+}
+
+.text-linethrough {
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  color: #94a3b8;
+}
+
+.text-shadow-neon {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 20px rgba(99, 102, 241, 0.5);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
