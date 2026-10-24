@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1: Linking JavaScript with HTML | Internnova Week 3</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.2);
+            --code-bg: #090d16;
+            --border-color: #334155;
+            --success-color: #4ade80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-box {
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box strong {
+            color: var(--accent-color);
+        }
+
+        .instructions {
+            background: #111827;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .instructions h3 {
+            font-size: 1.1rem;
+            color: var(--success-color);
+            margin-bottom: 0.5rem;
+        }
+
+        kbd {
+            background: #374151;
+            color: #f9fafb;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border: 1px solid #4b5563;
+        }
+
+        .code-snippet {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .code-tag {
+            color: #f43f5e;
+        }
+        .code-attr {
+            color: #38bdf8;
+        }
+        .code-val {
+            color: #facc15;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="badge">Task 1 Requirement</span>
+        <h1>Linking JavaScript with an HTML File</h1>
+        <p class="subtitle">Week 3 Assignment: JavaScript Fundamentals (Part 1)</p>
+
+        <div class="info-box">
+            <strong>Demonstration Concept:</strong> This HTML document demonstrates how an external JavaScript file (<code>js/task1_basics.js</code>) is linked to a web page using the standard HTML <code>&lt;script&gt;</code> element.
+        </div>
+
+        <h3>External Script Linking Code:</h3>
+        <div class="code-snippet">
+            &lt;<span class="code-tag">script</span> <span class="code-attr">src</span>=<span class="code-val">"js/task1_basics.js"</span>&gt;&lt;/<span class="code-tag">script</span>&gt;
+        </div>
+
+        <div class="instructions">
+            <h3>How to View the Output:</h3>
+            <ol style="margin-left: 1.25rem; color: var(--text-secondary); line-height: 1.8;">
+                <li>Open your browser's Developer Tools by pressing <kbd>F12</kbd> or <kbd>Ctrl + Shift + I</kbd> (Windows) / <kbd>Cmd + Option + I</kbd> (Mac).</li>
+                <li>Click on the <strong>Console</strong> tab.</li>
+                <li>You will see all output messages generated by <code>console.log()</code> from <code>task1_basics.js</code>.</li>
+            </ol>
+        </div>
+
+        <p style="color: var(--text-secondary);">
+            Return to the complete multi-task project dashboard:
+        </p>
+        <a href="index.html" class="back-link">&larr; Go to Assignment Overview & All Tasks</a>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- Task 1: Linking External JavaScript File with HTML File   -->
+    <!-- ======================================================== -->
+    <script src="js/task1_basics.js"></script>
+
+</body>
+</html>

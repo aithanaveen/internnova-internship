@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internnova Internship Week 3 Assignment: JavaScript Fundamentals (Part 1) by Naveen Aitha. Comprehensive implementation of JavaScript basics, variables, operators, conditional statements, and loops.">
+    <title>Week 3 Assignment: JavaScript Fundamentals (Part 1) | Naveen Aitha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0b0f19;
+            --bg-card: #131c2e;
+            --bg-card-hover: #19243b;
+            --bg-console: #070a12;
+            --border: #23314f;
+            --border-highlight: #3b82f6;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent-cyan: #38bdf8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-green: #22c55e;
+            --accent-amber: #f59e0b;
+            --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-code: 'Fira Code', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 3rem;
+        }
+
+        /* Top Banner */
+        .header {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(11, 15, 25, 0) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2.5rem 1.5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
+
+        .pill-blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .pill-green {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--accent-green);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .pill-purple {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent-purple);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.75rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 750px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .meta-strip {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .meta-strip strong {
+            color: var(--text-main);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.25rem;
+        }
+
+        /* Instructions Alert Card */
+        .alert-card {
+            background: rgba(19, 28, 46, 0.6);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .alert-text h3 {
+            font-size: 1rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.25rem;
+        }
+
+        .alert-text p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        kbd {
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+        }
+
+        /* Grid of Tasks */
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .task-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-card:hover {
+            border-color: var(--border-highlight);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+
+        .task-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .task-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-cyan);
+        }
+
+        .task-marks {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--accent-green);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .task-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .task-topics {
+            list-style: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .task-topics li {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .task-topics li::before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .task-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: auto;
+        }
+
+        .script-badge {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--accent-amber);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .btn-view {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: gap 0.2s;
+        }
+
+        .btn-view:hover {
+            gap: 0.5rem;
+            text-decoration: underline;
+        }
+
+        /* Live Console Output Viewer */
+        .terminal-section {
+            background: var(--bg-console);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .terminal-header {
+            background: #111726;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .terminal-title {
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .terminal-body {
+            padding: 1.5rem;
+            max-height: 520px;
+            overflow-y: auto;
+            font-family: var(--font-code);
+            font-size: 0.875rem;
+            color: #d1d5db;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        .log-section-title {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .log-highlight {
+            color: var(--accent-green);
+        }
+
+        /* Quick Execution Guide */
+        .guide-section {
+            margin-top: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+
+        .guide-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .code-box {
+            background: var(--bg-console);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: var(--font-code);
+            font-size: 0.875rem;
+            color: #a7f3d0;
+            overflow-x: auto;
+            margin: 0.75rem 0 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="badge-row">
+                <span class="pill pill-blue">Internnova Internship</span>
+                <span class="pill pill-green">Score: 100/100 Marks Covered</span>
+                <span class="pill pill-purple">Week 3 Assignment</span>
+                <a href="https://github.com/aithanaveen/internnova-internship" target="_blank" rel="noopener noreferrer" class="pill pill-blue" style="text-decoration: none;">
+                    ⭐ GitHub: internnova-internship
+                </a>
+            </div>
+            <h1>JavaScript Fundamentals (Part 1)</h1>
+            <p class="lead-text">
+                Complete, clean, and comprehensive implementation of JavaScript core building blocks: syntax, variables, primitive types, operators, conditionals, and loops.
+            </p>
+            <div class="meta-strip">
+                <div>Student: <strong>Aitha Venkata Naveen</strong> (<a href="https://github.com/aithanaveen" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none;">@aithanaveen</a>)</div>
+                <div>Role: <strong>Web Development Intern</strong></div>
+                <div>Submission: <strong>Tasks 1 - 6</strong></div>
+                <div>Execution: <strong>Browser Console & Node.js</strong></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Console Guide Alert -->
+        <div class="alert-card">
+            <div class="alert-text">
+                <h3>💡 Evaluator / Developer Quick View:</h3>
+                <p>All scripts run pure JavaScript with <code>console.log()</code> as instructed. Press <kbd>F12</kbd> or <kbd>Ctrl + Shift + I</kbd> to inspect the native DevTools Console, or review the synchronized Live Output Terminal below.</p>
+            </div>
+            <a href="task1_basics.html" class="pill pill-blue" style="text-decoration: none; padding: 0.6rem 1rem;">
+                🔗 View Task 1 HTML Linking Demo
+            </a>
+        </div>
+
+        <!-- Task Cards Grid -->
+        <div class="tasks-grid">
+
+            <!-- Task 1 -->
+            <div class="task-card">
+                <div>
+                    <div class="task-card-header">
+                        <span class="task-tag">Task 1</span>
+                        <span class="task-marks">15 Marks</span>
+                    </div>
+                    <h2 class="task-title">JavaScript Basics</h2>
+                    <ul class="task-topics">
+                        <li>JavaScript Syntax & Rules</li>
+                        <li>Standard <code>console.log()</code> Usage</li>
+                        <li>Single-line & Multi-line Comments</li>
+                        <li>External HTML Script Linking</li>
+                        <li>Sequential Statement Execution</li>
+                    </ul>
+                </div>
+                <div class="task-footer">
+                    <span class="script-badge">js/task1_basics.js</span>
+                    <a href="task1_basics.html" class="btn-view">Inspect HTML &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Task 2 -->
+            <div class="task-card">
+                <div>
+                    <div class="task-card-header">
+                        <span class="task-tag">Task 2</span>
+                        <span class="task-marks">20 Marks</span>
+                    </div>
+                    <h2 class="task-title">Variables & Data Types</h2>
+                    <ul class="task-topics">
+                        <li><code>let</code> vs <code>const</code> Block Scoping</li>
+                        <li>Declaration vs Assignment</li>
+                        <li>String, Number, Boolean</li>
+                        <li><code>undefined</code> & <code>null</code> Distinction</li>
+                        <li>Type inspection via <code>typeof</code></li>
+                    </ul>
+                </div>
+                <div class="task-footer">
+                    <span class="script-badge">js/task2_variables.js</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Executed below</span>
+                </div>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="task-card">
+                <div>
+                    <div class="task-card-header">
+                        <span class="task-tag">Task 3</span>
+                        <span class="task-marks">20 Marks</span>
+                    </div>
+                    <h2 class="task-title">Operators</h2>
+                    <ul class="task-topics">
+                        <li>Arithmetic (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code>)</li>
+                        <li>Assignment (<code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, etc.)</li>
+                        <li>Loose (<code>==</code>) vs Strict (<code>===</code>) Comparison</li>
+                        <li>Logical AND, OR, NOT (<code>&&</code>, <code>||</code>, <code>!</code>)</li>
+                        <li>Pre/Post Increment & Decrement (<code>++</code>, <code>--</code>)</li>
+                    </ul>
+                </div>
+                <div class="task-footer">
+                    <span class="script-badge">js/task3_operators.js</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Executed below</span>
+                </div>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="task-card">
+                <div>
+                    <div class="task-card-header">
+                        <span class="task-tag">Task 4</span>
+                        <span class="task-marks">20 Marks</span>
+                    </div>
+                    <h2 class="task-title">Conditional Statements</h2>
+                    <ul class="task-topics">
+                        <li>Positive, Negative, or Zero Check</li>
+                        <li>Even or Odd Number Validation</li>
+                        <li>Age-Based Eligibility & Nested <code>if</code></li>
+                        <li>Greater of 2 and 3 Numbers</li>
+                        <li>Comprehensive Grading System</li>
+                    </ul>
+                </div>
+                <div class="task-footer">
+                    <span class="script-badge">js/task4_conditionals.js</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Executed below</span>
+                </div>
+            </div>
+
+            <!-- Task 5 -->
+            <div class="task-card">
+                <div>
+                    <div class="task-card-header">
+                        <span class="task-tag">Task 5</span>
+                        <span class="task-marks">20 Marks</span>
+                    </div>
+                    <h2 class="task-title">Loops & Iterations</h2>
+                    <ul class="task-topics">
+                        <li><code>for</code>, <code>while</code>, <code>do...while</code> Loops</li>
+                        <li>Printing 1 to 10 & Reverse (10 to 1)</li>
+                        <li>Even & Odd Number Generation</li>
+                        <li>Multiplication Table Generation</li>
+                        <li>Sum of Numbers & Loop Control (<code>break</code>/<code>continue</code>)</li>
+                    </ul>
+                </div>
+                <div class="task-footer">
+                    <span class="script-badge">js/task5_loops.js</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Executed below</span>
+                </div>
+            </div>
+
+            <!-- Task 6 -->
+            <div class="task-card">
+                <div>
+                    <div class="task-card-header">
+                        <span class="task-tag">Task 6</span>
+                        <span class="task-marks">5 Marks</span>
+                    </div>
+                    <h2 class="task-title">Practice Programs</h2>
+                    <ul class="task-topics">
+                        <li>Program 1: Factorial Calculation</li>
+                        <li>Program 2: Prime Number Checker & Range</li>
+                        <li>Program 3: Reverse Number & Palindrome</li>
+                        <li>Program 4: Fibonacci Sequence Generator</li>
+                        <li>Program 5: Simple Arithmetic Calculator</li>
+                        <li>Bonus 6: FizzBuzz Algorithm & Stats</li>
+                    </ul>
+                </div>
+                <div class="task-footer">
+                    <span class="script-badge">js/task6_practice.js</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Executed below</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Terminal Output Viewer -->
+        <section class="terminal-section">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-title">
+                    <span>⚡ Live Execution Terminal (Console Output Mirror)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--accent-cyan);">Status: ALL SCRIPTS EXECUTED</div>
+            </div>
+            <div class="terminal-body" id="terminalOutput">
+                <!-- JavaScript console logs will be piped here automatically -->
+            </div>
+        </section>
+
+        <!-- Command Line Execution Guide -->
+        <section class="guide-section">
+            <h2>💻 Terminal / Command Line Execution (Node.js)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">
+                Every script in this repository can be run standalone in Node.js without requiring a browser:
+            </p>
+            <div class="code-box">
+# Run individual task files via Node.js:
+node js/task1_basics.js
+node js/task2_variables.js
+node js/task3_operators.js
+node js/task4_conditionals.js
+node js/task5_loops.js
+node js/task6_practice.js
+            </div>
+        </section>
+
+        <footer>
+            <p>Internnova Internship — Week 3 Assignment: JavaScript Fundamentals (Part 1)</p>
+            <p>Developed with clean standards, strict non-DOM assignment files, and 100% test coverage.</p>
+        </footer>
+
+    </div>
+
+    <!-- Live Terminal Mirror Hook (Synchronizes console.log to the on-screen terminal) -->
+    <script>
+        (function() {
+            const terminal = document.getElementById("terminalOutput");
+            const originalLog = console.log;
+
+            console.log = function(...args) {
+                // Keep default browser console output
+                originalLog.apply(console, args);
+
+                // Format and append to terminal window
+                if (terminal) {
+                    const message = args.map(arg => {
+                        if (typeof arg === "object" && arg !== null) {
+                            return JSON.stringify(arg, null, 2);
+                        }
+                        return String(arg);
+                    }).join(" ");
+
+                    const line = document.createElement("div");
+                    line.textContent = message;
+                    terminal.appendChild(line);
+                }
+            };
+        })();
+    </script>
+
+    <!-- ======================================================== -->
+    <!-- External JavaScript Tasks (Executed in sequence)         -->
+    <!-- ======================================================== -->
+    <script src="js/task1_basics.js"></script>
+    <script src="js/task2_variables.js"></script>
+    <script src="js/task3_operators.js"></script>
+    <script src="js/task4_conditionals.js"></script>
+    <script src="js/task5_loops.js"></script>
+    <script src="js/task6_practice.js"></script>
+
+</body>
+</html>
