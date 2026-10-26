@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Week 4 Assignment: JavaScript Fundamentals Part 2 - Functions, Arrays, Objects, DOM Manipulation, Events, and EduTrack Pro Mini Project by Aitha Naveen for Internnova Internship.">
+  <meta name="author" content="Aitha Naveen">
+  <meta name="keywords" content="JavaScript, Functions, Arrays, Objects, DOM Manipulation, Events, Web Development, Internnova">
+  <title>Week 4 Assignment: JavaScript Fundamentals – Part 2 | Internnova</title>
+  
+  <!-- Modern Fonts & Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Navigation Bar
+       ========================================================================= -->
+  <nav class="navbar" id="main-nav">
+    <div class="brand-container">
+      <div class="brand-logo-badge" id="brand-logo">JS</div>
+      <div class="brand-title">
+        <span>JavaScript Fundamentals</span>
+        <span class="brand-subtitle">Week 4 Assignment • Part 2</span>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://github.com/aithanaveen" target="_blank" rel="noopener noreferrer" class="badge-student" id="student-badge" style="text-decoration: none; color: inherit;" title="View GitHub Profile">
+        👨‍💻 Student: <span>Aitha Naveen</span>
+      </a>
+      <a href="https://github.com/aithanaveen/internnova-internship" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="github-repo-btn" style="text-decoration: none; gap: 0.4rem;" title="View Repository on GitHub">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: text-bottom;">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        <span>GitHub Repo</span>
+      </a>
+      <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">
+        <span id="theme-icon">☀️</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       2. Hero Banner
+       ========================================================================= -->
+  <header class="hero-banner">
+    <div class="hero-card" id="hero-card">
+      <div class="hero-content">
+        <h1>JavaScript Fundamentals – Part 2</h1>
+        <p>
+          Mastering modern JavaScript architecture: Functions, Arrays, Objects, 
+          Dynamic DOM Manipulation, Event Listeners, and a comprehensive Student Record Manager.
+        </p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-box">
+          <span class="stat-val" id="stat-marks-val">100</span>
+          <span class="stat-lbl">Total Marks</span>
+        </div>
+        <div class="hero-stat-box">
+          <span class="stat-val" id="stat-tasks-val">6 / 6</span>
+          <span class="stat-lbl">Tasks Done</span>
+        </div>
+        <div class="hero-stat-box">
+          <span class="stat-val" id="stat-engine-val">ES6+</span>
+          <span class="stat-lbl">Modern JS</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. Tab Navigation Bar
+       ========================================================================= -->
+  <nav class="tabs-container" aria-label="Task Navigation">
+    <div class="tabs-wrapper" id="tabs-wrapper">
+      <button class="tab-btn active" data-target="overview-panel" id="tab-btn-overview">
+        <span>📌 Overview</span>
+        <span class="tab-badge">Intro</span>
+      </button>
+      <button class="tab-btn" data-target="task1-panel" id="tab-btn-task1">
+        <span>⚡ Task 1: Functions</span>
+        <span class="tab-badge">20M</span>
+      </button>
+      <button class="tab-btn" data-target="task2-panel" id="tab-btn-task2">
+        <span>📦 Task 2: Arrays</span>
+        <span class="tab-badge">20M</span>
+      </button>
+      <button class="tab-btn" data-target="task3-panel" id="tab-btn-task3">
+        <span>🏷️ Task 3: Objects</span>
+        <span class="tab-badge">15M</span>
+      </button>
+      <button class="tab-btn" data-target="task4-panel" id="tab-btn-task4">
+        <span>🎨 Task 4: DOM</span>
+        <span class="tab-badge">20M</span>
+      </button>
+      <button class="tab-btn" data-target="task5-panel" id="tab-btn-task5">
+        <span>🎯 Task 5: Events</span>
+        <span class="tab-badge">15M</span>
+      </button>
+      <button class="tab-btn" data-target="task6-panel" id="tab-btn-task6">
+        <span>🚀 Task 6: Mini Project</span>
+        <span class="tab-badge">10M</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       4. Main Content Area & Task Panels
+       ========================================================================= -->
+  <main class="main-container" id="main-content">
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 0: OVERVIEW & EVALUATION DASHBOARD
+         --------------------------------------------------------------------- -->
+    <section class="task-panel active" id="overview-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">📋</div>
+          <div>
+            <h2>Assignment Overview & Rubric</h2>
+            <p>Comprehensive roadmap of all 6 tasks completed in this assignment</p>
+          </div>
+        </div>
+        <div class="marks-badge">Evaluation: 100 Marks</div>
+      </div>
+
+      <div class="grid-3">
+        <!-- Task 1 Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Task 1: Functions</h3>
+            <span class="card-badge">20 Marks</span>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+            Demonstrates Function Declarations, Parameters, Arguments, Return Values, Function Composition pipelines, and ES6 Arrow Functions.
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" onclick="switchTaskTab('task1-panel')">Explore Functions ➔</button>
+        </div>
+
+        <!-- Task 2 Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Task 2: Arrays</h3>
+            <span class="card-badge">20 Marks</span>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+            Creating, accessing, adding (push/unshift), removing (pop/shift/splice), updating, iterating, and high-order methods (map, filter, reduce, sort).
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" onclick="switchTaskTab('task2-panel')">Explore Arrays ➔</button>
+        </div>
+
+        <!-- Task 3 Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Task 3: Objects</h3>
+            <span class="card-badge">15 Marks</span>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+            Creating objects, properties, dot & bracket notation access, updating, dynamic property addition, deletion via <code>delete</code>, and 3 practical scenarios.
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" onclick="switchTaskTab('task3-panel')">Explore Objects ➔</button>
+        </div>
+
+        <!-- Task 4 Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Task 4: DOM Manipulation</h3>
+            <span class="card-badge">20 Marks</span>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+            Dynamic DOM selection, textContent, innerHTML, dynamic CSS styles, createElement, appendChild, remove, and interactive sandbox.
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" onclick="switchTaskTab('task4-panel')">Explore DOM ➔</button>
+        </div>
+
+        <!-- Task 5 Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Task 5: Events</h3>
+            <span class="card-badge">15 Marks</span>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+            Event-driven programming covering click, input, change, submit, mouse move/hover coordinates, keyboard keystroke tracking, and telemetry log.
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" onclick="switchTaskTab('task5-panel')">Explore Events ➔</button>
+        </div>
+
+        <!-- Task 6 Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Task 6: Mini Project</h3>
+            <span class="card-badge">10 Marks</span>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+            <strong>EduTrack Pro</strong>: Interactive Student Record & Performance Manager combining Functions, Arrays, Objects, DOM, Events, and LocalStorage.
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" onclick="switchTaskTab('task6-panel')">Launch EduTrack Pro ➔</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 1: TASK 1 (FUNCTIONS - 20 MARKS)
+         --------------------------------------------------------------------- -->
+    <section class="task-panel" id="task1-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">⚡</div>
+          <div>
+            <h2>Task 1: JavaScript Functions</h2>
+            <p>Declarations, Parameters, Arguments, Return Values, Function Composition, and Arrow Functions</p>
+          </div>
+        </div>
+        <div class="marks-badge">Weightage: 20 Marks</div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Interactive Marks Calculator -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🎓 Student Marks & Grade Calculator</h3>
+            <span class="card-badge">Function Declaration</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+            Demonstrates passing parameters/arguments to a function and computing structured return values.
+          </p>
+          <div class="form-group">
+            <label class="form-label" for="fn-student-name">Student Name:</label>
+            <input type="text" id="fn-student-name" class="form-input" value="Aitha Naveen" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fn-student-scores">Subject Marks (comma-separated out of 100):</label>
+            <input type="text" id="fn-student-scores" class="form-input" value="92, 88, 95, 84, 91" placeholder="e.g. 85, 90, 78, 92">
+          </div>
+          <button class="btn btn-primary btn-block" id="btn-calc-marks" onclick="handleUiCalculateMarks()">
+            Calculate Result (Calls calculateStudentPerformance)
+          </button>
+
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="terminal-title">Function Return Object Preview</span>
+            </div>
+            <div class="terminal-body compact" id="fn-marks-output">
+              <div class="log-line log-info">Click the button above to evaluate student marks.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-Commerce Multiple Functions Invoice Calculator -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🛒 E-Commerce Invoice Pipeline</h3>
+            <span class="card-badge">Multiple Functions</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+            Demonstrates pipeline composition calling <code>calculateSubtotal</code>, <code>calculateDiscount</code>, <code>calculateTax</code>, and <code>calculateShipping</code>.
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fn-item-name">Product Name:</label>
+              <input type="text" id="fn-item-name" class="form-input" value="Mechanical Gaming Keyboard">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fn-item-price">Unit Price (₹):</label>
+              <input type="number" id="fn-item-price" class="form-input" value="3499">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fn-item-qty">Quantity:</label>
+              <input type="number" id="fn-item-qty" class="form-input" value="2" min="1">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fn-item-discount">Discount (%):</label>
+              <input type="number" id="fn-item-discount" class="form-input" value="15" min="0" max="90">
+            </div>
+          </div>
+          <div class="form-group" style="display:flex; align-items:center; gap:0.5rem;">
+            <input type="checkbox" id="fn-item-express">
+            <label for="fn-item-express" style="font-size:0.85rem; color:var(--text-secondary); cursor:pointer;">Express Delivery (₹150 for orders below ₹1500)</label>
+          </div>
+          <button class="btn btn-primary btn-block" id="btn-calc-invoice" onclick="handleUiCalculateInvoice()">
+            Generate Invoice (Calls Pipeline)
+          </button>
+
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="terminal-title">Invoice Return Breakdown</span>
+            </div>
+            <div class="terminal-body compact" id="fn-invoice-output">
+              <div class="log-line log-info">Click the button above to run the multi-function invoice pipeline.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Functions Showcase -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🏹 Arrow Functions (ES6 Syntax)</h3>
+          <span class="card-badge">Arrow Functions</span>
+        </div>
+        <div class="grid-2">
+          <div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+              Demonstrating arrow functions for personalized greetings and financial algorithms.
+            </p>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fn-greet-name">Name:</label>
+                <input type="text" id="fn-greet-name" class="form-input" value="Aitha Naveen">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fn-greet-role">Role:</label>
+                <select id="fn-greet-role" class="form-select">
+                  <option value="Intern">Intern</option>
+                  <option value="Full-Stack Developer" selected>Full-Stack Developer</option>
+                  <option value="Lead Architect">Lead Architect</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fn-greet-time">Simulated Hour (0 - 23):</label>
+              <input type="number" id="fn-greet-time" class="form-input" value="10" min="0" max="23">
+            </div>
+            <button class="btn btn-secondary btn-block" id="btn-gen-greet" onclick="handleUiGenerateGreeting()">
+              Execute Arrow Function (generateGreeting)
+            </button>
+          </div>
+          <div>
+            <div class="code-preview">
+<span class="code-comment">// Concise ES6 Arrow Function Syntax</span>
+<span class="code-keyword">const</span> <span class="code-fn">generateGreeting</span> = (name, role, hour) => {
+  <span class="code-keyword">const</span> timeGreeting = hour &lt; <span class="code-num">12</span> ? <span class="code-str">"Good Morning"</span> : <span class="code-str">"Good Afternoon"</span>;
+  <span class="code-keyword">return</span> <span class="code-str">`${timeGreeting}, ${name}! Welcome to your ${role} portal.`</span>;
+};
+            </div>
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <span class="terminal-title">Arrow Function Result</span>
+              </div>
+              <div class="terminal-body compact" id="fn-greet-output">
+                <div class="log-line log-success">Good Morning, Aitha Naveen! Welcome back to your Full-Stack Developer dashboard.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 2: TASK 2 (ARRAYS - 20 MARKS)
+         --------------------------------------------------------------------- -->
+    <section class="task-panel" id="task2-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">📦</div>
+          <div>
+            <h2>Task 2: JavaScript Arrays</h2>
+            <p>Creating, Accessing, Adding, Removing, Updating, Iterating, and Higher-Order Methods</p>
+          </div>
+        </div>
+        <div class="marks-badge">Weightage: 20 Marks</div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Interactive Array Manipulation -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">📚 Course Catalog Array Operations</h3>
+            <span class="card-badge" id="array-course-count">5 Items</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+            Perform live additions, deletions, indexing, and updates on the practical courses array.
+          </p>
+
+          <!-- Current Items Display -->
+          <div class="form-group">
+            <label class="form-label">Current Array Elements (Click × to splice out):</label>
+            <div id="array-course-list" style="display:flex; flex-direction:column; gap:0.5rem; max-height:200px; overflow-y:auto; padding:0.5rem; background:var(--bg-glass); border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Add Item Controls -->
+          <div class="form-group">
+            <label class="form-label" for="array-new-course-input">Add New Element:</label>
+            <div class="form-row">
+              <input type="text" id="array-new-course-input" class="form-input" placeholder="e.g. Next.js 14 & Node Architecture">
+              <button class="btn btn-primary btn-sm" onclick="handleUiAddCourse('end')">push() [End]</button>
+              <button class="btn btn-secondary btn-sm" onclick="handleUiAddCourse('start')">unshift() [Start]</button>
+            </div>
+          </div>
+
+          <!-- Remove Item Controls -->
+          <div class="btn-group" style="margin-bottom:1rem;">
+            <button class="btn btn-danger btn-sm" onclick="handleUiPopCourse()">pop() [Remove Last]</button>
+            <button class="btn btn-danger btn-sm" onclick="handleUiShiftCourse()">shift() [Remove First]</button>
+            <button class="btn btn-secondary btn-sm" onclick="handleUiSortCourses()">sort() [A-Z]</button>
+            <button class="btn btn-secondary btn-sm" onclick="handleUiResetCourses()">Reset Default</button>
+          </div>
+
+          <!-- Update Element -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label">Update Element by Index (e.g. <code>arr[index] = newValue</code>):</label>
+            <div class="form-row">
+              <input type="number" id="array-update-index" class="form-input" placeholder="Index (0..N)" style="max-width:120px;" min="0">
+              <input type="text" id="array-update-val" class="form-input" placeholder="New Title">
+              <button class="btn btn-primary btn-sm" onclick="handleUiUpdateCourse()">Update</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- High-Order Array Methods Explorer -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🔍 Array Methods (map, filter, reduce)</h3>
+            <span class="card-badge">Array Methods</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+            Test functional JavaScript transformations directly against the array.
+          </p>
+
+          <div class="form-group">
+            <label class="form-label" for="array-filter-query">Live filter() Query:</label>
+            <div class="form-row">
+              <input type="text" id="array-filter-query" class="form-input" placeholder="e.g. Web, Python, Cloud..." oninput="handleUiFilterCourses()">
+              <button class="btn btn-primary btn-sm" onclick="handleUiFilterCourses()">filter()</button>
+            </div>
+          </div>
+
+          <div class="btn-group" style="margin-bottom:1rem;">
+            <button class="btn btn-secondary btn-sm" onclick="handleUiMapCourses()">map() (Generate Codes)</button>
+            <button class="btn btn-secondary btn-sm" onclick="handleUiFilterCourses()">filter()</button>
+          </div>
+
+          <div class="code-preview">
+<span class="code-comment">// High-order methods demonstrate clean functional code</span>
+<span class="code-keyword">const</span> inStock = products.<span class="code-fn">filter</span>(p => p.inStock);
+<span class="code-keyword">const</span> names = products.<span class="code-fn">map</span>(p => p.name);
+<span class="code-keyword">const</span> totalValue = products.<span class="code-fn">reduce</span>((acc, p) => acc + p.price, <span class="code-num">0</span>);
+          </div>
+
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="terminal-title">Methods Output Stream</span>
+            </div>
+            <div class="terminal-body compact" id="array-methods-output">
+              <div class="log-line log-info">Click map() or type a search query above to execute array methods.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 3: TASK 3 (OBJECTS - 15 MARKS)
+         --------------------------------------------------------------------- -->
+    <section class="task-panel" id="task3-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">🏷️</div>
+          <div>
+            <h2>Task 3: JavaScript Objects</h2>
+            <p>Creating Objects, Properties, Values, Dot & Bracket Notation, Updating, Adding & Deleting</p>
+          </div>
+        </div>
+        <div class="marks-badge">Weightage: 15 Marks</div>
+      </div>
+
+      <!-- Object Selector -->
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div class="card-header">
+          <h3 class="card-title">📂 Select Practical Scenario Object</h3>
+          <span class="card-badge">3 Practical Objects</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+          Choose an object scenario to inspect, modify, add properties, or delete properties:
+        </p>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="handleUiSelectObject('intern')">
+            👨‍💻 Scenario 1: Internnova Intern Profile
+          </button>
+          <button class="btn btn-secondary" onclick="handleUiSelectObject('product')">
+            💻 Scenario 2: ROG Laptop Product Specs
+          </button>
+          <button class="btn btn-secondary" onclick="handleUiSelectObject('wallet')">
+            💳 Scenario 3: Student Digital Wallet
+          </button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Live Property Inspector -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🔍 Live Object Properties Inspector</h3>
+            <span class="card-badge">Properties & Values</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+            Click <code>delete</code> to remove any property via JavaScript <code>delete obj[key]</code>.
+          </p>
+          <div id="object-properties-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; max-height:280px; overflow-y:auto; padding:0.5rem; background:var(--bg-glass); border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <!-- Rendered via JS -->
+          </div>
+
+          <!-- Add / Update Property Form -->
+          <div style="margin-top:1.25rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+            <label class="form-label">Add or Update Object Property:</label>
+            <div class="form-row">
+              <input type="text" id="obj-prop-key" class="form-input" placeholder="Property Key (e.g. gpa)">
+              <input type="text" id="obj-prop-val" class="form-input" placeholder="Value (e.g. 9.4)">
+              <button class="btn btn-success btn-sm" onclick="handleUiAddOrUpdateProperty()">Save Property</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Raw Object JSON & Syntax Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">📋 Raw Object State & Syntax</h3>
+            <span class="card-badge">JSON Representation</span>
+          </div>
+          <div class="code-preview" style="max-height:280px; overflow-y:auto;">
+            <pre id="object-json-preview">Loading...</pre>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-secondary); margin-top:0.5rem;">
+            💡 <strong>Dot notation</strong>: <code>intern.fullName</code> | 
+            <strong>Bracket notation</strong>: <code>intern["role"]</code> | 
+            <strong>Delete</strong>: <code>delete intern.stipend</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 4: TASK 4 (DOM MANIPULATION - 20 MARKS)
+         --------------------------------------------------------------------- -->
+    <section class="task-panel" id="task4-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">🎨</div>
+          <div>
+            <h2>Task 4: DOM Manipulation</h2>
+            <p>Selecting Elements, Changing Text/HTML Content, Modifying CSS Styles, Adding & Removing Nodes</p>
+          </div>
+        </div>
+        <div class="marks-badge">Weightage: 20 Marks</div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Content & Style Laboratory -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">✨ Text, HTML & CSS Modifiers</h3>
+            <span class="card-badge">Live DOM APIs</span>
+          </div>
+
+          <!-- 1. Text Content -->
+          <div class="form-group">
+            <label class="form-label">1. textContent Mutation Target:</label>
+            <div style="padding:0.75rem; background:var(--bg-glass); border:1px solid var(--border-color); border-radius:var(--radius-sm); margin-bottom:0.5rem;">
+              <h4 id="dom-demo-heading" style="color:var(--text-highlight);">Original Heading Before JS Mutation</h4>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="handleDomChangeText()">
+              Change textContent (handleDomChangeText)
+            </button>
+          </div>
+
+          <!-- 2. HTML Content -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label">2. innerHTML Injection Target:</label>
+            <div id="dom-demo-rich-content" style="margin-bottom:0.5rem;">
+              <p style="font-size:0.85rem; color:var(--text-secondary);">
+                Default unformatted text node before dynamic HTML injection.
+              </p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="handleDomChangeHtml()">
+              Inject Dynamic HTML (innerHTML)
+            </button>
+          </div>
+
+          <!-- 3. CSS Styles -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label">3. Dynamic CSS Style Transformation Box:</label>
+            <div id="dom-style-box" style="padding:1rem; border:2px solid var(--border-color); border-radius:var(--radius-md); text-align:center; margin-bottom:0.5rem; background:var(--bg-glass);">
+              🎨 Dynamic CSS Styling Playground
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="handleDomChangeStyles()">
+              Morph CSS Styles Dynamically (style.background)
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Element Tree Sandbox -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🏗️ Dynamic Elements Sandbox</h3>
+            <span class="card-badge" id="dom-item-count-badge">0 Elements</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+            Demonstrating <code>document.createElement()</code>, <code>appendChild()</code>, and <code>element.remove()</code>:
+          </p>
+
+          <div class="btn-group" style="margin-bottom:1rem;">
+            <button class="btn btn-success btn-sm" onclick="handleDomAddElement()">
+              ➕ createElement & appendChild
+            </button>
+            <button class="btn btn-danger btn-sm" onclick="handleDomRemoveLastElement()">
+              🗑️ remove() Last Node
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="handleDomClearAll()">
+              Clear All Nodes
+            </button>
+          </div>
+
+          <div class="dom-sandbox" id="dom-sandbox-area">
+            <div style="font-size:0.8rem; color:var(--text-muted); text-align:center;">
+              --- Dynamic DOM Sandbox Container ---
+            </div>
+            <div id="dom-sandbox-items" style="display:flex; flex-direction:column; gap:0.5rem;">
+              <!-- Dynamically injected items go here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 5: TASK 5 (EVENTS - 15 MARKS)
+         --------------------------------------------------------------------- -->
+    <section class="task-panel" id="task5-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">🎯</div>
+          <div>
+            <h2>Task 5: JavaScript Events</h2>
+            <p>Click, Input, Change, Submit, Mouse Movements & Coordinates, Keyboard Events, and Telemetry</p>
+          </div>
+        </div>
+        <div class="marks-badge">Weightage: 15 Marks</div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Event Forms & Inputs -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🖱️ Click, Input & Change Events</h3>
+            <span class="card-badge">Form & UI Events</span>
+          </div>
+
+          <!-- Click Event -->
+          <div class="form-group">
+            <label class="form-label">1. Click Event Counter:</label>
+            <div style="display:flex; align-items:center; gap:1rem;">
+              <button class="btn btn-primary" id="evt-click-btn">Click Me!</button>
+              <span style="font-size:1.1rem; font-weight:700;">
+                Clicks: <span id="evt-click-counter" style="color:var(--text-highlight);">0</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Input Event -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label" for="evt-live-input">2. Real-Time 'input' Event Mirror:</label>
+            <input type="text" id="evt-live-input" class="form-input" placeholder="Type here in real-time...">
+            <div style="margin-top:0.4rem; font-size:0.85rem; color:var(--text-secondary);">
+              Preview: <strong id="evt-live-preview" style="color:var(--text-highlight);">(Type above...)</strong>
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">
+              Characters: <span id="evt-char-count">0</span> | Words: <span id="evt-word-count">0</span>
+            </div>
+          </div>
+
+          <!-- Change Event -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label" for="evt-accent-select">3. 'change' Event on Dropdown & Checkbox:</label>
+            <div class="form-row">
+              <select id="evt-accent-select" class="form-select">
+                <option value="#6366f1">Indigo Accent</option>
+                <option value="#06b6d4">Cyan Accent</option>
+                <option value="#10b981">Emerald Green</option>
+                <option value="#ec4899">Hot Pink</option>
+                <option value="#f59e0b">Amber Gold</option>
+              </select>
+              <div id="evt-change-preview" style="padding:0.5rem 1rem; border:2px solid #6366f1; border-radius:var(--radius-sm); font-weight:700; font-size:0.8rem; display:flex; align-items:center;">
+                Preview
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">
+              <input type="checkbox" id="evt-checkbox-toggle">
+              <label for="evt-checkbox-toggle" style="font-size:0.85rem; color:var(--text-secondary); cursor:pointer;">
+                Trigger change event on toggle checkbox
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Event -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label">4. 'submit' Event Interception (e.preventDefault):</label>
+            <form id="evt-demo-form">
+              <div class="form-row" style="margin-bottom:0.5rem;">
+                <input type="text" id="evt-form-name" class="form-input" placeholder="Your Name" required>
+                <input type="email" id="evt-form-email" class="form-input" placeholder="Your Email" required>
+              </div>
+              <button type="submit" class="btn btn-success btn-sm btn-block">
+                Submit Form (Intercepted via preventDefault)
+              </button>
+            </form>
+            <div id="evt-form-feedback" style="margin-top:0.5rem; font-size:0.82rem;"></div>
+          </div>
+        </div>
+
+        <!-- Mouse & Keyboard Events Arena -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🕹️ Mouse Coordinates & Keyboard Inspector</h3>
+            <span class="card-badge">Mouse & Keydown</span>
+          </div>
+
+          <!-- Mouse Arena -->
+          <div class="form-group">
+            <label class="form-label">5. Mouse Movement Arena (mousemove, enter, leave, down, up):</label>
+            <div class="event-arena" id="evt-mouse-arena">
+              <div style="font-size:1.8rem; margin-bottom:0.25rem;">🎯</div>
+              <div style="font-weight:700; font-size:0.95rem;">Hover & Click Inside This Box</div>
+              <div id="evt-mouse-coords" style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-highlight); margin-top:0.35rem;">
+                X: -- | Y: --
+              </div>
+              <div id="evt-mouse-state" style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">
+                Status: Hover above to track coordinates
+              </div>
+            </div>
+          </div>
+
+          <!-- Keyboard Events -->
+          <div class="form-group" style="border-top:1px solid var(--border-color); padding-top:0.75rem;">
+            <label class="form-label" for="evt-key-test-input">6. Keyboard Events (keydown, keyup):</label>
+            <input type="text" id="evt-key-test-input" class="form-input" placeholder="Press any key inside this input box...">
+            <div style="display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.82rem; background:var(--bg-glass); padding:0.5rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+              <div>Key: <strong id="evt-key-name" style="color:var(--text-highlight);">--</strong></div>
+              <div>Code: <strong id="evt-key-code" style="color:var(--text-highlight);">--</strong></div>
+              <div>Modifiers: <strong id="evt-key-modifiers" style="color:var(--text-highlight);">None</strong></div>
+            </div>
+          </div>
+
+          <!-- Live Event Stream Logger -->
+          <div class="terminal-card" style="margin-top:0.75rem;">
+            <div class="terminal-header">
+              <span class="terminal-title">Real-Time Event Telemetry Stream</span>
+              <button class="btn btn-secondary btn-sm" style="padding:0.15rem 0.45rem; font-size:0.7rem;" onclick="handleClearEventStream()">Clear</button>
+            </div>
+            <div class="terminal-body compact" id="evt-stream-body">
+              <div class="log-line log-info">Event telemetry online. Trigger actions to observe event dispatching.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         PANEL 6: TASK 6 (MINI PROJECT - 10 MARKS)
+         --------------------------------------------------------------------- -->
+    <section class="task-panel" id="task6-panel">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">🚀</div>
+          <div>
+            <h2>Task 6: Mini Project – EduTrack Pro</h2>
+            <p>Interactive Student Record & Performance Manager combining Functions, Arrays, Objects, DOM, and Events</p>
+          </div>
+        </div>
+        <div class="marks-badge">Weightage: 10 Marks</div>
+      </div>
+
+      <!-- Dashboard Stats -->
+      <div class="project-stats-grid">
+        <div class="project-stat-card">
+          <div class="stat-icon-wrap stat-icon-indigo">👥</div>
+          <div>
+            <div class="stat-info-val" id="edutrack-stat-total">5</div>
+            <div class="stat-info-lbl">Total Enrolled</div>
+          </div>
+        </div>
+        <div class="project-stat-card">
+          <div class="stat-icon-wrap stat-icon-cyan">📊</div>
+          <div>
+            <div class="stat-info-val" id="edutrack-stat-avg">78.5%</div>
+            <div class="stat-info-lbl">Class Average</div>
+          </div>
+        </div>
+        <div class="project-stat-card">
+          <div class="stat-icon-wrap stat-icon-amber">🏆</div>
+          <div>
+            <div class="stat-info-val" id="edutrack-stat-high">94.2%</div>
+            <div class="stat-info-lbl">Highest Score</div>
+          </div>
+        </div>
+        <div class="project-stat-card">
+          <div class="stat-icon-wrap stat-icon-green">🎯</div>
+          <div>
+            <div class="stat-info-val" id="edutrack-stat-pass">100%</div>
+            <div class="stat-info-lbl">Passing Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Toolbar -->
+      <div class="project-header-bar">
+        <div class="table-toolbar" style="margin-bottom:0; width:100%;">
+          <div class="search-box-wrap">
+            <input type="text" id="edutrack-search" class="form-input" placeholder="🔍 Live search student name, roll number, or email...">
+          </div>
+          
+          <select id="edutrack-filter-course" class="form-select" style="max-width:200px;">
+            <option value="ALL">All Courses</option>
+            <option value="Full-Stack Web Development">Full-Stack Web Dev</option>
+            <option value="Python & Machine Learning">Python & ML</option>
+            <option value="Cloud Architecture">Cloud Architecture</option>
+            <option value="Cybersecurity Fundamentals">Cybersecurity</option>
+          </select>
+
+          <select id="edutrack-filter-status" class="form-select" style="max-width:160px;">
+            <option value="ALL">All Grades</option>
+            <option value="Distinction">Distinction (>=85%)</option>
+            <option value="First Class">First Class (>=70%)</option>
+            <option value="Second Class">Second Class (>=55%)</option>
+            <option value="Failed">Failed (&lt;45%)</option>
+          </select>
+
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="handleOpenAddStudentModal()">
+              ➕ Add Student
+            </button>
+            <button class="btn btn-secondary" onclick="handleExportJson()" title="Export JSON dataset">
+              💾 Export JSON
+            </button>
+            <button class="btn btn-secondary" onclick="handleResetEduTrackData()" title="Reset default records">
+              🔄 Reset Data
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table of Records -->
+      <div class="table-responsive">
+        <table class="custom-table" id="edutrack-table">
+          <thead>
+            <tr>
+              <th onclick="handleSortStudents('name')" style="cursor:pointer;" title="Sort by Name">Student Name ⇅</th>
+              <th onclick="handleSortStudents('roll')" style="cursor:pointer;" title="Sort by Roll No">Roll Number ⇅</th>
+              <th>Enrolled Course</th>
+              <th>Total Marks</th>
+              <th onclick="handleSortStudents('percentage')" style="cursor:pointer;" title="Sort by Percentage">Percentage & Grade ⇅</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="edutrack-table-body">
+            <!-- Dynamically populated via task6_project.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         GLOBAL LIVE SYSTEM TERMINAL / CONSOLE MIRROR
+         --------------------------------------------------------------------- -->
+    <section class="card" style="margin-top:2rem;">
+      <div class="card-header">
+        <h3 class="card-title">💻 Live System Terminal (Real-Time Console Mirror)</h3>
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-sm" onclick="handleClearTerminal()">Clear Log</button>
+        </div>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+        Every JavaScript event, function invocation, array mutation, and DOM update is streamed live here:
+      </p>
+      <div class="terminal-card" style="margin-top:0;">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">Internnova JS Execution Console • Week 4</span>
+        </div>
+        <div class="terminal-body" id="main-terminal-body">
+          <div class="log-line log-info">System terminal initialized. All console and interactive actions will stream here.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       5. Modal: Add / Edit Student (EduTrack Pro)
+       ========================================================================= -->
+  <div class="modal-overlay" id="edutrack-modal" role="dialog" aria-modal="true" aria-labelledby="edutrack-modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="edutrack-modal-title">➕ Add New Student Record</h3>
+        <button class="modal-close-btn" onclick="handleCloseStudentModal()" aria-label="Close modal">×</button>
+      </div>
+
+      <form id="edutrack-student-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modal-student-name">Full Name *</label>
+            <input type="text" id="modal-student-name" class="form-input" required placeholder="e.g. Aitha Naveen">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-student-roll">Roll Number *</label>
+            <input type="text" id="modal-student-roll" class="form-input" required placeholder="e.g. 26-CSE-006">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modal-student-email">Email Address *</label>
+            <input type="email" id="modal-student-email" class="form-input" required placeholder="name@domain.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-student-course">Course *</label>
+            <select id="modal-student-course" class="form-select" required>
+              <option value="Full-Stack Web Development">Full-Stack Web Development</option>
+              <option value="Python & Machine Learning">Python & Machine Learning</option>
+              <option value="Cloud Architecture">Cloud Architecture</option>
+              <option value="Cybersecurity Fundamentals">Cybersecurity Fundamentals</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin: 0.85rem 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-highlight);">
+          Subject Marks (Max 100 Each):
+        </div>
+
+        <div class="grid-4" style="gap: 0.5rem; margin-bottom: 1.25rem;">
+          <div class="form-group">
+            <label class="form-label" for="modal-mark-js">JavaScript</label>
+            <input type="number" id="modal-mark-js" class="form-input" min="0" max="100" value="85" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-mark-html">HTML / CSS</label>
+            <input type="number" id="modal-mark-html" class="form-input" min="0" max="100" value="90" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-mark-react">React.js</label>
+            <input type="number" id="modal-mark-react" class="form-input" min="0" max="100" value="80" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-mark-python">Python</label>
+            <input type="number" id="modal-mark-python" class="form-input" min="0" max="100" value="88" required>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:0.75rem;">
+          <button type="button" class="btn btn-secondary" onclick="handleCloseStudentModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="modal-submit-btn">Save Student Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       6. Footer
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Internnova Technologies Internship</strong> • Web Development Track
+      </div>
+      <div>
+        Student: <a href="https://github.com/aithanaveen" target="_blank" rel="noopener noreferrer" style="color:var(--text-highlight); text-decoration:none; font-weight:700;">Aitha Naveen</a> | 
+        Assignment: <strong>Week 4 - JavaScript Fundamentals Part 2</strong>
+      </div>
+      <div>
+        <a href="https://github.com/aithanaveen/internnova-internship" target="_blank" rel="noopener noreferrer" style="color:var(--text-highlight); text-decoration:none; font-weight:600;">
+          📂 github.com/aithanaveen/internnova-internship
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       7. External JavaScript Modules (Loaded in Sequence)
+       ========================================================================= -->
+  <script src="js/task1_functions.js"></script>
+  <script src="js/task2_arrays.js"></script>
+  <script src="js/task3_objects.js"></script>
+  <script src="js/task4_dom.js"></script>
+  <script src="js/task5_events.js"></script>
+  <script src="js/task6_project.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
